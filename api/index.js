@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import db from './db.js';
+import { supabase } from './supabaseClient.js';
 import dotenv from 'dotenv';
 import Stripe from 'stripe';
 
@@ -47,6 +48,10 @@ app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, 
         console.log(`💰 Payment confirmed for ${email}. Upgrading to ${tier}.`);
 
         try {
+            // First try Supabase if available
+            if (supabase) {
+                await supabase.from('users').upsert({ email, tier, updated_at: new Date() });
+            }
             db.prepare('INSERT OR REPLACE INTO users (email, tier) VALUES (?, ?)').run(email, tier);
         } catch (error) {
             console.error('Database update error:', error);
@@ -64,8 +69,12 @@ console.log('API Status: Gemini Key', GEMINI_API_KEY ? 'is present' : 'is missin
 
 // --- INVENTORY ENDPOINTS ---
 
-app.get('/api/inventory', (req, res) => {
+app.get('/api/inventory', async (req, res) => {
     try {
+        if (supabase) {
+            const { data, error } = await supabase.from('inventory').select('*').order('exp', { ascending: true });
+            if (!error && data) return res.json(data);
+        }
         const items = db.prepare('SELECT * FROM inventory ORDER BY exp ASC').all();
         res.json(items);
     } catch (error) {
@@ -73,9 +82,13 @@ app.get('/api/inventory', (req, res) => {
     }
 });
 
-app.post('/api/inventory', (req, res) => {
+app.post('/api/inventory', async (req, res) => {
     const { name, exp, icon, status } = req.body;
     try {
+        if (supabase) {
+            const { data, error } = await supabase.from('inventory').insert([{ name, exp, icon, status: status || 'green' }]).select();
+            if (!error && data) return res.json(data[0]);
+        }
         const info = db.prepare('INSERT INTO inventory (name, exp, icon, status) VALUES (?, ?, ?, ?)').run(name, exp, icon, status || 'green');
         res.json({ id: info.lastInsertRowid, name, exp, icon, status });
     } catch (error) {
@@ -289,9 +302,13 @@ app.get('/api/subscription/:email', (req, res) => {
     }
 });
 
-app.get('/api/subscription-status', (req, res) => {
+app.get('/api/subscription-status', async (req, res) => {
     const { email } = req.query;
     try {
+        if (supabase) {
+            const { data, error } = await supabase.from('users').select('tier').eq('email', email).single();
+            if (!error && data) return res.json({ isPro: data.tier === 'pro' });
+        }
         const user = db.prepare('SELECT tier FROM users WHERE email = ?').get(email);
         res.json({ isPro: user ? user.tier === 'pro' : false });
     } catch (error) {
