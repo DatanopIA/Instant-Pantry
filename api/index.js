@@ -348,6 +348,8 @@ app.post('/api/create-checkout-session', async (req, res) => {
     if (!stripe) return res.status(500).json({ error: "Stripe missing" });
 
     try {
+        const baseUrl = req.headers.origin || 'https://instant-pantry.vercel.app';
+
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             line_items: [{
@@ -355,8 +357,8 @@ app.post('/api/create-checkout-session', async (req, res) => {
                 quantity: 1,
             }],
             mode: 'subscription',
-            success_url: `${req.headers.origin}/profile?session_id={CHECKOUT_SESSION_ID}&status=success`,
-            cancel_url: `${req.headers.origin}/profile?status=cancel`,
+            success_url: `${baseUrl}/profile?session_id={CHECKOUT_SESSION_ID}&status=success`,
+            cancel_url: `${baseUrl}/profile?status=cancel`,
             customer_email: userEmail,
             metadata: { user_tier: tier }
         });
