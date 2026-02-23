@@ -272,7 +272,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
             payment_method_types: ['card'],
             line_items: [
                 {
-                    price: priceId || 'price_smart_monthly_placeholder', // Reemplazar con ID real de Stripe
+                    price: priceId || process.env.STRIPE_PRICE_ID || 'price_placeholder_needed', // ID real de Stripe desde .env
                     quantity: 1,
                 },
             ],
