@@ -84,7 +84,7 @@ const LandingView = () => {
 
                             <div className="landing-image-circle">
                                 <img
-                                    src="/Users/meritxellgimenez/.gemini/antigravity/brain/7c50d1b4-889e-4da0-ac3c-fbb5873210a6/gourmet_landing_bg_1772136920780.png"
+                                    src="/gourmet-landing.png"
                                     alt="Gourmet Ingredients"
                                 />
                             </div>
