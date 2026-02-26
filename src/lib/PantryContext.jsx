@@ -213,11 +213,17 @@ export const PantryProvider = ({ children }) => {
             setView('home');
         },
         logout: async () => {
-            await supabase.auth.signOut();
+            try {
+                await supabase.auth.signOut();
+            } catch (e) {
+                console.error("Logout error:", e);
+            }
             setUser(null);
             setInventory([]);
             setIsPro(false);
             setView('landing');
+            // Forzar recarga limpia para volver al estado inicial de la App
+            window.location.href = window.location.origin;
         }
     };
 

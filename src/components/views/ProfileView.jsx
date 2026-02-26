@@ -32,7 +32,6 @@ const ProfileView = () => {
 
     const handleLogout = async () => {
         await logout();
-        window.location.reload();
     };
 
     const handleImageUpload = (e) => {
