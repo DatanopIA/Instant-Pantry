@@ -1,38 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
-:root {
-  /* Sage & Gourmet Palette */
-  --primary: #3A5A40;
-  /* Forest Sage */
-  --primary-light: #A3B18A;
-  /* Sage Green */
-  --primary-soft: #DAD7CD;
-  /* Pale Sage */
-  --accent: #E2725B;
-  /* Terracotta for highlights */
-  --accent-soft: #FCF5EC;
-  /* Creamy highlight */
+@theme {
+  --color-primary: #3A5A40;
+  --color-primary-light: #A3B18A;
+  --color-primary-soft: #DAD7CD;
+  --color-accent: #E2725B;
+  --color-accent-soft: #FCF5EC;
+  --color-main: #2D3E33;
+  --color-muted: #6B7280;
+  --color-bg-main: #FBFBF9;
 
-  /* Semantic */
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+
+  --shadow-soft: 0 10px 30px -10px rgba(58, 90, 64, 0.15);
+  --shadow-premium: 0 30px 60px -12px rgba(58, 90, 64, 0.12);
+}
+
+:root {
+  --primary: #3A5A40;
+  --primary-light: #A3B18A;
+  --primary-soft: #DAD7CD;
+  --accent: #E2725B;
+  --accent-soft: #FCF5EC;
   --bg-main: #FBFBF9;
-  /* Warm White */
   --card-bg: #FFFFFF;
   --text-main: #2D3E33;
-  /* Deep Jungle Green */
   --text-muted: #6B7280;
   --border-color: rgba(58, 90, 64, 0.08);
   --glass: rgba(255, 255, 255, 0.85);
-
-  /* Radius & Shadows */
   --radius-sm: 12px;
   --radius-lg: 28px;
   --radius-xl: 36px;
   --radius-full: 9999px;
-
   --shadow-soft: 0 10px 30px -10px rgba(58, 90, 64, 0.15);
   --shadow-premium: 0 30px 60px -12px rgba(58, 90, 64, 0.12);
   --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -104,7 +106,6 @@ h4 {
     border-radius: 40px;
     min-height: calc(100vh - 80px);
     box-shadow: 0 60px 100px -20px rgba(58, 90, 64, 0.15);
-    /* Removed overflow hidden for better shadow visibility */
   }
 }
 
