@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePantry } from '../../lib/PantryContext';
-import { Clock, Filter, Search, ChevronRight, AlertTriangle, CheckCircle2, Star } from 'lucide-react';
+import { Clock, Filter, Search, ChevronRight, AlertTriangle, CheckCircle2, Star, Flame } from 'lucide-react';
 
 const RecipeView = () => {
     const { t, recipes, inventory, setSelectedRecipe, goTo } = usePantry();
@@ -23,72 +23,58 @@ const RecipeView = () => {
     );
 
     return (
-        <div className="container" style={{ paddingBottom: '120px' }}>
+        <div className="container animate-fade-in">
             {/* Header */}
-            <header className="pt-8 pb-4">
-                <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}
-                >
+            <header className="pt-10 pb-6">
+                <div className="flex justify-between items-end mb-8">
                     <div>
-                        <h1 style={{ fontSize: '2rem', fontWeight: 900, letterSpacing: '-1px', background: 'linear-gradient(45deg, var(--text-main), var(--primary))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                            {t('recetario').toUpperCase()}
-                        </h1>
-                        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '1px' }}>
-                            {t('recomendado').toUpperCase()}
-                        </p>
+                        <span className="text-accent font-black tracking-[0.2em] text-[10px] uppercase block mb-1">Inspiración</span>
+                        <h1 className="text-3xl font-black tracking-tighter text-main">{t('recetario')}</h1>
                     </div>
                     <motion.button
-                        whileHover={{ scale: 1.05, rotate: 5 }}
-                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={() => goTo('diet')}
-                        style={{ width: '50px', height: '50px', borderRadius: '18px', background: 'var(--glass)', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}
+                        className="w-12 h-12 rounded-2xl bg-white border border-border-color flex items-center justify-center shadow-premium-sm text-primary"
                     >
-                        <Filter size={22} />
+                        <Filter size={20} />
                     </motion.button>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                    style={{ position: 'relative' }}
-                >
-                    <Search style={{ position: 'absolute', left: '18px', top: '50%', transform: 'translateY(-50%)', color: 'var(--primary)', opacity: 0.7 }} size={20} />
+                <div className="relative">
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60" size={18} />
                     <input
                         type="text"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder={t('buscar_recetas')}
-                        style={{ width: '100%', padding: '1.4rem 1.4rem 1.4rem 3.5rem', borderRadius: '1.8rem', border: '1px solid var(--border-color)', background: 'var(--glass)', color: 'var(--text-main)', fontSize: '1rem', fontWeight: 600, boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.05)' }}
+                        className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-border-color shadow-sm focus:border-primary outline-none text-sm font-medium transition-all"
                     />
-                </motion.div>
+                </div>
             </header>
 
             {/* Recipes Grid */}
-            <div style={{ display: 'grid', gap: '1.8rem', marginTop: '1rem' }}>
+            <div className="grid gap-6 mt-4">
                 <AnimatePresence mode="popLayout">
                     {filteredRecipes.length === 0 ? (
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.9 }}
-                            style={{ padding: '4rem 2rem', textAlign: 'center', background: 'var(--glass)', borderRadius: '2.5rem', border: '1px dashed var(--border-color)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="flex flex-col items-center justify-center py-20 text-center"
                         >
-                            <Search size={48} style={{ opacity: 0.2 }} />
-                            <div>
-                                <p style={{ color: 'var(--text-main)', fontWeight: 800, fontSize: '1.1rem' }}>{t('no_recetas_encontradas') || 'No se han encontrado recetas'}</p>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.5rem' }}>Prueba con otros términos o ajusta tu dieta.</p>
+                            <div className="w-20 h-20 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-200 mb-6">
+                                <Search size={40} />
                             </div>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={() => { setSearchQuery(''); goTo('diet'); }}
-                                style={{ marginTop: '0.5rem', padding: '0.8rem 1.5rem', borderRadius: '1rem', background: 'var(--primary)', color: 'white', fontWeight: 800, border: 'none' }}
+                            <h3 className="text-lg font-black text-main mb-2">No hay resultados</h3>
+                            <p className="text-xs text-muted font-medium max-w-[200px] leading-relaxed mb-6">
+                                Intenta con otros términos o ingredientes.
+                            </p>
+                            <button
+                                onClick={() => setSearchQuery('')}
+                                className="px-6 py-2.5 rounded-full bg-zinc-900 text-white text-[10px] font-black uppercase tracking-widest shadow-lg"
                             >
-                                {t('preferencias')}
-                            </motion.button>
+                                Limpiar búsqueda
+                            </button>
                         </motion.div>
                     ) : (
                         filteredRecipes.map((recipe, index) => {
@@ -96,115 +82,74 @@ const RecipeView = () => {
                             const totalIng = recipe.ingredients?.length || 0;
                             const matchCount = totalIng - missing.length;
                             const matchPercentage = totalIng > 0 ? (matchCount / totalIng) * 100 : 0;
-                            const needsShopping = missing.length > 0;
+                            const isReady = missing.length === 0;
 
                             return (
                                 <motion.div
                                     key={recipe.id || index}
                                     layout
-                                    initial={{ opacity: 0, y: 20 }}
+                                    initial={{ opacity: 0, y: 15 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.05 }}
-                                    whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                                    className="premium-card"
-                                    style={{ padding: 0, overflow: 'hidden', position: 'relative', cursor: 'pointer', border: '1px solid var(--border-color)' }}
+                                    className="premium-card overflow-hidden group cursor-pointer hover:border-primary/20 transition-all flex flex-col"
                                     onClick={() => {
                                         setSelectedRecipe(recipe);
                                         goTo('recipe-detail');
                                     }}
                                 >
-                                    <div style={{ width: '100%', height: '180px', background: '#222', position: 'relative' }}>
+                                    <div className="h-48 relative overflow-hidden">
                                         <img
                                             src={recipe.img}
                                             alt={recipe.title}
-                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                             onError={(e) => {
                                                 e.target.src = "https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1000&auto=format&fit=crop";
                                             }}
                                         />
-
-                                        {/* Premium Overlay */}
-                                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, rgba(0,0,0,0.3), transparent, rgba(0,0,0,0.6))' }}></div>
-
-                                        {/* Status Tag */}
-                                        <div style={{
-                                            position: 'absolute',
-                                            top: '15px',
-                                            left: '15px',
-                                            background: needsShopping ? 'var(--terrakotta)' : 'var(--status-green)',
-                                            padding: '6px 12px',
-                                            borderRadius: '10px',
-                                            color: 'white',
-                                            fontSize: '0.7rem',
-                                            fontWeight: 900,
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '5px',
-                                            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                                            textTransform: 'uppercase',
-                                            letterSpacing: '0.5px'
-                                        }}>
-                                            {needsShopping ? <AlertTriangle size={12} /> : <CheckCircle2 size={12} />}
-                                            {needsShopping ? t('falta_algo') || 'FALTAN ITEMS' : t('listo_para_cocinar') || '¡LISTO!'}
+                                        <div className="absolute top-4 left-4">
+                                            <span className={`px-3 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest shadow-lg flex items-center gap-1.5 backdrop-blur-md ${isReady ? 'bg-status-green text-white' : 'bg-white/90 text-main'}`}>
+                                                {isReady ? <CheckCircle2 size={10} /> : <AlertTriangle size={10} className="text-accent" />}
+                                                {isReady ? 'Para cocinar' : `${missing.length} faltan`}
+                                            </span>
                                         </div>
 
-                                        {/* Match Badge */}
-                                        <div style={{
-                                            position: 'absolute',
-                                            bottom: '15px',
-                                            right: '15px',
-                                            background: 'rgba(0,0,0,0.7)',
-                                            backdropFilter: 'blur(10px)',
-                                            padding: '6px 12px',
-                                            borderRadius: '12px',
-                                            color: 'white',
-                                            fontSize: '0.75rem',
-                                            fontWeight: 800,
-                                            border: '1px solid rgba(255,255,255,0.1)'
-                                        }}>
-                                            <span style={{ color: 'var(--primary)' }}>{matchCount}</span>/{totalIng} {t('ingredientes') || 'Ingredientes'}
+                                        <div className="absolute bottom-4 right-4 py-1.5 px-3 rounded-xl bg-black/50 backdrop-blur-md border border-white/10 text-white text-[10px] font-black tracking-widest">
+                                            <span className="text-primary-bright font-black">{Math.round(matchPercentage)}%</span> MATCH
                                         </div>
                                     </div>
 
-                                    <div style={{ padding: '1.25rem' }}>
-                                        <div style={{ display: 'flex', gap: '4px', marginBottom: '0.6rem' }}>
-                                            {[1, 2, 3, 4, 5].map(s => <Star key={s} size={10} fill={s <= 4 ? "var(--primary)" : "none"} color="var(--primary)" strokeWidth={3} />)}
+                                    <div className="p-6 bg-white">
+                                        <div className="flex gap-1 mb-3">
+                                            {[1, 2, 3, 4, 5].map(s => (
+                                                <Star key={s} size={10} fill={s <= (recipe.rating || 4) ? "#F49D1A" : "none"} color="#F49D1A" strokeWidth={2.5} />
+                                            ))}
                                         </div>
-                                        <h3 style={{ fontSize: '1.1rem', marginBottom: '0.75rem', fontWeight: 800, lineHeight: 1.2, color: 'var(--text-main)' }}>
+
+                                        <h3 className="text-lg font-black text-main leading-tight mb-4 group-hover:text-primary transition-colors">
                                             {recipe.title}
                                         </h3>
 
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                            <div style={{ display: 'flex', gap: '12px', fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)' }}>
-                                                <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><Clock size={14} color="var(--primary)" /> {recipe.time}</span>
-                                                <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><Star size={14} color="var(--primary)" /> {recipe.cal || '450 kcal'}</span>
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex gap-4">
+                                                <div className="flex items-center gap-1.5 text-muted text-[10px] font-bold uppercase">
+                                                    <Clock size={12} className="text-primary" /> {recipe.time}
+                                                </div>
+                                                <div className="flex items-center gap-1.5 text-muted text-[10px] font-bold uppercase">
+                                                    <Flame size={12} className="text-accent" /> {recipe.cal || '450 kcal'}
+                                                </div>
                                             </div>
-                                            <div style={{
-                                                width: '36px',
-                                                height: '36px',
-                                                borderRadius: '12px',
-                                                background: 'var(--glass)',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                border: '1px solid var(--border-color)',
-                                                color: 'var(--primary)'
-                                            }}>
-                                                <ChevronRight size={20} strokeWidth={3} />
+                                            <div className="w-10 h-10 rounded-xl bg-zinc-50 border border-border-color flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+                                                <ChevronRight size={18} />
                                             </div>
                                         </div>
                                     </div>
 
-                                    {/* Premium Progress Bar */}
-                                    <div style={{ width: '100%', height: '4px', background: 'rgba(255,255,255,0.03)' }}>
+                                    {/* Match Progress Line */}
+                                    <div className="h-1 bg-zinc-50 w-full overflow-hidden">
                                         <motion.div
                                             initial={{ width: 0 }}
                                             animate={{ width: `${matchPercentage}%` }}
-                                            style={{
-                                                height: '100%',
-                                                background: needsShopping ? 'linear-gradient(90deg, var(--primary), var(--terrakotta))' : 'var(--status-green)',
-                                                boxShadow: '0 0 10px rgba(var(--primary-rgb), 0.3)'
-                                            }}
+                                            className={`h-full ${isReady ? 'bg-status-green' : 'bg-primary'}`}
                                         />
                                     </div>
                                 </motion.div>

@@ -1,126 +1,120 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePantry } from '../../lib/PantryContext';
-import { Trash2, AlertCircle, Plus, Search } from 'lucide-react';
+import { Trash2, AlertCircle, Plus, Search, SlidersHorizontal } from 'lucide-react';
 
 const InventoryView = () => {
     const { t, inventory, deleteProduct, goTo } = usePantry();
 
+    const getStatusColor = (exp) => {
+        if (exp <= 2) return 'bg-status-red text-status-red';
+        if (exp <= 5) return 'bg-status-yellow text-status-yellow';
+        return 'bg-status-green text-status-green';
+    };
+
     return (
-        <div className="container" style={{ paddingBottom: '120px' }}>
-            <header className="pt-8 pb-6">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                    <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>{t('despensa')}</h1>
+        <div className="container animate-fade-in">
+            <header className="pt-10 pb-6">
+                <div className="flex justify-between items-end mb-8">
+                    <div>
+                        <span className="text-accent font-black tracking-[0.2em] text-[10px] uppercase block mb-1">Tu Colección</span>
+                        <h1 className="text-3xl font-black tracking-tighter text-main">{t('despensa')}</h1>
+                    </div>
                     <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={() => goTo('add-product')}
-                        style={{
-                            width: '3rem',
-                            height: '3rem',
-                            borderRadius: '50%',
-                            background: 'var(--primary)',
-                            color: 'white',
-                            border: 'none',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            boxShadow: '0 8px 16px rgba(var(--primary-rgb), 0.3)'
-                        }}
+                        className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/20"
                     >
                         <Plus size={24} />
                     </motion.button>
                 </div>
 
-                {/* Search Mockup */}
-                <div style={{ position: 'relative', width: '100%' }}>
-                    <Search size={18} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', opacity: 0.4 }} />
-                    <input
-                        type="text"
-                        placeholder="Buscar ingredientes..."
-                        style={{
-                            width: '100%',
-                            padding: '1rem 1rem 1rem 3.5rem',
-                            borderRadius: '1rem',
-                            background: 'var(--glass)',
-                            border: '1px solid var(--border-color)',
-                            color: 'var(--text-main)',
-                            outline: 'none'
-                        }}
-                    />
+                {/* Search & Filter Bar */}
+                <div className="flex gap-3 mb-8">
+                    <div className="relative flex-1">
+                        <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted" />
+                        <input
+                            type="text"
+                            placeholder="Buscar ingredientes..."
+                            className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-border-color shadow-sm focus:border-primary outline-none text-sm font-medium transition-all"
+                        />
+                    </div>
+                    <button className="w-14 h-14 rounded-2xl border border-border-color flex items-center justify-center text-main hover:bg-zinc-50 transition-colors">
+                        <SlidersHorizontal size={20} />
+                    </button>
+                </div>
+
+                {/* Expiry Categories */}
+                <div className="flex gap-3 overflow-x-auto pb-2 hide-scrollbar snap-x">
+                    {['Todos', 'Urgentes', 'Frescos', 'Secos'].map((cat, i) => (
+                        <button
+                            key={cat}
+                            className={`px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-[0.1em] whitespace-nowrap border transition-all snap-start ${i === 0
+                                ? 'bg-zinc-900 border-zinc-900 text-white shadow-md'
+                                : 'bg-white border-border-color text-muted hover:border-primary/30'
+                                }`}
+                        >
+                            {cat}
+                        </button>
+                    ))}
                 </div>
             </header>
 
-            {/* Expiry Categories */}
-            <div style={{ display: 'flex', gap: '8px', marginBottom: '1.5rem', overflowX: 'auto', paddingBottom: '4px' }} className="hide-scrollbar">
-                {['Todos', 'Urgentes', 'Frescos', 'Secos'].map((cat, i) => (
-                    <span
-                        key={cat}
-                        style={{
-                            padding: '8px 16px',
-                            borderRadius: '12px',
-                            background: i === 0 ? 'var(--primary)' : 'var(--glass)',
-                            color: i === 0 ? 'white' : 'var(--text-muted)',
-                            fontSize: '0.8rem',
-                            fontWeight: 700,
-                            whiteSpace: 'nowrap',
-                            border: '1px solid var(--border-color)'
-                        }}
-                    >
-                        {cat.toUpperCase()}
-                    </span>
-                ))}
-            </div>
-
             {/* Inventory List */}
-            <div style={{ display: 'grid', gap: '1rem' }}>
+            <div className="grid gap-4 mt-2">
                 <AnimatePresence>
                     {inventory.map((item, index) => (
                         <motion.div
                             key={item.id || index}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ delay: index * 0.05 }}
-                            className="premium-card"
-                            style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}
+                            className="premium-card p-5 group flex items-center gap-5 hover:border-primary/20 transition-all"
                         >
-                            <div style={{ fontSize: '2rem', width: '50px', height: '50px', background: 'rgba(var(--primary-rgb), 0.1)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <div className="w-16 h-16 rounded-2xl bg-white border border-border-color flex items-center justify-center text-3xl shadow-sm group-hover:scale-105 transition-transform">
                                 {item.icon || '📦'}
                             </div>
 
-                            <div style={{ flex: 1 }}>
-                                <h4 style={{ fontSize: '1rem', marginBottom: '2px' }}>{item.name}</h4>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                    <span style={{
-                                        width: '8px',
-                                        height: '8px',
-                                        borderRadius: '50%',
-                                        background: item.exp <= 2 ? 'var(--status-red)' : item.exp <= 5 ? 'var(--status-yellow)' : 'var(--status-green)'
-                                    }}></span>
-                                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                            <div className="flex-1">
+                                <h4 className="text-base font-black text-main mb-1 group-hover:text-primary transition-colors">
+                                    {item.name}
+                                </h4>
+                                <div className="flex items-center gap-2">
+                                    <div className={`w-1.5 h-1.5 rounded-full ${getStatusColor(item.exp).split(' ')[0]}`} />
+                                    <span className="text-[10px] font-bold text-muted uppercase tracking-wider">
                                         {t('caduca_en').replace('{count}', item.exp)}
                                     </span>
                                 </div>
                             </div>
 
                             <motion.button
-                                whileHover={{ scale: 1.1, color: 'var(--status-red)' }}
+                                whileHover={{ scale: 1.1, color: '#ef4444' }}
                                 whileTap={{ scale: 0.9 }}
                                 onClick={() => deleteProduct(item.id)}
-                                style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '8px' }}
+                                className="w-10 h-10 rounded-xl bg-zinc-50 text-muted/50 flex items-center justify-center hover:bg-red-50 transition-colors"
                             >
-                                <Trash2 size={20} />
+                                <Trash2 size={18} />
                             </motion.button>
                         </motion.div>
                     ))}
                 </AnimatePresence>
 
                 {inventory.length === 0 && (
-                    <div style={{ textAlign: 'center', padding: '4rem 2rem', opacity: 0.3 }}>
-                        <AlertCircle size={48} style={{ margin: '0 auto 1rem' }} />
-                        <p>Tu despensa está vacía.<br />¡Escanea tu compra!</p>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="flex flex-col items-center justify-center py-20 text-center"
+                    >
+                        <div className="w-20 h-20 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-200 mb-6">
+                            <AlertCircle size={40} />
+                        </div>
+                        <h3 className="text-lg font-black text-main mb-2">Despensa vacía</h3>
+                        <p className="text-xs text-muted font-medium max-w-[200px] leading-relaxed">
+                            Añade algunos ingredientes para empezar a crear recetas inteligentes.
+                        </p>
+                    </motion.div>
                 )}
             </div>
         </div>

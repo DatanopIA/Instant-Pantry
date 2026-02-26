@@ -1,66 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Brand Colors - Primary is now Sage Green for Light Mode */
-  --primary: #84A98C;
-  --primary-rgb: 132, 169, 140;
-  --accent-sage: #84A98C;
-  --accent-sage-rgb: 132, 169, 140;
-  --terrakotta: #BC6C25;
-  /* Solo para alertas puntuales en modo claro */
-  --soft-cream: #F5F5DC;
-  --charcoal: #2F3E46;
+  /* Brand Colors - Pro Gourmet Palette */
+  --primary: #2B4C3F;
+  /* Deep Forest Sage */
+  --primary-bright: #4ade80;
+  --accent: #F49D1A;
+  /* Saffron Orange for CTA */
+  --accent-soft: #E9EDC9;
 
   /* Semantic Colors */
-  --status-green: #4ade80;
-  --status-yellow: #fbbf24;
-  --status-red: #f87171;
+  --status-green: #22c55e;
+  --status-yellow: #eab308;
+  --status-red: #ef4444;
   --text-on-primary: #ffffff;
 
-  /* Backgrounds */
-  --bg-light: var(--soft-cream);
-  --bg-dark: #1A1D1E;
-  --surface-dark: #2F3E46;
-
   /* Shared values */
-  --radius-sm: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
+  --radius-sm: 0.75rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2.25rem;
   --radius-full: 9999px;
 
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --ios-blur: blur(12px);
-  --ios-blur-deep: blur(20px);
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --ios-blur: blur(16px);
+  --ios-blur-deep: blur(32px);
+
+  --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 30px rgba(43, 76, 63, 0.15);
 }
 
-/* Dark Mode Theme (Premium - Terrakotta Emphasis) */
+/* Dark Mode Theme (Premium Nordic) */
 [data-theme='dark'] {
-  --bg-color: var(--bg-dark);
-  --card-bg: rgba(47, 62, 70, 0.4);
-  --text-main: var(--soft-cream);
-  --text-muted: rgba(245, 245, 220, 0.6);
-  --border-color: rgba(245, 245, 220, 0.1);
-  --glass: rgba(47, 62, 70, 0.6);
-  --nav-bg: rgba(26, 29, 30, 0.85);
-  --primary: #D88C51;
-  /* Terrakotta Vibrante para modo oscuro */
-  --primary-rgb: 216, 140, 81;
-  --accent-sage: #B2D8B7;
-  /* Neon Sage */
+  --bg-color: #0F1212;
+  --card-bg: rgba(25, 30, 30, 0.6);
+  --text-main: #FEFEFA;
+  --text-muted: rgba(254, 254, 250, 0.6);
+  --border-color: rgba(254, 254, 250, 0.1);
+  --glass: rgba(15, 18, 18, 0.8);
+  --nav-bg: rgba(15, 18, 18, 0.9);
+  --primary-rgb: 43, 76, 63;
 }
 
-/* Light Mode Theme (Organic - Sage Emphasis) */
+/* Light Mode Theme (Fresh Gourmet) */
 [data-theme='light'] {
-  --bg-color: var(--bg-light);
+  --bg-color: #FEFEFA;
+  /* Warm White, not beige */
   --card-bg: #ffffff;
-  --text-main: var(--charcoal);
-  --text-muted: #4b5563;
-  --border-color: rgba(47, 62, 70, 0.1);
-  --glass: rgba(132, 169, 140, 0.1);
-  --nav-bg: rgba(245, 245, 220, 0.9);
-  --primary: #84A98C;
-  --primary-rgb: 132, 169, 140;
+  --text-main: #2D3E33;
+  --text-muted: #64748b;
+  --border-color: rgba(45, 62, 51, 0.08);
+  --glass: rgba(255, 255, 255, 0.7);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --primary-rgb: 43, 76, 63;
 }
+
 
 
 * {
@@ -100,7 +93,7 @@ h4 {
   color: var(--text-main);
 }
 
-.App {
+.app-container {
   max-width: 480px;
   /* Tamaño móvil por defecto */
   margin: 0 auto;
@@ -109,12 +102,12 @@ h4 {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-color);
-  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.4);
 }
 
 /* Tablet / iPad Architecture */
 @media (min-width: 768px) {
-  .App {
+  .app-container {
     max-width: 900px;
     /* Ancho Bento para iPad */
     border-radius: 40px;
@@ -156,34 +149,32 @@ h4 {
   box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.4);
 }
 
-/* ios-tab-bar - Docked at bottom (Original version) */
+/* ios-tab-bar - Docked at bottom (Floating Dock Version) */
 .ios-tab-bar {
   position: fixed;
-  bottom: 0;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  max-width: 480px;
-  /* Ancho controlado para la nav en mobile */
-  height: 90px;
+  width: calc(100% - 48px);
+  max-width: 440px;
+  height: 76px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0 1rem 20px 1rem;
+  padding: 0 8px;
   z-index: 100;
   background: var(--nav-bg);
   -webkit-backdrop-filter: var(--ios-blur-deep);
   backdrop-filter: var(--ios-blur-deep);
-  border-top: 1px solid var(--border-color);
-  border-radius: 20px 20px 0 0;
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
 @media (min-width: 768px) {
   .ios-tab-bar {
-    max-width: 900px;
-    border-radius: 0 0 40px 40px;
+    max-width: 800px;
     bottom: 40px;
-    /* Alineada con el contenedor en iPad */
   }
 }
 
@@ -192,38 +183,47 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 2px;
   color: var(--text-muted);
-  font-size: 0.6rem;
-  font-weight: 600;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
   transition: var(--transition);
   flex: 1;
-  min-width: 0;
+  height: 100%;
 }
 
 .tab-item.active {
   color: var(--primary);
 }
 
+.tab-item .icon-wrapper {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tab-item.active .icon-wrapper {
+  transform: translateY(-4px) scale(1.1);
+}
+
 .tab-item.special-scanner-btn {
-  position: relative;
-  z-index: 2;
-  margin-top: -30px;
+  margin-top: -45px;
 }
 
 .tab-item.special-scanner-btn .icon-wrapper {
   background: var(--primary);
   color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 16px rgba(var(--primary-rgb), 0.3);
-  border: 4px solid var(--bg-color);
+  box-shadow: 0 12px 24px rgba(43, 76, 63, 0.3);
+  border: 6px solid var(--bg-color);
 }
+
 
 .tab-item.active .icon-wrapper svg {
   transform: scale(1.1);
@@ -482,29 +482,93 @@ h4 {
   border-radius: 10px;
 }
 
-/* Premium Aurora (EXCLUSIVE FOR LANDING) */
-@keyframes aurora {
-  from {
-    background-position: 50% 50%, 50% 50%;
+/* Premium Aurora (REFACTORED FOR NATIVE CSS) */
+@keyframes aurora-animation {
+  0% {
+    background-position: 0% 50%;
   }
 
-  to {
-    background-position: 350% 50%, 350% 50%;
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.animate-aurora {
-  --aurora: repeating-linear-gradient(100deg, var(--primary) 0%, #D88C51 7%, #E9EDC9 12%, #BC6C25 17%, var(--primary) 20%);
-  background-image: var(--aurora), var(--aurora);
-  background-size: 300%, 200%;
-  background-attachment: fixed;
-  filter: blur(80px) brightness(1.2);
+.aurora-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+.aurora-inner {
+  position: absolute;
+  inset: -100px;
   opacity: 0.15;
-  mix-blend-mode: soft-light;
-  animation: aurora 60s linear infinite;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg,
+      var(--primary) 0%,
+      #4f772d 20%,
+      var(--accent) 40%,
+      #90a955 60%,
+      var(--primary) 80%,
+      #31572c 100%);
+  background-size: 400% 400%;
+  animation: aurora-animation 30s ease infinite;
 }
 
-[data-theme='dark'] .animate-aurora {
-  opacity: 0.1;
-  filter: blur(100px) brightness(0.8);
+[data-theme='dark'] .aurora-inner {
+  opacity: 0.2;
+  filter: blur(100px);
+}
+
+.aurora-mask {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 0%, transparent 20%, var(--bg-color) 80%);
+  z-index: 1;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-main {
+  color: var(--text-main);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-color {
+  border-color: var(--border-color);
+}
+
+.shadow-premium {
+  box-shadow: var(--shadow-premium);
+}
+
+.premium-card {
+  background: var(--glass);
+  -webkit-backdrop-filter: var(--ios-blur-deep);
+  backdrop-filter: var(--ios-blur-deep);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-premium);
 }
