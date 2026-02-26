@@ -774,20 +774,29 @@ h4 {
   border-radius: 10px;
 }
 
-/* Aurora Animation Engine */
+/* Aurora Background Animations */
 @keyframes aurora {
   from {
     background-position: 50% 50%, 50% 50%;
   }
+
   to {
     background-position: 350% 50%, 350% 50%;
   }
 }
 
 .animate-aurora {
+  --aurora: repeating-linear-gradient(100deg, var(--primary) 0%, #D88C51 7%, #E9EDC9 12%, #BC6C25 17%, var(--primary) 20%);
+  background-image: var(--aurora), var(--aurora);
+  background-size: 300%, 200%;
+  background-attachment: fixed;
+  filter: blur(80px) brightness(1.2);
+  opacity: 0.15;
+  mix-blend-mode: soft-light;
   animation: aurora 60s linear infinite;
 }
 
-.transition-bg {
-  transition: background-color 0.5s ease, color 0.5s ease;
+[data-theme='dark'] .animate-aurora {
+  opacity: 0.1;
+  filter: blur(100px) brightness(0.8);
 }

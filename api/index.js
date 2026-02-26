@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { rateLimit } from 'express-rate-limit';
+import db from './db.js';
 import { supabase } from './supabaseClient.js';
 import dotenv from 'dotenv';
 import Stripe from 'stripe';
@@ -235,6 +236,13 @@ app.delete('/api/inventory/:id', async (req, res) => {
         const { error } = await supabase.from('inventory').delete().eq('id', id);
         if (error) throw error;
 
+        if (process.env.NODE_ENV !== 'production') {
+            try {
+                db.prepare('DELETE FROM inventory WHERE id = ?').run(id);
+            } catch (e) {
+                console.error("Local DB sync error:", e);
+            }
+        }
         res.json({ success: true });
     } catch (error) {
         sendError(res, error, "No se pudo eliminar el item del inventario");

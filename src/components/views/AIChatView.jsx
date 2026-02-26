@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePantry } from '../../lib/PantryContext';
-import { Send, Sparkles, Trash2, User, Bot, CookingPot, RotateCcw } from 'lucide-react';
-import { GlassCard } from '../ui/GlassCard';
+import { Send, Sparkles, Trash2, User, Bot } from 'lucide-react';
 
 const AIChatView = () => {
     const { t, inventory, recipes, dietSettings, language, pendingAiPrompt, setPendingAiPrompt } = usePantry();
@@ -11,6 +10,7 @@ const AIChatView = () => {
     const [isTyping, setIsTyping] = useState(false);
     const scrollRef = useRef(null);
 
+    // Initialize/Update first message on language change if no other messages
     useEffect(() => {
         if (messages.length === 0) {
             setMessages([
@@ -26,12 +26,9 @@ const AIChatView = () => {
 
     useEffect(() => {
         if (scrollRef.current) {
-            scrollRef.current.scrollTo({
-                top: scrollRef.current.scrollHeight,
-                behavior: 'smooth'
-            });
+            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
-    }, [messages, isTyping]);
+    }, [messages.length, t, isTyping]);
 
     const sendMessage = async (overrideText = null) => {
         const text = overrideText || inputText;
@@ -81,84 +78,94 @@ const AIChatView = () => {
 
     return (
         <div className="container" style={{
-            paddingBottom: '20px',
+            paddingBottom: '100px',
             height: '100vh',
             display: 'flex',
             flexDirection: 'column',
-            maxWidth: '800px',
-            margin: '0 auto'
+            background: 'var(--mesh-1), var(--mesh-2), var(--mesh-3), var(--mesh-4)',
+            backgroundAttachment: 'fixed'
         }}>
-            <header className="pt-10 pb-6 flex justify-between items-center border-b border-zinc-100/50 mb-2">
-                <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-[#84A98C] flex items-center justify-center text-white shadow-lg shadow-[#84A98C]/20">
-                        <CookingPot size={24} />
+            <header className="pt-8 pb-4 flex justify-between items-center">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Sparkles size={20} color="white" />
                     </div>
                     <div>
-                        <h1 className="text-xl font-black tracking-tighter text-zinc-900 uppercase">Chef Virtual</h1>
-                        <div className="flex items-center gap-2">
-                            <motion.div
-                                animate={{ opacity: [0.4, 1, 0.4] }}
-                                transition={{ duration: 2, repeat: Infinity }}
-                                className="w-2 h-2 rounded-full bg-[#84A98C]"
-                            />
-                            <span className="text-[10px] font-black tracking-widest text-zinc-400 uppercase">Estatus: Gourmet AI</span>
+                        <h1 style={{ fontSize: '1.25rem', fontWeight: 800 }}>CHEF VIRTUAL</h1>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--status-green)' }}></div>
+                            <span style={{ fontSize: '0.65rem', fontWeight: 700, opacity: 0.6 }}>CONECTADO CON IA INTELIGENTE</span>
                         </div>
                     </div>
                 </div>
                 <motion.button
-                    whileHover={{ rotate: 180 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setMessages([{ id: 1, sender: 'bot', text: t('saludo_ia'), time: new Date() }])}
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-zinc-300 hover:text-zinc-600 transition-colors"
+                    style={{ background: 'none', border: 'none', color: 'var(--text-muted)' }}
                 >
-                    <RotateCcw size={20} />
+                    <Trash2 size={20} />
                 </motion.button>
             </header>
 
             {/* Chat Messages */}
             <div
                 ref={scrollRef}
-                className="flex-1 overflow-y-auto py-6 px-1 flex flex-col gap-8 hide-scrollbar"
+                style={{ flex: 1, overflowY: 'auto', padding: '1rem 0', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
+                className="hide-scrollbar"
             >
-                <AnimatePresence initial={false}>
+                <AnimatePresence>
                     {messages.map((m) => (
                         <motion.div
                             key={m.id}
-                            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
-                            className={`flex ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                            style={{
+                                alignSelf: m.sender === 'user' ? 'flex-end' : 'flex-start',
+                                maxWidth: '85%',
+                                display: 'flex',
+                                gap: '10px',
+                                flexDirection: m.sender === 'user' ? 'row-reverse' : 'row'
+                            }}
                         >
-                            <div className={`flex gap-3 max-w-[85%] ${m.sender === 'user' ? 'flex-row-reverse' : ''}`}>
-                                <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-sm ${m.sender === 'user' ? 'bg-zinc-900 text-white' : 'bg-[#84A98C] text-white'
-                                    }`}>
-                                    {m.sender === 'user' ? <User size={16} /> : <Bot size={16} />}
-                                </div>
-                                <div className="flex flex-col gap-1">
-                                    <div className={`px-5 py-4 rounded-2xl text-[0.95rem] leading-relaxed shadow-sm ${m.sender === 'user'
-                                            ? 'bg-zinc-900 text-white rounded-tr-none'
-                                            : 'bg-white border border-zinc-100 text-zinc-800 rounded-tl-none'
-                                        }`}>
-                                        {m.text}
-                                    </div>
-                                    <span className={`text-[9px] font-bold text-zinc-400 px-1 ${m.sender === 'user' ? 'text-right' : 'text-left'}`}>
-                                        {new Date(m.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                                    </span>
-                                </div>
+                            <div style={{
+                                width: '32px',
+                                height: '32px',
+                                borderRadius: '50%',
+                                background: m.sender === 'user' ? 'var(--glass)' : 'var(--primary)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexShrink: 0,
+                                border: '1px solid var(--border-color)'
+                            }}>
+                                {m.sender === 'user' ? <User size={16} /> : <Bot size={16} color="white" />}
+                            </div>
+                            <div style={{
+                                padding: '1rem',
+                                borderRadius: m.sender === 'user' ? '1.25rem 0.25rem 1.25rem 1.25rem' : '0.25rem 1.25rem 1.25rem 1.25rem',
+                                background: m.sender === 'user' ? 'var(--primary)' : 'var(--glass)',
+                                color: m.sender === 'user' ? 'white' : 'var(--text-main)',
+                                border: '1px solid var(--border-color)',
+                                fontSize: '0.95rem',
+                                lineHeight: 1.5,
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
+                            }}>
+                                {m.text}
                             </div>
                         </motion.div>
                     ))}
                 </AnimatePresence>
 
                 {isTyping && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start gap-3">
-                        <div className="w-8 h-8 rounded-full bg-[#84A98C] flex items-center justify-center text-white">
-                            <Bot size={16} />
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ display: 'flex', gap: '10px' }}>
+                        <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <Bot size={16} color="white" />
                         </div>
-                        <div className="bg-white border border-zinc-100 px-5 py-3 rounded-2xl rounded-tl-none shadow-sm">
-                            <div className="flex gap-1.5 items-center h-4">
-                                <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 0.8 }} className="w-1.5 h-1.5 bg-[#84A98C] rounded-full" />
-                                <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 0.8, delay: 0.2 }} className="w-1.5 h-1.5 bg-[#84A98C] rounded-full" />
-                                <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 0.8, delay: 0.4 }} className="w-1.5 h-1.5 bg-[#84A98C] rounded-full" />
+                        <div className="glass-panel" style={{ padding: '0.75rem 1.25rem', borderRadius: '0.25rem 1.25rem 1.25rem 1.25rem' }}>
+                            <div style={{ display: 'flex', gap: '4px' }}>
+                                <span className="dot-animate" style={{ fontSize: '1.2rem', lineHeight: 1 }}>.</span>
+                                <span className="dot-animate" style={{ fontSize: '1.2rem', lineHeight: 1, animationDelay: '0.2s' }}>.</span>
+                                <span className="dot-animate" style={{ fontSize: '1.2rem', lineHeight: 1, animationDelay: '0.4s' }}>.</span>
                             </div>
                         </div>
                     </motion.div>
@@ -166,20 +173,32 @@ const AIChatView = () => {
             </div>
 
             {/* Sugerencias Rápidas */}
-            <div className="flex gap-2 overflow-x-auto py-4 px-2 hide-scrollbar">
+            <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', padding: '0.5rem 0', marginBottom: '0.5rem' }} className="hide-scrollbar">
                 {[
                     { text: "¿Qué cocino hoy?", icon: "🍳" },
-                    { text: "¿Qué caduca pronto?", icon: "⏰" },
-                    { text: "Receta exprés", icon: "⚡" },
-                    { text: "Dieta semanal", icon: "📅" }
+                    { text: "¿Qué va a caducar?", icon: "⏰" },
+                    { text: "Dime una receta rápida", icon: "⚡" },
+                    { text: "Planifica mi semana", icon: "📅" }
                 ].map((chip) => (
                     <motion.button
                         key={chip.text}
-                        whileHover={{ y: -2 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={!isTyping ? { scale: 1.05 } : {}}
+                        whileTap={!isTyping ? { scale: 0.95 } : {}}
                         onClick={() => !isTyping && sendMessage(chip.text)}
                         disabled={isTyping}
-                        className="px-5 py-2.5 rounded-full bg-white border border-zinc-100 text-[11px] font-black uppercase tracking-widest text-zinc-500 shadow-sm hover:border-[#84A98C] hover:text-[#84A98C] transition-all whitespace-nowrap flex items-center gap-2"
+                        style={{
+                            flexShrink: 0,
+                            padding: '0.6rem 1rem',
+                            borderRadius: '1rem',
+                            background: 'var(--glass)',
+                            border: '1px solid var(--border-color)',
+                            color: 'var(--text-main)',
+                            fontSize: '0.75rem',
+                            fontWeight: 700,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                        }}
                     >
                         <span>{chip.icon}</span> {chip.text}
                     </motion.button>
@@ -187,29 +206,53 @@ const AIChatView = () => {
             </div>
 
             {/* Input Area */}
-            <div className="pb-24 lg:pb-8">
-                <GlassCard className="p-2 border-zinc-100 shadow-2xl shadow-zinc-900/5 group" hover={false}>
-                    <div className="relative flex items-center">
-                        <input
-                            type="text"
-                            value={inputText}
-                            onChange={(e) => setInputText(e.target.value)}
-                            onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-                            placeholder={isTyping ? "Preparando respuesta..." : t('preguntar_ia')}
-                            disabled={isTyping}
-                            className="flex-1 py-4 pl-6 pr-16 bg-transparent text-zinc-900 font-medium outline-none text-base"
-                        />
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => sendMessage()}
-                            disabled={isTyping || !inputText.trim()}
-                            className="absolute right-2 w-12 h-12 rounded-xl bg-zinc-900 text-white flex items-center justify-center shadow-lg disabled:opacity-30 disabled:grayscale transition-all"
-                        >
-                            <Send size={20} />
-                        </motion.button>
-                    </div>
-                </GlassCard>
+            <div style={{ padding: '1rem 0 2rem 0' }}>
+                <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                    <input
+                        type="text"
+                        value={inputText}
+                        onChange={(e) => setInputText(e.target.value)}
+                        onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+                        placeholder={isTyping ? "Chef Virtual está cocinando una respuesta..." : t('preguntar_ia')}
+                        disabled={isTyping}
+                        style={{
+                            width: '100%',
+                            padding: '1.25rem 4rem 1.25rem 1.5rem',
+                            borderRadius: '1.5rem',
+                            background: 'var(--glass)',
+                            border: '1px solid var(--border-color)',
+                            color: 'var(--text-main)',
+                            outline: 'none',
+                            fontSize: '1rem',
+                            backdropFilter: 'blur(20px)',
+                            opacity: isTyping ? 0.6 : 1,
+                            cursor: isTyping ? 'wait' : 'text'
+                        }}
+                    />
+                    <motion.button
+                        whileHover={!isTyping ? { scale: 1.1 } : {}}
+                        whileTap={!isTyping ? { scale: 0.9 } : {}}
+                        onClick={() => sendMessage()}
+                        disabled={isTyping}
+                        style={{
+                            position: 'absolute',
+                            right: '8px',
+                            width: '44px',
+                            height: '44px',
+                            borderRadius: '1rem',
+                            background: 'var(--primary)',
+                            color: 'white',
+                            border: 'none',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: isTyping ? 'not-allowed' : 'pointer',
+                            opacity: isTyping ? 0.5 : 1
+                        }}
+                    >
+                        <Send size={20} />
+                    </motion.button>
+                </div>
             </div>
         </div>
     );

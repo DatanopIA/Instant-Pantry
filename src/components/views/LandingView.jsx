@@ -7,7 +7,7 @@ import { AuroraBackground } from '../ui/AuroraBackground';
 import { MagneticText } from '../ui/MagneticText';
 
 const LandingView = () => {
-    const { setUser, setIsPro, loginGuest } = usePantry();
+    const { loginGuest } = usePantry();
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
     const [activeStep, setActiveStep] = useState(0);
@@ -15,21 +15,18 @@ const LandingView = () => {
     const steps = [
         {
             title: "¿CANSADO DE TIRAR COMIDA?",
-            hover: "ZERO WASTE REVOLUTION",
             desc: "No desperdicies más. Nuestra IA detecta lo que tienes y te ayuda a aprovecharlo al máximo.",
             icon: <Scan size={32} />,
             color: "#84A98C"
         },
         {
             title: "¿NO SABES QUÉ COCINAR?",
-            hover: "CHEF IA PERSONAL",
             desc: "Tu chef IA personal diseña recetas exclusivas con los ingredientes que ya están en tu despensa.",
             icon: <Utensils size={32} />,
             color: "#D88C51"
         },
         {
             title: "AHORRA TIEMPO Y DINERO",
-            hover: "GESTIÓN INTELIGENTE",
             desc: "Organización inteligente que te avisa antes de que tus alimentos caduquen.",
             icon: <Zap size={32} />,
             color: "#A4C3A2"
@@ -39,9 +36,9 @@ const LandingView = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setActiveStep((prev) => (prev + 1) % steps.length);
-        }, 6000);
+        }, 5000);
         return () => clearInterval(timer);
-    }, []);
+    }, [steps.length]);
 
     const handleLogin = async (e) => {
         if (e) e.preventDefault();
@@ -52,7 +49,7 @@ const LandingView = () => {
                 options: { emailRedirectTo: window.location.origin },
             });
             if (error) throw error;
-            alert('¡Revisa tu email para el enlace de acceso gourmet! 💌');
+            alert('¡Revisa tu email para el enlace de acceso gourmet!');
         } catch (error) {
             alert(error.message);
         } finally {
@@ -106,7 +103,7 @@ const LandingView = () => {
                                 <div className="hidden md:block">
                                     <MagneticText
                                         text={steps[activeStep].title}
-                                        hoverText={steps[activeStep].hover}
+                                        hoverText="REVOLUCIÓN GOURMET"
                                         className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] text-zinc-900"
                                         circleSize={280}
                                         variant="inverted"
@@ -136,15 +133,15 @@ const LandingView = () => {
                     </div>
                 </div>
 
-                {/* Authentication Card Side */}
+                {/* Interaction Side / Login */}
                 <div className="w-full max-w-[480px] perspective-1000">
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                        className="bg-white/80 backdrop-blur-2xl p-8 md:p-12 rounded-[3rem] border border-white/50 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] relative overflow-hidden"
+                        className="bg-white/80 backdrop-blur-2xl p-8 md:p-12 rounded-[3.5rem] border border-white/50 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] relative overflow-hidden"
                     >
-                        {/* Decorative background for card */}
+                        {/* Subtle Glow */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#84A98C]/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
 
                         <div className="relative z-10 flex flex-col gap-8">
@@ -157,36 +154,30 @@ const LandingView = () => {
                                 <motion.button
                                     whileHover={{ scale: 1.02, y: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    onClick={handleGoogleLogin}
-                                    disabled={loading}
-                                    className="flex items-center justify-center gap-4 py-4 rounded-2xl bg-white border border-zinc-200 shadow-sm hover:shadow-md transition-all font-bold text-zinc-700"
-                                >
-                                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" className="w-5 h-5" />
-                                    Continuar con Google
-                                </motion.button>
-
-                                <div className="flex items-center gap-4 py-2">
-                                    <div className="flex-1 h-px bg-zinc-100" />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">o accede directamente</span>
-                                    <div className="flex-1 h-px bg-zinc-100" />
-                                </div>
-
-                                <motion.button
-                                    whileHover={{ scale: 1.02, y: -2 }}
-                                    whileTap={{ scale: 0.98 }}
                                     onClick={loginGuest}
-                                    className="w-full py-4 rounded-2xl bg-white border border-zinc-200 shadow-sm hover:shadow-md transition-all font-black text-[10px] text-[#84A98C] uppercase tracking-[0.2em]"
+                                    className="w-full py-4 rounded-2xl bg-[#84A98C]/10 border border-[#84A98C]/20 text-[#84A98C] font-black text-xs uppercase tracking-widest shadow-sm hover:bg-[#84A98C]/20 transition-all"
                                 >
                                     Explorar como Invitado
                                 </motion.button>
 
                                 <div className="flex items-center gap-4 py-2">
                                     <div className="flex-1 h-px bg-zinc-100" />
-                                    <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">o con acceso mágico</span>
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-300">o con tu cuenta</span>
                                     <div className="flex-1 h-px bg-zinc-100" />
                                 </div>
 
-                                <form onSubmit={handleLogin} className="flex flex-col gap-4">
+                                <motion.button
+                                    whileHover={{ scale: 1.02, y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    onClick={handleGoogleLogin}
+                                    disabled={loading}
+                                    className="flex items-center justify-center gap-4 py-4 rounded-2xl bg-white border border-zinc-100 shadow-sm hover:shadow-md transition-all font-bold text-zinc-700"
+                                >
+                                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" className="w-5 h-5" />
+                                    Google
+                                </motion.button>
+
+                                <form onSubmit={handleLogin} className="flex flex-col gap-3">
                                     <input
                                         type="email"
                                         placeholder="chef@tucocina.com"
@@ -195,13 +186,12 @@ const LandingView = () => {
                                         required
                                         className="w-full py-4 px-6 rounded-2xl bg-zinc-50 border border-zinc-100 focus:border-[#84A98C] focus:bg-white outline-none transition-all text-zinc-900 font-medium"
                                     />
-
                                     <motion.button
                                         whileHover={{ scale: 1.02, y: -2 }}
                                         whileTap={{ scale: 0.98 }}
                                         disabled={loading}
                                         type="submit"
-                                        className="w-full py-4 rounded-2xl bg-zinc-900 text-white font-black text-sm uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl shadow-zinc-900/20"
+                                        className="w-full py-4 rounded-2xl bg-zinc-900 text-white font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 shadow-xl shadow-zinc-900/20"
                                     >
                                         {loading ? 'Preparando...' : 'Acceder'}
                                         <ArrowRight size={18} />
@@ -214,7 +204,7 @@ const LandingView = () => {
                                     <span className="text-lg font-black text-zinc-900">+10k</span>
                                     <span className="text-[9px] font-black uppercase text-zinc-400">Recetas</span>
                                 </div>
-                                <div className="flex flex-col items-center gap-1 border-x border-zinc-50">
+                                <div className="flex flex-col items-center gap-1 border-x border-zinc-100">
                                     <span className="text-lg font-black text-zinc-900">4.9/5</span>
                                     <span className="text-[9px] font-black uppercase text-zinc-400">Rating</span>
                                 </div>
