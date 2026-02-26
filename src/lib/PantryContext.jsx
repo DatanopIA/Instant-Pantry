@@ -201,6 +201,17 @@ export const PantryProvider = ({ children }) => {
         notificationsEnabled, setNotificationsEnabled,
         addProductToInventory, deleteProduct, upgradeToPro, manageSubscription,
         checkRecipeIngredients, pendingAiPrompt, setPendingAiPrompt,
+        loginGuest: () => {
+            setUser({ email: 'invitado@instantpantry.com', guest: true });
+            setInventory([
+                { id: 1, name: 'Aguacates', exp: 2, icon: '🥑', status: 'red' },
+                { id: 2, name: 'Leche de Almendra', exp: 5, icon: '🥛', status: 'yellow' },
+                { id: 3, name: 'Salmón Fresco', exp: 1, icon: '🍣', status: 'red' },
+                { id: 4, name: 'Pasta Integral', exp: 120, icon: '🍝', status: 'green' }
+            ]);
+            setIsPro(true);
+            setView('home');
+        },
         logout: async () => {
             await supabase.auth.signOut();
             setUser(null);

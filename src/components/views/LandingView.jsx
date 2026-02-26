@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePantry } from '../../lib/PantryContext';
-import { Sparkles, ArrowRight, Scan, Utensils, Zap, Globe } from 'lucide-react';
+import { Sparkles, ArrowRight, Scan, Utensils, Zap, Globe, CookingPot } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+import { AuroraBackground } from '../ui/AuroraBackground';
+import { MagneticText } from '../ui/MagneticText';
 
 const LandingView = () => {
-    const { setUser, setIsPro } = usePantry();
+    const { setUser, setIsPro, loginGuest } = usePantry();
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
     const [activeStep, setActiveStep] = useState(0);
@@ -13,18 +15,21 @@ const LandingView = () => {
     const steps = [
         {
             title: "¿CANSADO DE TIRAR COMIDA?",
+            hover: "ZERO WASTE REVOLUTION",
             desc: "No desperdicies más. Nuestra IA detecta lo que tienes y te ayuda a aprovecharlo al máximo.",
             icon: <Scan size={32} />,
             color: "#84A98C"
         },
         {
             title: "¿NO SABES QUÉ COCINAR?",
+            hover: "CHEF IA PERSONAL",
             desc: "Tu chef IA personal diseña recetas exclusivas con los ingredientes que ya están en tu despensa.",
             icon: <Utensils size={32} />,
             color: "#D88C51"
         },
         {
             title: "AHORRA TIEMPO Y DINERO",
+            hover: "GESTIÓN INTELIGENTE",
             desc: "Organización inteligente que te avisa antes de que tus alimentos caduquen.",
             icon: <Zap size={32} />,
             color: "#A4C3A2"
@@ -34,7 +39,7 @@ const LandingView = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setActiveStep((prev) => (prev + 1) % steps.length);
-        }, 5000);
+        }, 6000);
         return () => clearInterval(timer);
     }, []);
 
@@ -47,7 +52,7 @@ const LandingView = () => {
                 options: { emailRedirectTo: window.location.origin },
             });
             if (error) throw error;
-            alert('¡Revisa tu email para el enlace de acceso gourmet!');
+            alert('¡Revisa tu email para el enlace de acceso gourmet! 💌');
         } catch (error) {
             alert(error.message);
         } finally {
@@ -71,243 +76,158 @@ const LandingView = () => {
     };
 
     return (
-        <div className="landing-outer" style={{
-            minHeight: '100vh',
-            background: 'var(--bg-color)',
-            color: 'var(--text-main)',
-            position: 'relative',
-            overflowX: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            padding: '1rem'
-        }}>
-            {/* Background Effects */}
-            <div style={{ position: 'fixed', top: '-10%', right: '-10%', width: '60vw', height: '60vw', background: 'radial-gradient(circle, rgba(var(--primary-rgb), 0.15) 0%, transparent 70%)', filter: 'blur(120px)', zIndex: 0 }} />
+        <AuroraBackground className="min-h-screen">
+            <div className="relative z-10 w-full max-w-[1400px] px-6 py-12 md:py-24 flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-24">
 
-            <div className="landing-container" style={{
-                position: 'relative',
-                zIndex: 1,
-                width: '100%',
-                maxWidth: '1200px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '3rem',
-                minHeight: '90vh',
-                padding: '2rem 1rem'
-            }}>
+                {/* Brand & Content Side */}
+                <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-8 md:gap-12">
 
-                {/* Visual Side / Carousel */}
-                <div className="landing-visual" style={{
-                    width: '100%',
-                    maxWidth: '600px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '2rem',
-                    textAlign: 'center',
-                    alignItems: 'center'
-                }}>
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="brand-badge"
-                        style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-xl"
                     >
-                        <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
-                            <Sparkles size={20} />
+                        <div className="w-10 h-10 rounded-xl bg-[#84A98C] flex items-center justify-center text-white shadow-lg shadow-[#84A98C]/20">
+                            <CookingPot size={22} strokeWidth={2.5} />
                         </div>
-                        <span style={{ fontWeight: 900, letterSpacing: '2px', fontSize: '0.9rem', opacity: 0.8 }}>INSTANT PANTRY</span>
+                        <span className="font-black tracking-[0.2em] text-xs md:text-sm uppercase opacity-80">INSTANT PANTRY</span>
                     </motion.div>
 
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeStep}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        >
-                            <h1 style={{
-                                fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-                                fontWeight: 950,
-                                lineHeight: 1.1,
-                                letterSpacing: '-2px',
-                                marginBottom: '1.5rem'
-                            }}>
-                                <span style={{
-                                    background: `linear-gradient(135deg, var(--primary) 0%, #E9EDC9 100%)`,
-                                    WebkitBackgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                    display: 'inline-block'
-                                }}>
-                                    {steps[activeStep].title}
-                                </span>
-                            </h1>
-                            <p style={{ fontSize: '1.2rem', lineHeight: 1.5, color: 'var(--text-muted)', maxWidth: '500px', marginBottom: '2rem' }}>
-                                {steps[activeStep].desc}
-                            </p>
-                        </motion.div>
-                    </AnimatePresence>
+                    <div className="flex flex-col gap-6 md:gap-10 min-h-[300px] md:min-h-[400px]">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeStep}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -30 }}
+                                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                                className="flex flex-col gap-6"
+                            >
+                                <div className="hidden md:block">
+                                    <MagneticText
+                                        text={steps[activeStep].title}
+                                        hoverText={steps[activeStep].hover}
+                                        className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] text-zinc-900"
+                                        circleSize={280}
+                                        variant="inverted"
+                                    />
+                                </div>
 
-                    <div style={{ display: 'flex', gap: '8px' }}>
-                        {steps.map((_, i) => (
-                            <div
-                                key={i}
-                                onClick={() => setActiveStep(i)}
-                                style={{
-                                    width: i === activeStep ? '30px' : '8px',
-                                    height: '6px',
-                                    borderRadius: '3px',
-                                    background: i === activeStep ? 'var(--primary)' : 'var(--border-color)',
-                                    transition: 'all 0.4s ease',
-                                    cursor: 'pointer'
-                                }}
-                            />
-                        ))}
+                                <h1 className="md:hidden text-5xl font-black tracking-tighter leading-[0.9] text-zinc-900">
+                                    {steps[activeStep].title}
+                                </h1>
+
+                                <p className="text-lg md:text-2xl text-zinc-600/80 font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                                    {steps[activeStep].desc}
+                                </p>
+                            </motion.div>
+                        </AnimatePresence>
+
+                        <div className="flex justify-center lg:justify-start gap-3 mt-4">
+                            {steps.map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setActiveStep(i)}
+                                    className={`h-2 rounded-full transition-all duration-500 ${i === activeStep ? 'w-12 bg-[#84A98C]' : 'w-2 bg-zinc-200 hover:bg-zinc-300'
+                                        }`}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
 
-                {/* Interaction Side / Login */}
-                <div className="landing-interaction" style={{ width: '100%', maxWidth: '450px' }}>
+                {/* Authentication Card Side */}
+                <div className="w-full max-w-[480px] perspective-1000">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2 }}
-                        className="premium-card"
-                        style={{
-                            padding: '2rem',
-                            borderRadius: '2.5rem',
-                            background: 'var(--card-bg)',
-                            border: '1px solid var(--border-color)',
-                            boxShadow: '0 50px 100px -20px rgba(0,0,0,0.4)',
-                            width: '100%'
-                        }}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                        className="bg-white/80 backdrop-blur-2xl p-8 md:p-12 rounded-[3rem] border border-white/50 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] relative overflow-hidden"
                     >
-                        <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '2rem', textAlign: 'center' }}>Entra ahora y <br />empieza a cocinar.</h2>
+                        {/* Decorative background for card */}
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-[#84A98C]/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
 
-                        <div style={{ display: 'grid', gap: '1rem' }}>
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                onClick={handleGoogleLogin}
-                                disabled={loading}
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    gap: '12px',
-                                    padding: '1.1rem',
-                                    borderRadius: '1.25rem',
-                                    background: 'var(--glass)',
-                                    border: '1px solid var(--border-color)',
-                                    color: 'var(--text-main)',
-                                    fontWeight: 700,
-                                    cursor: 'pointer',
-                                    fontSize: '0.95rem'
-                                }}
-                            >
-                                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style={{ width: '18px' }} />
-                                Continuar con Google
-                            </motion.button>
-
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '0.5rem 0' }}>
-                                <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}></div>
-                                <span style={{ fontSize: '0.8rem', opacity: 0.5, fontWeight: 700 }}>o con email</span>
-                                <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}></div>
+                        <div className="relative z-10 flex flex-col gap-8">
+                            <div className="flex flex-col gap-2 text-center">
+                                <h2 className="text-2xl md:text-3xl font-black tracking-tight text-zinc-900">Bienvenido Chef</h2>
+                                <p className="text-zinc-500 font-medium">Entra ahora y transforma tu cocina.</p>
                             </div>
 
-                            <form onSubmit={handleLogin} style={{ display: 'grid', gap: '1rem' }}>
-                                <input
-                                    type="email"
-                                    placeholder="tu@email.com"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                    style={{
-                                        width: '100%',
-                                        padding: '1.1rem',
-                                        borderRadius: '1.25rem',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        border: '1px solid var(--border-color)',
-                                        color: 'var(--text-main)',
-                                        fontSize: '1rem',
-                                        outline: 'none'
-                                    }}
-                                />
+                            <div className="flex flex-col gap-4">
+                                <motion.button
+                                    whileHover={{ scale: 1.02, y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    onClick={handleGoogleLogin}
+                                    disabled={loading}
+                                    className="flex items-center justify-center gap-4 py-4 rounded-2xl bg-white border border-zinc-200 shadow-sm hover:shadow-md transition-all font-bold text-zinc-700"
+                                >
+                                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" className="w-5 h-5" />
+                                    Continuar con Google
+                                </motion.button>
+
+                                <div className="flex items-center gap-4 py-2">
+                                    <div className="flex-1 h-px bg-zinc-100" />
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">o accede directamente</span>
+                                    <div className="flex-1 h-px bg-zinc-100" />
+                                </div>
 
                                 <motion.button
-                                    whileHover={{ scale: 1.02 }}
+                                    whileHover={{ scale: 1.02, y: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    disabled={loading}
-                                    type="submit"
-                                    style={{
-                                        background: 'var(--primary)',
-                                        color: '#000',
-                                        padding: '1.1rem',
-                                        borderRadius: '1.25rem',
-                                        fontWeight: 900,
-                                        fontSize: '0.9rem',
-                                        border: 'none',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        gap: '10px',
-                                        cursor: 'pointer'
-                                    }}
+                                    onClick={loginGuest}
+                                    className="w-full py-4 rounded-2xl bg-white border border-zinc-200 shadow-sm hover:shadow-md transition-all font-black text-[10px] text-[#84A98C] uppercase tracking-[0.2em]"
                                 >
-                                    {loading ? 'CARGANDO...' : 'ENVIAR ENLACE'}
-                                    <ArrowRight size={20} />
+                                    Explorar como Invitado
                                 </motion.button>
-                            </form>
-                        </div>
 
-                        <div style={{
-                            marginTop: '2rem',
-                            paddingTop: '1.5rem',
-                            borderTop: '1px solid var(--border-color)',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center'
-                        }}>
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontWeight: 900, fontSize: '1rem' }}>+10k</div>
-                                <div style={{ fontSize: '0.6rem', fontWeight: 800, opacity: 0.5 }}>RECETAS</div>
+                                <div className="flex items-center gap-4 py-2">
+                                    <div className="flex-1 h-px bg-zinc-100" />
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">o con acceso mágico</span>
+                                    <div className="flex-1 h-px bg-zinc-100" />
+                                </div>
+
+                                <form onSubmit={handleLogin} className="flex flex-col gap-4">
+                                    <input
+                                        type="email"
+                                        placeholder="chef@tucocina.com"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                        className="w-full py-4 px-6 rounded-2xl bg-zinc-50 border border-zinc-100 focus:border-[#84A98C] focus:bg-white outline-none transition-all text-zinc-900 font-medium"
+                                    />
+
+                                    <motion.button
+                                        whileHover={{ scale: 1.02, y: -2 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        disabled={loading}
+                                        type="submit"
+                                        className="w-full py-4 rounded-2xl bg-zinc-900 text-white font-black text-sm uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl shadow-zinc-900/20"
+                                    >
+                                        {loading ? 'Preparando...' : 'Acceder'}
+                                        <ArrowRight size={18} />
+                                    </motion.button>
+                                </form>
                             </div>
-                            <div style={{ textAlign: 'center' }}>
-                                <div style={{ fontWeight: 900, fontSize: '1rem' }}>4.9/5</div>
-                                <div style={{ fontSize: '0.6rem', fontWeight: 800, opacity: 0.5 }}>VALORACIÓN</div>
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}>
-                                <Globe size={14} style={{ opacity: 0.5 }} />
-                                <span style={{ fontSize: '0.6rem', fontWeight: 800, opacity: 0.5 }}>MULTIDIOMA</span>
+
+                            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-zinc-50">
+                                <div className="flex flex-col items-center gap-1">
+                                    <span className="text-lg font-black text-zinc-900">+10k</span>
+                                    <span className="text-[9px] font-black uppercase text-zinc-400">Recetas</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1 border-x border-zinc-50">
+                                    <span className="text-lg font-black text-zinc-900">4.9/5</span>
+                                    <span className="text-[9px] font-black uppercase text-zinc-400">Rating</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1">
+                                    <Globe size={18} className="text-[#84A98C]" />
+                                    <span className="text-[9px] font-black uppercase text-zinc-400">Global</span>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
                 </div>
             </div>
-
-            {/* Responsive styles */}
-            <style dangerouslySetInnerHTML={{
-                __html: `
-                @media (min-width: 1024px) {
-                    .landing-container {
-                        flex-direction: row !important;
-                        gap: 5rem !important;
-                        text-align: left !important;
-                    }
-                    .landing-visual {
-                        text-align: left !important;
-                        align-items: flex-start !important;
-                    }
-                }
-                @media (max-width: 600px) {
-                    .landing-visual h1 { fontSize: 2.5rem !important; }
-                    .premium-card { padding: 1.5rem !important; }
-                }
-            `}} />
-        </div>
+        </AuroraBackground>
     );
 };
 

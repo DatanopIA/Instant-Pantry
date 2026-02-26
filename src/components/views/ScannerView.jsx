@@ -2,13 +2,15 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePantry } from '../../lib/PantryContext';
 import { apiFetch } from '../../lib/api';
-import { X, Camera, Receipt, Box, Sparkles, Check, Trash2, Plus } from 'lucide-react';
+import { X, Camera, Receipt, Box, Sparkles, Check, Trash2, Plus, CookingPot, Loader2 } from 'lucide-react';
+import { GlassCard } from '../ui/GlassCard';
 
 const ScannerView = () => {
     const { goTo, prevView, addProductToInventory } = usePantry();
     const [isScanning, setIsScanning] = useState(false);
     const [scanMode, setScanMode] = useState('ticket'); // 'ticket' or 'fridge'
     const [detectedProducts, setDetectedProducts] = useState(null);
+    const [isConfirming, setIsConfirming] = useState(false);
     const scanInputRef = useRef(null);
 
     const resizeImage = (base64Str, maxWidth = 1024, maxHeight = 1024) => {
@@ -19,7 +21,6 @@ const ScannerView = () => {
                 const canvas = document.createElement('canvas');
                 let width = img.width;
                 let height = img.height;
-
                 if (width > height) {
                     if (width > maxWidth) {
                         height *= maxWidth / width;
@@ -35,7 +36,6 @@ const ScannerView = () => {
                 canvas.height = height;
                 const ctx = canvas.getContext('2d');
                 ctx.drawImage(img, 0, 0, width, height);
-                // Comprimir a JPEG al 80% de calidad
                 resolve(canvas.toDataURL('image/jpeg', 0.8));
             };
         });
@@ -50,9 +50,7 @@ const ScannerView = () => {
         reader.onloadend = async () => {
             const originalBase64 = reader.result;
             try {
-                // Optimización: Redimensionar y comprimir antes de enviar a la IA
                 const compressedBase64 = await resizeImage(originalBase64);
-
                 const data = await apiFetch('/api/ai/analyze-image', {
                     method: 'POST',
                     body: JSON.stringify({ image: compressedBase64, mode: scanMode })
@@ -73,16 +71,12 @@ const ScannerView = () => {
         reader.readAsDataURL(file);
     };
 
-    const [isConfirming, setIsConfirming] = useState(false);
-
     const handleConfirmProducts = async () => {
         if (isConfirming) return;
         setIsConfirming(true);
         try {
             const toAdd = detectedProducts.filter(p => p.selected);
             let addedCount = 0;
-            let limitReached = false;
-
             for (const product of toAdd) {
                 const success = await addProductToInventory({
                     name: product.name,
@@ -90,16 +84,9 @@ const ScannerView = () => {
                     icon: product.icon || '📦',
                     status: (product.exp || 7) > 5 ? 'green' : (product.exp || 7) > 2 ? 'yellow' : 'red'
                 });
-
-                if (success) {
-                    addedCount++;
-                } else {
-                    limitReached = true;
-                    break;
-                }
+                if (success) addedCount++;
             }
-
-            if (addedCount > 0 || limitReached) {
+            if (addedCount > 0) {
                 setDetectedProducts(null);
                 goTo('inventory');
             }
@@ -115,108 +102,123 @@ const ScannerView = () => {
     };
 
     return (
-        <div className="container" style={{
-            flexDirection: 'column',
-            background: '#000',
-            color: '#fff',
-            position: 'fixed',
-            inset: 0,
-            zIndex: 1000,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-        }}>
-            <motion.button
-                whileTap={{ scale: 0.9 }}
-                onClick={() => goTo(prevView)}
-                style={{ position: 'absolute', top: '40px', left: '25px', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#fff', padding: '12px', borderRadius: '50%', cursor: 'pointer', zIndex: 50 }}
-            >
-                <X size={24} />
-            </motion.button>
+        <div className="fixed inset-0 z-[1000] bg-zinc-950 text-white flex flex-col items-center overflow-hidden">
+            {/* Top Navigation */}
+            <div className="absolute top-0 left-0 right-0 p-8 flex justify-between items-center z-50">
+                <motion.button
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => goTo(prevView)}
+                    className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white"
+                >
+                    <X size={24} />
+                </motion.button>
 
-            {/* Mode Selector */}
-            <div style={{ position: 'absolute', top: '100px', display: 'flex', gap: '1rem', background: 'rgba(255,255,255,0.1)', padding: '6px', borderRadius: '2rem', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.1)', zIndex: 50 }}>
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-2 rounded-full hidden md:flex items-center gap-3">
+                    <Sparkles size={16} className="text-[#84A98C]" />
+                    <span className="text-[10px] font-black tracking-widest uppercase">IA Gastronómica Activa</span>
+                </div>
+
+                <div className="w-12" /> {/* Spacer */}
+            </div>
+
+            {/* Mode Controls */}
+            <div className="absolute top-28 z-50 flex gap-2 p-1 bg-white/5 backdrop-blur-2xl rounded-2xl border border-white/10">
                 <button
                     onClick={() => setScanMode('ticket')}
-                    style={{
-                        padding: '0.8rem 1.5rem',
-                        borderRadius: '1.5rem',
-                        border: 'none',
-                        background: scanMode === 'ticket' ? 'var(--primary)' : 'transparent',
-                        color: '#fff',
-                        fontWeight: 800,
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '10px',
-                        fontSize: '0.8rem',
-                        transition: 'all 0.3s'
-                    }}
+                    className={`flex items-center gap-2 px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${scanMode === 'ticket' ? 'bg-[#84A98C] text-zinc-950 shadow-lg' : 'text-zinc-400 hover:text-white'
+                        }`}
                 >
-                    <Receipt size={18} /> TIQUET
+                    <Receipt size={16} /> Ticket
                 </button>
                 <button
                     onClick={() => setScanMode('fridge')}
-                    style={{
-                        padding: '0.8rem 1.5rem',
-                        borderRadius: '1.5rem',
-                        border: 'none',
-                        background: scanMode === 'fridge' ? 'var(--primary)' : 'transparent',
-                        color: '#fff',
-                        fontWeight: 800,
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '10px',
-                        fontSize: '0.8rem',
-                        transition: 'all 0.3s'
-                    }}
+                    className={`flex items-center gap-2 px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${scanMode === 'fridge' ? 'bg-[#84A98C] text-zinc-950 shadow-lg' : 'text-zinc-400 hover:text-white'
+                        }`}
                 >
-                    <Box size={18} /> NEVERA
+                    <Box size={16} /> Nevera
                 </button>
             </div>
 
-            <div style={{ position: 'relative' }}>
-                <AnimatePresence>
-                    {isScanning && (
+            {/* Viewfinder Main */}
+            <div className="flex-1 flex items-center justify-center relative w-full h-full p-4">
+                <div className="relative w-full max-w-[340px] aspect-[3/4.5] group">
+                    <AnimatePresence>
+                        {isScanning && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className="absolute inset-0 z-[100] bg-zinc-950/80 backdrop-blur-xl flex flex-col items-center justify-center rounded-[3rem] border-2 border-[#84A98C]/30"
+                            >
+                                <div className="relative">
+                                    <motion.div
+                                        animate={{ rotate: 360 }}
+                                        transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+                                        className="w-24 h-24 border-4 border-[#84A98C]/20 border-t-[#84A98C] rounded-full"
+                                    />
+                                    <CookingPot size={32} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#84A98C]" />
+                                </div>
+                                <motion.p
+                                    animate={{ opacity: [0.5, 1, 0.5] }}
+                                    transition={{ repeat: Infinity, duration: 2 }}
+                                    className="mt-8 text-xs font-black tracking-[0.4em] text-[#84A98C] uppercase"
+                                >
+                                    Procesando IA
+                                </motion.p>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    {/* Laser Line */}
+                    {!isScanning && (
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            style={{ position: 'absolute', inset: -20, background: 'rgba(0,0,0,0.9)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 200, borderRadius: '2.5rem', backdropFilter: 'blur(15px)' }}
-                        >
-                            <div style={{ position: 'relative' }}>
-                                <motion.div
-                                    animate={{ rotate: 360 }}
-                                    transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
-                                    style={{ width: '80px', height: '80px', border: '4px solid var(--primary)', borderTopColor: 'transparent', borderRadius: '50%' }}
-                                />
-                                <Sparkles size={32} color="var(--primary)" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-                            </div>
-                            <p style={{ marginTop: '2rem', fontWeight: 900, letterSpacing: '4px', color: 'var(--primary)', fontSize: '1.1rem' }}>SISTEMA IA</p>
-                            <p style={{ fontSize: '0.9rem', opacity: 0.6, marginTop: '0.5rem' }}>ANALIZANDO {scanMode === 'ticket' ? 'TIQUET' : 'NEVERA'}...</p>
-                        </motion.div>
+                            animate={{ top: ['10%', '90%', '10%'] }}
+                            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                            className="absolute left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-[#84A98C] to-transparent shadow-[0_0_20px_#84A98C] z-20"
+                        />
                     )}
-                </AnimatePresence>
 
-                <div className="premium-border" style={{ width: '320px', height: '480px', borderRadius: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', border: '2px solid rgba(255,255,255,0.05)', background: 'rgba(255,255,255,0.02)' }}>
-                    {/* Scanning animation line */}
-                    <motion.div
-                        animate={{ top: ['0%', '100%', '0%'] }}
-                        transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                        style={{ position: 'absolute', left: 0, right: 0, height: '3px', background: 'linear-gradient(to right, transparent, var(--primary), transparent)', boxShadow: '0 0 20px var(--primary)', zIndex: 10 }}
-                    />
+                    {/* Corners */}
+                    <div className="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none z-30">
+                        <div className="flex justify-between">
+                            <div className="w-12 h-12 border-t-4 border-l-4 border-[#84A98C] rounded-tl-3xl opacity-60" />
+                            <div className="w-12 h-12 border-t-4 border-r-4 border-[#84A98C] rounded-tr-3xl opacity-60" />
+                        </div>
+                        <div className="flex justify-between">
+                            <div className="w-12 h-12 border-b-4 border-l-4 border-[#84A98C] rounded-bl-3xl opacity-60" />
+                            <div className="w-12 h-12 border-b-4 border-r-4 border-[#84A98C] rounded-br-3xl opacity-60" />
+                        </div>
+                    </div>
 
-                    <div style={{ position: 'absolute', width: '50px', height: '50px', borderTop: '4px solid var(--primary)', borderLeft: '4px solid var(--primary)', top: '25px', left: '25px', borderRadius: '1.5rem 0 0 0', opacity: 0.5 }}></div>
-                    <div style={{ position: 'absolute', width: '50px', height: '50px', borderTop: '4px solid var(--primary)', borderRight: '4px solid var(--primary)', top: '25px', right: '25px', borderRadius: '0 1.5rem 0 0', opacity: 0.5 }}></div>
-                    <div style={{ position: 'absolute', width: '50px', height: '50px', borderBottom: '4px solid var(--primary)', borderLeft: '4px solid var(--primary)', bottom: '25px', left: '25px', borderRadius: '0 0 0 1.5rem', opacity: 0.5 }}></div>
-                    <div style={{ position: 'absolute', width: '50px', height: '50px', borderBottom: '4px solid var(--primary)', borderRight: '4px solid var(--primary)', bottom: '25px', right: '25px', borderRadius: '0 0 1.5rem 0', opacity: 0.5 }}></div>
-
-                    {scanMode === 'ticket' ? <Receipt size={80} style={{ opacity: 0.1 }} /> : <Box size={80} style={{ opacity: 0.1 }} />}
-                    <p style={{ opacity: 0.4, marginTop: '2rem', textAlign: 'center', padding: '0 3rem', fontSize: '0.9rem', lineHeight: '1.5', fontWeight: 600 }}>
-                        {scanMode === 'ticket' ? 'Escanea tu ticket de compra para añadir productos automáticamente' : 'Captura el interior de tu nevera para actualizar el inventario'}
-                    </p>
+                    {/* Placeholder Content */}
+                    <div className="absolute inset-0 rounded-[3rem] bg-zinc-900/40 border border-white/5 overflow-hidden flex flex-col items-center justify-center p-12 text-center">
+                        <Camera size={64} className="text-zinc-800 mb-6" />
+                        <h3 className="text-sm font-black text-zinc-500 uppercase tracking-widest mb-2">
+                            Modo {scanMode}
+                        </h3>
+                        <p className="text-[10px] font-bold text-zinc-600 leading-relaxed">
+                            Ajusta el {scanMode === 'ticket' ? 'tíquet' : 'interior de la nevera'} al centro del visor para mejores resultados.
+                        </p>
+                    </div>
                 </div>
+            </div>
+
+            {/* Bottom Controls */}
+            <div className="absolute bottom-16 md:bottom-24 z-50 flex flex-col items-center gap-6">
+                {!detectedProducts && (
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => scanInputRef.current?.click()}
+                        disabled={isScanning}
+                        className="w-20 h-20 rounded-full border-[6px] border-white/10 p-1 bg-white/5 transition-all"
+                    >
+                        <div className="w-full h-full rounded-full bg-white flex items-center justify-center shadow-2xl">
+                            <Camera size={32} className="text-zinc-950" />
+                        </div>
+                    </motion.button>
+                )}
+                <p className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase">Toca para capturar</p>
             </div>
 
             <input
@@ -225,120 +227,78 @@ const ScannerView = () => {
                 capture="environment"
                 ref={scanInputRef}
                 onChange={handleScanImage}
-                style={{ display: 'none' }}
+                className="hidden"
             />
 
-            {!detectedProducts && (
-                <motion.button
-                    whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(var(--primary-rgb), 0.4)' }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{ marginTop: '3.5rem', height: '90px', width: '90px', borderRadius: '50%', border: '5px solid #fff', background: 'transparent', padding: '8px', cursor: isScanning ? 'default' : 'pointer', boxShadow: '0 15px 40px rgba(0,0,0,0.6)', zIndex: 50 }}
-                    disabled={isScanning}
-                    onClick={() => scanInputRef.current?.click()}
-                >
-                    <div style={{ width: '100%', height: '100%', background: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Camera size={36} color="#000" />
-                    </div>
-                </motion.button>
-            )}
-
-            {!detectedProducts && (
-                <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.7, fontWeight: 800, letterSpacing: '2px', textTransform: 'uppercase' }}>Toca para capturar</p>
-            )}
-
-            {/* Validation List Modal */}
+            {/* Results Modal */}
             <AnimatePresence>
                 {detectedProducts && (
                     <motion.div
-                        initial={{ opacity: 0, y: 100 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 100 }}
-                        style={{
-                            position: 'fixed',
-                            inset: 0,
-                            background: '#0a0a0a',
-                            zIndex: 1000,
-                            padding: '2rem',
-                            display: 'flex',
-                            flexDirection: 'column'
-                        }}
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.1 }}
+                        className="fixed inset-0 z-[1100] bg-zinc-950 flex flex-col p-8 md:p-12"
                     >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+                        <div className="flex justify-between items-start mb-10">
                             <div>
-                                <h2 style={{ fontSize: '1.8rem', fontWeight: 900, marginBottom: '0.5rem' }}>Resultados IA</h2>
-                                <p style={{ opacity: 0.6, fontWeight: 600 }}>Coteja y añade a tu despensa</p>
+                                <h2 className="text-4xl font-black tracking-tighter text-white">Análisis IA</h2>
+                                <p className="text-sm font-bold text-[#84A98C] uppercase tracking-widest mt-2">
+                                    Hemos detectado {detectedProducts.length} productos
+                                </p>
                             </div>
-                            <button onClick={() => setDetectedProducts(null)} style={{ background: 'rgba(255,255,255,0.05)', border: 'none', color: '#fff', padding: '15px', borderRadius: '50%' }}>
+                            <button onClick={() => setDetectedProducts(null)} className="p-4 rounded-2xl bg-white/5 border border-white/10 text-white">
                                 <X size={24} />
                             </button>
                         </div>
 
-                        <div style={{ flex: 1, overflowY: 'auto', marginBottom: '2rem', paddingRight: '10px' }}>
+                        <div className="flex-1 overflow-y-auto pr-2 hide-scrollbar flex flex-col gap-4">
                             {detectedProducts.map((product, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, x: -20, delay: idx * 0.1 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     onClick={() => toggleProductSelection(idx)}
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '1.5rem',
-                                        background: product.selected ? 'rgba(var(--primary-rgb), 0.1)' : 'rgba(255,255,255,0.03)',
-                                        padding: '1.2rem',
-                                        borderRadius: '1.5rem',
-                                        marginBottom: '1rem',
-                                        border: `1px solid ${product.selected ? 'var(--primary)' : 'rgba(255,255,255,0.05)'}`,
-                                        cursor: 'pointer',
-                                        transition: 'all 0.2s'
-                                    }}
                                 >
-                                    <div style={{ fontSize: '1.5rem' }}>{product.icon}</div>
-                                    <div style={{ flex: 1 }}>
-                                        <div style={{ fontWeight: 800, fontSize: '1rem' }}>{product.name}</div>
-                                        <div style={{ fontSize: '0.8rem', opacity: 0.5, fontWeight: 600 }}>≈ vda media: {product.exp} días</div>
-                                    </div>
-                                    <div style={{
-                                        width: '28px',
-                                        height: '28px',
-                                        borderRadius: '8px',
-                                        border: '2px solid var(--primary)',
-                                        background: product.selected ? 'var(--primary)' : 'transparent',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}>
-                                        {product.selected && <Check size={18} color="#fff" />}
-                                    </div>
+                                    <GlassCard
+                                        className={`p-5 flex items-center gap-5 border-white/5 transition-all cursor-pointer ${product.selected ? 'bg-[#84A98C]/10 border-[#84A98C]/30 shadow-lg shadow-[#84A98C]/5' : 'opacity-40 grayscale'
+                                            }`}
+                                        hover={true}
+                                    >
+                                        <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-3xl">
+                                            {product.icon}
+                                        </div>
+                                        <div className="flex-1">
+                                            <h4 className="text-lg font-black text-white">{product.name}</h4>
+                                            <p className="text-xs font-bold text-zinc-500 uppercase tracking-tighter">
+                                                Vida media: {product.exp} días
+                                            </p>
+                                        </div>
+                                        <div className={`w-8 h-8 rounded-lg border-2 flex items-center justify-center transition-all ${product.selected ? 'bg-[#84A98C] border-[#84A98C]' : 'border-zinc-700'
+                                            }`}>
+                                            {product.selected && <Check size={18} className="text-zinc-950" />}
+                                        </div>
+                                    </GlassCard>
                                 </motion.div>
                             ))}
                         </div>
 
-                        <div style={{ display: 'flex', gap: '1rem' }}>
+                        <div className="mt-10 flex gap-4">
                             <button
                                 onClick={() => setDetectedProducts(null)}
-                                style={{ flex: 1, padding: '1.2rem', borderRadius: '1.5rem', background: 'rgba(255,255,255,0.05)', color: '#fff', border: 'none', fontWeight: 800, cursor: 'pointer' }}
+                                className="flex-1 py-5 rounded-2xl bg-white/5 text-zinc-400 font-black text-xs uppercase tracking-widest transition-all hover:bg-white/10"
                             >
-                                DESCARTAR
+                                Reintentar
                             </button>
-                            <button
+                            <motion.button
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
                                 onClick={handleConfirmProducts}
-                                disabled={isConfirming}
-                                style={{
-                                    flex: 2,
-                                    padding: '1.2rem',
-                                    borderRadius: '1.5rem',
-                                    background: 'var(--primary)',
-                                    color: '#fff',
-                                    border: 'none',
-                                    fontWeight: 900,
-                                    cursor: isConfirming ? 'not-allowed' : 'pointer',
-                                    boxShadow: '0 10px 30px rgba(var(--primary-rgb), 0.3)',
-                                    opacity: isConfirming ? 0.7 : 1
-                                }}
+                                disabled={isConfirming || detectedProducts.filter(p => p.selected).length === 0}
+                                className="flex-[2] py-5 rounded-2xl bg-[#84A98C] text-zinc-950 font-black text-xs uppercase tracking-widest shadow-xl shadow-[#84A98C]/20 flex items-center justify-center gap-3"
                             >
-                                {isConfirming ? 'AÑADIENDO...' : `AÑADIR SELECCIONADOS (${detectedProducts.filter(p => p.selected).length})`}
-                            </button>
+                                {isConfirming ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
+                                Añadir a Despensa ({detectedProducts.filter(p => p.selected).length})
+                            </motion.button>
                         </div>
                     </motion.div>
                 )}

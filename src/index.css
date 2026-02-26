@@ -773,3 +773,21 @@ h4 {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
+
+/* Aurora Animation Engine */
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+.animate-aurora {
+  animation: aurora 60s linear infinite;
+}
+
+.transition-bg {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
