@@ -12,7 +12,7 @@ export const AuroraBackground = ({
         >
             <div className="aurora-inner" />
             <div className="aurora-mask" />
-            <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+            <div className="relative z-10 w-full h-full">
                 {children}
             </div>
         </div>

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { usePantry } from '../../lib/PantryContext';
-import { ArrowRight, Scan, Utensils, Zap, Globe, CookingPot, ChefHat, Sparkles, Box, ShieldCheck, Star } from 'lucide-react';
+import { ArrowRight, CookingPot, ShieldCheck, Star } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import { AuroraBackground } from '../ui/AuroraBackground';
 
@@ -9,35 +9,6 @@ const LandingView = () => {
     const { loginGuest } = usePantry();
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
-    const [activeStep, setActiveStep] = useState(0);
-
-    const steps = [
-        {
-            title: "¿Harto de tirar comida?",
-            subtitle: "REVOLUCIÓN GOURMET",
-            desc: "Nuestra IA de vanguardia detecta lo que tienes y diseña un plan maestro para tu alimentación.",
-            icon: <Scan size={20} />,
-        },
-        {
-            title: "¿Qué cocinamos hoy?",
-            subtitle: "TU CHEF PERSONAL",
-            desc: "Imagina un chef con Michelin que conoce cada rincón de tu despensa. Eso es Instant Pantry.",
-            icon: <ChefHat size={20} />,
-        },
-        {
-            title: "Despensa Inteligente",
-            subtitle: "MÁXIMA EFICIENCIA",
-            desc: "Organización de nivel industrial en la palma de tu mano. Ahorra tiempo, dinero y el planeta.",
-            icon: <Box size={20} />,
-        }
-    ];
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setActiveStep((prev) => (prev + 1) % steps.length);
-        }, 8000);
-        return () => clearInterval(timer);
-    }, [steps.length]);
 
     const handleLogin = async (e) => {
         if (e) e.preventDefault();
@@ -72,183 +43,154 @@ const LandingView = () => {
     };
 
     return (
-        <AuroraBackground className="min-h-screen">
-            <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 py-8 flex flex-col min-h-screen">
+        <AuroraBackground>
+            <div className="relative z-10 w-full max-w-[1400px] mx-auto min-h-screen px-4 md:px-12 py-8 flex flex-col">
 
-                {/* Header Superior */}
-                <header className="flex justify-between items-center mb-12 lg:mb-20">
+                {/* Header Section */}
+                <header className="flex justify-between items-center mb-8 md:mb-16">
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="flex items-center gap-3 group cursor-pointer"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex items-center gap-3"
                     >
-                        <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-premium">
+                        <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
                             <CookingPot size={22} />
                         </div>
                         <div className="flex flex-col">
-                            <span className="font-black tracking-[0.2em] text-xs uppercase text-main">Instant Pantry</span>
-                            <span className="text-[9px] font-bold text-accent tracking-[0.1em] uppercase">Inteligencia Gourmet</span>
+                            <span className="font-black text-xs uppercase tracking-[0.2em] text-main">Instant Pantry</span>
+                            <span className="text-[9px] font-bold text-primary-light uppercase tracking-widest">Master 2026</span>
                         </div>
                     </motion.div>
 
-                    <div className="hidden md:flex items-center gap-6">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-muted">V 2.0 Pro</span>
-                        <div className="w-px h-4 bg-border-color" />
-                        <div className="flex -space-x-2">
-                            {[1, 2, 3].map(i => (
-                                <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-zinc-100 overflow-hidden">
-                                    <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="user" />
-                                </div>
-                            ))}
-                        </div>
-                        <span className="text-[10px] font-bold text-muted">+10k Chefs</span>
+                    <div className="hidden md:flex gap-8 items-center text-[10px] font-black uppercase tracking-widest text-muted">
+                        <span className="cursor-pointer hover:text-primary transition-colors">Características</span>
+                        <span className="cursor-pointer hover:text-primary transition-colors">Recetas Premium</span>
+                        <span className="cursor-pointer hover:text-primary transition-colors">Club Gourmet</span>
                     </div>
                 </header>
 
-                <main className="flex-1 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                <main className="flex-1 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
 
-                    {/* Hero Content */}
-                    <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-                        <AnimatePresence mode="wait">
+                    {/* Visual Section - Circular Product Image */}
+                    <div className="flex-1 w-full flex items-center justify-center lg:justify-start">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                            className="relative w-full max-w-[500px] md:max-w-[700px] aspect-square flex items-center justify-center"
+                        >
+                            {/* Decorative element behind image */}
+                            <div className="absolute inset-0 bg-primary-soft/30 rounded-full blur-[100px] -z-1" />
+
+                            <div className="landing-image-circle">
+                                <img
+                                    src="/Users/meritxellgimenez/.gemini/antigravity/brain/7c50d1b4-889e-4da0-ac3c-fbb5873210a6/gourmet_landing_bg_1772136920780.png"
+                                    alt="Gourmet Ingredients"
+                                />
+                            </div>
+
+                            {/* Floating Highlight Card */}
                             <motion.div
-                                key={activeStep}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                                className="flex flex-col gap-6"
+                                animate={{ y: [0, -15, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute top-10 right-0 md:top-20 md:right-10 glass-panel p-6 rounded-3xl shadow-premium z-20 flex flex-col gap-2"
                             >
-                                <div className="flex items-center gap-3 self-center lg:self-start">
-                                    <span className="w-8 h-px bg-accent" />
-                                    <span className="text-accent font-black tracking-[0.3em] text-[10px] uppercase">
-                                        {steps[activeStep].subtitle}
-                                    </span>
+                                <div className="flex text-primary gap-1">
+                                    {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} fill="currentColor" />)}
                                 </div>
-
-                                <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.05] text-main max-w-2xl">
-                                    {steps[activeStep].title}
-                                </h1>
-
-                                <p className="text-lg md:text-xl text-muted font-medium max-w-xl leading-relaxed">
-                                    {steps[activeStep].desc}
-                                </p>
+                                <span className="text-xs font-black uppercase text-main tracking-widest">Plan Maestro IA</span>
+                                <span className="text-[10px] font-bold text-muted">Diseñado para tu salud.</span>
                             </motion.div>
-                        </AnimatePresence>
-
-                        {/* Controls */}
-                        <div className="flex gap-3 mt-12 bg-white/40 p-2 rounded-3xl backdrop-blur-sm border border-white/50">
-                            {steps.map((step, i) => (
-                                <button
-                                    key={i}
-                                    onClick={() => setActiveStep(i)}
-                                    className={`relative flex items-center justify-center p-3 rounded-2xl transition-all ${i === activeStep
-                                            ? 'bg-primary text-white shadow-premium w-12 md:w-32'
-                                            : 'bg-transparent text-primary/40 hover:bg-white/60 w-12'
-                                        }`}
-                                >
-                                    <div className="flex items-center gap-3">
-                                        {step.icon}
-                                        <span className={`text-[10px] font-black uppercase tracking-widest whitespace-nowrap overflow-hidden transition-all ${i === activeStep ? 'max-w-[80px] opacity-1' : 'max-w-0 opacity-0'}`}>
-                                            Paso {i + 1}
-                                        </span>
-                                    </div>
-                                    {i === activeStep && (
-                                        <motion.div
-                                            layoutId="active-step"
-                                            className="absolute inset-0 bg-primary rounded-2xl -z-1"
-                                        />
-                                    )}
-                                </button>
-                            ))}
-                        </div>
+                        </motion.div>
                     </div>
 
-                    {/* Auth Card */}
-                    <div className="w-full max-w-[460px]">
+                    {/* Content Section */}
+                    <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-8 md:gap-12 w-full max-w-[500px]">
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="premium-card p-8 md:p-12 relative overflow-hidden"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3, duration: 1 }}
+                            className="flex flex-col gap-4 md:gap-6"
                         >
-                            {/* Decorative Sparkle */}
-                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/5 blur-3xl rounded-full" />
+                            <span className="text-primary font-black uppercase tracking-[0.4em] text-[10px] md:text-xs">
+                                Inteligencia Culinaria
+                            </span>
+                            <h1 className="text-5xl md:text-8xl font-black text-main leading-[0.95] tracking-tighter">
+                                Tu cocina, <br />
+                                <span className="text-primary-light italic">rediseñada.</span>
+                            </h1>
+                            <p className="text-lg md:text-xl text-muted font-medium max-w-md mx-auto lg:mx-0 leading-relaxed pt-2">
+                                Gestionamos tu despensa, diseñamos tus recetas y eliminamos el desperdicio. Todo con un toque Michelin.
+                            </p>
+                        </motion.div>
 
-                            <div className="relative z-10 flex flex-col gap-8">
-                                <div className="text-center lg:text-left">
-                                    <h2 className="text-2xl md:text-3xl font-black tracking-tight text-main mb-2">Comienza ahora</h2>
-                                    <p className="text-xs font-bold text-muted uppercase tracking-widest">Experiencia culinaria inteligente</p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5, duration: 1 }}
+                            className="w-full flex flex-col gap-6"
+                        >
+                            {/* Auth Actions Area */}
+                            <div className="flex flex-col gap-4">
+                                <button
+                                    onClick={loginGuest}
+                                    className="btn-primary"
+                                >
+                                    Comenzar como Invitado
+                                    <ArrowRight size={18} />
+                                </button>
+
+                                <div className="flex items-center gap-4 py-2">
+                                    <div className="flex-1 h-px bg-border-color" />
+                                    <span className="text-[9px] font-black uppercase text-zinc-300 tracking-widest">Acceso para profesionales</span>
+                                    <div className="flex-1 h-px bg-border-color" />
                                 </div>
 
-                                <div className="flex flex-col gap-4">
-                                    <motion.button
-                                        whileHover={{ y: -3, boxShadow: '0 20px 40px rgba(30, 47, 35, 0.2)' }}
-                                        whileTap={{ scale: 0.98 }}
-                                        onClick={loginGuest}
-                                        className="btn-primary w-full py-4 rounded-2xl bg-primary text-white font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-3 shadow-premium transition-all"
+                                <div className="flex flex-col gap-3">
+                                    <button
+                                        onClick={handleGoogleLogin}
+                                        disabled={loading}
+                                        className="btn-secondary"
                                     >
-                                        Acceso Invitado
-                                        <ArrowRight size={16} />
-                                    </motion.button>
+                                        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" className="w-5 h-5" />
+                                        Continuar con Google
+                                    </button>
 
-                                    <div className="flex items-center gap-4 py-2">
-                                        <div className="flex-1 h-px bg-border-color" />
-                                        <span className="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-300">pro chef login</span>
-                                        <div className="flex-1 h-px bg-border-color" />
-                                    </div>
-
-                                    <div className="flex flex-col gap-3">
+                                    <form onSubmit={handleLogin} className="flex flex-col gap-2">
+                                        <input
+                                            type="email"
+                                            placeholder="Introduce tu Email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
+                                            className="w-full py-4 px-6 rounded-2xl bg-white border border-border-color focus:border-primary focus:outline-none text-sm font-bold placeholder:text-zinc-300 transition-all shadow-sm"
+                                        />
                                         <button
-                                            onClick={handleGoogleLogin}
                                             disabled={loading}
-                                            className="flex items-center justify-center gap-4 py-3.5 rounded-2xl bg-white border border-border-color hover:bg-zinc-50 transition-all font-bold text-xs text-main"
+                                            type="submit"
+                                            className="w-full py-4 rounded-2xl bg-zinc-900 text-white font-black text-[10px] uppercase tracking-[0.2em] hover:bg-black transition-colors"
                                         >
-                                            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" className="w-4 h-4" />
-                                            Continuar con Google
+                                            {loading ? 'Preparando...' : 'Obtener Enlace Mágico'}
                                         </button>
-
-                                        <form onSubmit={handleLogin} className="flex flex-col gap-2">
-                                            <input
-                                                type="email"
-                                                placeholder="Email Gourmet"
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
-                                                required
-                                                className="w-full py-4 px-6 rounded-2xl bg-white/60 border border-border-color focus:border-primary focus:bg-white outline-none transition-all text-xs font-bold placeholder:text-zinc-300"
-                                            />
-                                            <button
-                                                disabled={loading}
-                                                type="submit"
-                                                className="w-full py-3.5 rounded-2xl bg-zinc-900 text-white font-black text-[10px] uppercase tracking-[0.2em] hover:bg-black transition-all"
-                                            >
-                                                {loading ? 'Preparando...' : 'Obtener Enlace de Acceso'}
-                                            </button>
-                                        </form>
-                                    </div>
+                                    </form>
                                 </div>
+                            </div>
 
-                                <footer className="pt-6 border-t border-border-color flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <div className="flex text-accent">
-                                            {[1, 2, 3, 4, 5].map(i => <Star key={i} size={10} fill="currentColor" />)}
-                                        </div>
-                                        <span className="text-[9px] font-black uppercase text-muted">4.9 Apple Store</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <ShieldCheck size={14} className="text-primary/40" />
-                                        <span className="text-[9px] font-bold text-muted uppercase">Seguridad SSL</span>
-                                    </div>
-                                </footer>
+                            {/* Trust Badge */}
+                            <div className="flex items-center justify-center lg:justify-start gap-3 mt-4 text-muted pt-8 border-t border-border-color">
+                                <ShieldCheck size={18} className="text-primary-light" />
+                                <span className="text-[10px] font-bold uppercase tracking-widest leading-none">Acceso seguro con encriptación de grado militar</span>
                             </div>
                         </motion.div>
                     </div>
                 </main>
 
-                <footer className="mt-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-[10px] font-bold text-muted uppercase tracking-widest">© 2026 DatanopIA Labs. Todos los derechos reservados.</p>
-                    <div className="flex gap-8">
-                        {['Privacidad', 'Términos', 'Gourmet Club'].map(item => (
-                            <button key={item} className="text-[10px] font-black uppercase tracking-widest text-primary/40 hover:text-primary transition-colors">{item}</button>
-                        ))}
+                <footer className="mt-auto py-12 flex flex-col md:flex-row justify-between items-center gap-4 text-muted border-t border-border-color">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em]">© 2026 DatanopIA. Hecho por chefs para el mundo.</p>
+                    <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest">
+                        <span className="cursor-pointer hover:text-primary">Términos</span>
+                        <span className="cursor-pointer hover:text-primary">Privacidad</span>
+                        <span className="cursor-pointer hover:text-primary">Soporte</span>
                     </div>
                 </footer>
             </div>
@@ -257,4 +199,3 @@ const LandingView = () => {
 };
 
 export default LandingView;
-
