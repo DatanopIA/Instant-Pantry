@@ -19,8 +19,8 @@ const HomeView = () => {
     const suggestedRecipes = recipesWithMatch.slice(0, 5);
 
     return (
-        <div className="container animate-fade-in">
-            <header className="pt-10 pb-10 flex justify-between items-center">
+        <div className="container animate-fade-in group/container">
+            <header className="pt-16 md:pt-20 pb-12 flex justify-between items-center transition-all">
                 <div className="flex flex-col gap-1">
                     <span className="text-accent font-black tracking-[0.2em] text-[10px] uppercase">
                         {new Date().toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })}

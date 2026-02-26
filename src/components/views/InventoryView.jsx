@@ -14,7 +14,7 @@ const InventoryView = () => {
 
     return (
         <div className="container animate-fade-in">
-            <header className="pt-10 pb-6">
+            <header className="pt-16 md:pt-20 pb-8">
                 <div className="flex justify-between items-end mb-8">
                     <div>
                         <span className="text-accent font-black tracking-[0.2em] text-[10px] uppercase block mb-1">Tu Colección</span>

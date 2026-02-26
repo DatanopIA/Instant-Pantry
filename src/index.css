@@ -102,18 +102,25 @@ h4 {
 @media (min-width: 1024px) {
   .app-container {
     max-width: 1400px;
-    margin: 40px auto;
-    border-radius: 40px;
-    min-height: calc(100vh - 80px);
-    box-shadow: 0 60px 100px -20px rgba(58, 90, 64, 0.15);
+    margin: 60px auto;
+    border-radius: 48px;
+    min-height: calc(100vh - 120px);
+    box-shadow: 0 80px 150px -30px rgba(58, 90, 64, 0.2);
   }
 }
 
 .container {
-  padding: 2rem;
-  padding-bottom: 120px;
+  padding: 2.5rem 2rem;
+  padding-bottom: 140px;
   flex: 1;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 3.5rem 4rem;
+    padding-bottom: 160px;
+  }
 }
 
 .glass-panel {
