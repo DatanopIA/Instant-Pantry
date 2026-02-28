@@ -1,54 +1,153 @@
-<!doctype html>
-<html lang="en" translate="no">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instant Pantry | Nutrición Inteligente & Gestión Gourmet</title>
-  <meta name="description"
-    content="Instant Pantry es el asistente de cocina líder en 2026. Gestión de despensa con IA, escaneo de tickets OCR, reconocimiento visual de nevera y recetas personalizadas para evitar el desperdicio alimentario." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Pantry | Tu Despensa Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --accent: #10b981;
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+        }
 
-  <!-- GEO / LLM Optimization Tags -->
-  <meta name="application-name" content="Instant Pantry" />
-  <meta name="og:type" content="website" />
-  <meta name="og:title" content="Instant Pantry: Tu Asistente de Cocina con Agentes IA" />
-  <meta name="og:description"
-    content="Ahorra hasta 200€ al mes gestionando tu despensa con visión artificial y el Chef IA de DatanopIA." />
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- JSON-LD for Search Generative Experience -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Instant Pantry",
-    "operatingSystem": "Web, iOS, Android",
-    "applicationCategory": "KitchenApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0.00",
-      "priceCurrency": "EUR"
-    },
-    "description": "Smart pantry management app using Gemini AI for OCR receipt scanning and fridge vision.",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "1250"
-    }
-  }
-  </script>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-    rel="stylesheet" />
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.1), transparent);
+        }
+
+        .badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--text-dim));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 2rem;
+            color: var(--text-dim);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+    <section class="hero">
+        <div class="badge">Back-end Online 🟢</div>
+        <h1>Instant Pantry</h1>
+        <p>Gestiona tu inventario con IA, reduce el desperdicio y cocina recetas inteligentes basadas en lo que ya
+            tienes.</p>
+
+        <div class="btn-group">
+            <a href="test-scanner.html" class="btn btn-primary">Probar Escáner IA</a>
+            <a href="#" class="btn btn-secondary">Explorar API</a>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 DatanopIA. Todos los derechos reservados.
+        </div>
+    </section>
 </body>
 
 </html>

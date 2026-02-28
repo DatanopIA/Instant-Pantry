@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Pantry | AI Scanner Test</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        input[type="file"] {
+            margin: 1.5rem 0;
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            color: #94a3b8;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            width: 100%;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #results {
+            margin-top: 2rem;
+            text-align: left;
+            background: #000;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            display: none;
+            color: #4ade80;
+        }
+
+        .loader {
+            display: none;
+            margin: 1rem auto;
+            border: 3px solid #334155;
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📊 Instant Pantry AI Tester</h1>
+        <p>Sube la foto de un ticket para probar tu backend con Gemini</p>
+
+        <input type="file" id="imageInput" accept="image/*" title="Seleccionar imagen de ticket"
+            aria-label="Seleccionar imagen de ticket">
+        <button id="scanBtn">Escanear Ticket con IA</button>
+
+        <div class="loader" id="loader"></div>
+        <pre id="results"></pre>
+    </div>
+
+    <script>
+        const scanBtn = document.getElementById('scanBtn');
+        const imageInput = document.getElementById('imageInput');
+        const results = document.getElementById('results');
+        const loader = document.getElementById('loader');
+
+        scanBtn.addEventListener('click', async () => {
+            const file = imageInput.files[0];
+            if (!file) return alert('Por favor, selecciona una imagen');
+
+            // Convertir a Base64
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = async () => {
+                const base64Image = reader.result;
+
+                scanBtn.disabled = true;
+                loader.style.display = 'block';
+                results.style.display = 'none';
+
+                try {
+                    const response = await fetch('/api/process-ticket', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ image: base64Image })
+                    });
+
+                    const data = await response.json();
+                    results.textContent = JSON.stringify(data, null, 2);
+                    results.style.display = 'block';
+                } catch (error) {
+                    results.textContent = 'Error: ' + error.message;
+                    results.style.display = 'block';
+                } finally {
+                    scanBtn.disabled = false;
+                    loader.style.display = 'none';
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>
