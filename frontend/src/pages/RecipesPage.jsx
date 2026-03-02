@@ -8,10 +8,12 @@ import {
 import { inventoryService } from '../services/inventoryService';
 import { aiService } from '../services/aiService';
 import { supabase } from '../utils/supabase';
+import RecipeModal from '../components/RecipeModal';
 
 const RecipesPage = () => {
     const [pantryItems, setPantryItems] = useState([]);
     const [savedRecipes, setSavedRecipes] = useState([]);
+    const [selectedRecipe, setSelectedRecipe] = useState(null);
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const [showAllRecommended, setShowAllRecommended] = useState(false);
@@ -256,7 +258,8 @@ const RecipesPage = () => {
                                 <motion.div
                                     key={recipe.id}
                                     whileHover={{ y: -5 }}
-                                    className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+                                    onClick={() => setSelectedRecipe(recipe)}
+                                    className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 cursor-pointer"
                                 >
                                     <div className="aspect-video bg-gray-100 dark:bg-gray-900 overflow-hidden relative">
                                         <img
@@ -310,7 +313,8 @@ const RecipesPage = () => {
                             <motion.div
                                 key={recipe.id}
                                 whileTap={{ scale: 0.98 }}
-                                className="flex-none w-[280px] group"
+                                onClick={() => setSelectedRecipe(recipe)}
+                                className="flex-none w-[280px] group cursor-pointer"
                             >
                                 <div className="relative h-[180px] rounded-[32px] overflow-hidden mb-3 shadow-lg group-hover:shadow-xl transition-all duration-300">
                                     <img src={recipe.image} alt={recipe.title} className="w-full h-full object-cover" />
@@ -355,6 +359,7 @@ const RecipesPage = () => {
                                     key={recipe.id}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
+                                    onClick={() => setSelectedRecipe(recipe)}
                                     className="bg-white dark:bg-gray-800/50 rounded-[28px] p-4 flex gap-4 border border-gray-100 dark:border-gray-700/50 shadow-sm hover:shadow-md transition-all group cursor-pointer"
                                 >
                                     <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
@@ -535,6 +540,12 @@ const RecipesPage = () => {
                     </div>
                 )}
             </AnimatePresence>
+
+            <RecipeModal
+                recipe={selectedRecipe}
+                isOpen={!!selectedRecipe}
+                onClose={() => setSelectedRecipe(null)}
+            />
         </div>
     );
 };
