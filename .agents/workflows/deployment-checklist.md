@@ -11,6 +11,8 @@ description: Preparación de la Aplicación para Publicación (De Local a Produc
 Antes de tocar cualquier servidor, la aplicación debe estar lista a nivel de archivos.
 
 - [ ] **Limpiar Logs y Mocks:** Retirar `console.log()` de la lógica crítica, datos mockeados innecesarios y comentarios como "Para desarrollo".
+- [ ] **Eliminar Código Muerto:** Borrar cualquier componente, librería no usada (revisar `package.json`), variables o imports obsoletos que ya no estén funcionando o no tengan utilidad.
+- [ ] **Optimización y Compresión:** Configurar o asegurarse de que todo minify y compresión está activo para arrancar rápido. Minimizar el peso de imágenes, aplicar lazy-load si es necesario, y garantizar que la App será puramente ligera.
 - [ ] **URLs Relativas y Absolutas:** Asegurarse de que el frontend usa URLs dinámicas que apunten al entorno adecuado (ej. `process.env.VITE_API_URL` o `import.meta.env.VITE_API_URL` apuntando a Vercel en la nube y NO a `http://localhost:3000`).
 - [ ] **Verificación de UI Responsiva:** Corroborar que toda UI (incluyendo modals emergentes) sea responsive (adaptable a móvil/escritorio).
 - [ ] **Supresión de Errores Vistos:** Solventar cualquier error o "warning" gordo en la consola del navegador o al compilar, especialmente aquellos que frenan el Build de Vite o React.
@@ -61,7 +63,7 @@ El último paso y revisión general final.
 
 ### 👑 RESUMEN DIRECTO 👑
 
-1. **Local Clean-up** (quitar Localhost del código y purgar mocks y fallos).
+1. **Local Clean-up & Opt** (purgar localhost, borrar código/ficheros muertos, y maximizar la compresión y ligereza).
 2. **Entornos/Enviroments** (Mudar claves Test a Live y configurar panel de Vercel Envs).
 3. **Persistencia de IA** (Verificar modelos y configuración de la Inteligencia Artificial idénticos a local, sin bajadas de versión).
 4. **Plataformas Externas** (Configurar Redirect Urls en Supabase RLS/Auth y Webhooks en Stripe).
