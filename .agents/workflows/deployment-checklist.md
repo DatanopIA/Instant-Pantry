@@ -63,6 +63,7 @@ El último paso y revisión general final.
 
 1. **Local Clean-up** (quitar Localhost del código y purgar mocks y fallos).
 2. **Entornos/Enviroments** (Mudar claves Test a Live y configurar panel de Vercel Envs).
-3. **Plataformas Externas** (Configurar Redirect Urls en Supabase RLS/Auth y Webhooks en Stripe).
-4. **Git Push** (Subir estado íntegro y estable al respositorio principal).
-5. **Vercel Deploy + Testing** (Arrancar desde Vercel con todo cargado, y simular la ruta crítica completa del usuario como prueba final).
+3. **Persistencia de IA** (Verificar modelos y configuración de la Inteligencia Artificial idénticos a local, sin bajadas de versión).
+4. **Plataformas Externas** (Configurar Redirect Urls en Supabase RLS/Auth y Webhooks en Stripe).
+5. **Git Push** (Subir estado íntegro y estable al respositorio principal).
+6. **Vercel Deploy + Testing** (Arrancar desde Vercel con todo cargado, y simular la ruta crítica completa del usuario como prueba final).
