@@ -42,10 +42,14 @@ Si el usuario te pide EXPLÍCITAMENTE "guardar esta receta" o "añadir a la bibl
 Responde siempre en Español de España.`;
 
         // Formatear para Gemini
-        const formattedMessages = messages.map(msg => ({
+        let formattedMessages = messages.map(msg => ({
             role: msg.role === 'user' ? 'user' : 'model',
             parts: [{ text: msg.content }]
         }));
+
+        if (formattedMessages.length > 0 && formattedMessages[0].role === 'model') {
+            formattedMessages.shift();
+        }
 
         console.log(`[Chef IA] Chat iniciado con capacidad de Guardado...`);
 

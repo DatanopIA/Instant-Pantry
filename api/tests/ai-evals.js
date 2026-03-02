@@ -25,7 +25,7 @@ async function runEvals() {
         const response = await guard.call({
             messages: { contents: [{ role: 'user', parts: [{ text: "Dame una receta creativa" }] }] },
             systemInstruction: "Eres Chef IA. Despensa: Pasta, Aceite de oliva. Responde en Español de España.",
-            model: "gemini-2.5-flash"
+            model: "gemini-flash-latest"
         });
 
         const passed = response.toLowerCase().includes('pasta') && response.includes('**');
@@ -41,7 +41,7 @@ async function runEvals() {
         const response = await guard.call({
             prompt: [{ text: "Analiza esta lista de compra imaginaria y devuelve JSON: Leche, Huevos, Pan." }],
             format: 'json',
-            model: "gemini-2.5-flash"
+            model: "gemini-flash-latest"
         });
 
         const passed = Array.isArray(response.items) && response.items.length > 0;
