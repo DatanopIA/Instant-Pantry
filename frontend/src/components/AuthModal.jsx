@@ -42,7 +42,7 @@ export default function AuthModal({ isOpen, onClose, defaultIsLogin = false }) {
             const { error } = await supabase.auth.signInWithOAuth({
                 provider: 'google',
                 options: {
-                    redirectTo: window.location.origin + '/',
+                    redirectTo: 'https://instant-pantry.vercel.app/',
                     queryParams: {
                         prompt: 'select_account',
                     }
@@ -84,7 +84,7 @@ export default function AuthModal({ isOpen, onClose, defaultIsLogin = false }) {
                         data: {
                             full_name: fullName.trim()
                         },
-                        emailRedirectTo: window.location.origin + '/'
+                        emailRedirectTo: 'https://instant-pantry.vercel.app/'
                     }
                 });
                 if (error) throw error;
