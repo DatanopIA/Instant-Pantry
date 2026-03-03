@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 // Importar handlers
 import chatHandler from './ai/chat.js';
 import visionHandler from './process-vision.js';
+import nutritionHandler from './ai/nutrition.js';
+import familyMenuHandler from './ai/family-menu.js';
 
 dotenv.config();
 
@@ -37,6 +39,9 @@ app.post('/api/ai/chat', (req, res, next) => {
     next();
 }, chatHandler);
 app.post('/api/process-vision', visionHandler);
+
+app.post('/api/ai/nutrition', nutritionHandler);
+app.post('/api/ai/family-menu', familyMenuHandler);
 
 // Iniciar servidor solo si no estamos en Vercel (opcional, Vercel ignora el listen)
 if (process.env.NODE_ENV !== 'production') {

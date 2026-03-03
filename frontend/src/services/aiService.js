@@ -72,5 +72,38 @@ export const aiService = {
 
         if (error) throw error;
         return data;
+    },
+
+    /**
+     * Analiza una receta existente y devuelve sus macros.
+     */
+    async analyzeNutrition(recipeTitle, ingredients) {
+        try {
+            const fullUrl = `${API_URL}/api/ai/nutrition`;
+            const response = await axios.post(fullUrl, { recipeTitle, ingredients }, { timeout: 30000 });
+            return response.data;
+        } catch (error) {
+            console.error('AI Nutrition Error:', error);
+            throw new Error('No pudimos analizar la receta');
+        }
+    },
+
+    /**
+     * Genera un menú familiar basado en la despensa.
+     */
+    async generateFamilyMenu(pantryContext = [], days = 7, members = 2) {
+        const foodItems = pantryContext.filter(item =>
+            inventoryService.isFoodItem(item.products_master?.name || item.name, item.products_master?.category)
+        );
+        const pantryNames = foodItems.map(i => i.products_master?.name || i.name);
+
+        try {
+            const fullUrl = `${API_URL}/api/ai/family-menu`;
+            const response = await axios.post(fullUrl, { pantry: pantryNames, days, members }, { timeout: 45000 });
+            return response.data;
+        } catch (error) {
+            console.error('AI Family Menu Error:', error);
+            throw new Error('No pudimos generar el menú familiar');
+        }
     }
 };

@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Clock, ChefHat, Star, Users, Flame } from 'lucide-react';
+import { X, Clock, ChefHat, Star, Users, Flame, Activity } from 'lucide-react';
+import { useSubscription } from '../hooks/useSubscription';
+import { aiService } from '../services/aiService';
 
 const RecipeModal = ({ recipe, isOpen, onClose }) => {
+    const { features } = useSubscription();
+    const [nutritionData, setNutritionData] = useState(null);
+    const [loadingNutrition, setLoadingNutrition] = useState(false);
+
     if (!recipe) return null;
 
     const imageUrl = recipe.image_url || recipe.image || 'https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=400&auto=format&fit=crop';
@@ -14,7 +20,6 @@ const RecipeModal = ({ recipe, isOpen, onClose }) => {
     } else if (Array.isArray(recipe.instructions)) {
         parsedInstructions = recipe.instructions;
     } else {
-        // Fallback for mock recipes without instructions
         parsedInstructions = [
             "1. Prepara todos los ingredientes indicados.",
             "2. Sigue los pasos de cocción adecuados según el plato.",
@@ -22,6 +27,20 @@ const RecipeModal = ({ recipe, isOpen, onClose }) => {
             "4. Sirve caliente y disfruta."
         ];
     }
+
+    const handleAnalyzeNutrition = async () => {
+        if (!features.canUseNutritionalAnalysis) return;
+        setLoadingNutrition(true);
+        try {
+            const data = await aiService.analyzeNutrition(recipe.title, recipe.ingredients || []);
+            setNutritionData(data);
+        } catch (error) {
+            console.error(error);
+            // Mostrar error amigable o silenciar
+        } finally {
+            setLoadingNutrition(false);
+        }
+    };
 
     return (
         <AnimatePresence>
@@ -149,6 +168,65 @@ const RecipeModal = ({ recipe, isOpen, onClose }) => {
                                     })}
                                 </div>
                             </div>
+
+                            {/* Nutritional Analysis Section (Elite feature) */}
+                            {features.canUseNutritionalAnalysis && (
+                                <div className="mt-8">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <h3 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                                            <span className="w-8 h-8 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-500 flex items-center justify-center">
+                                                <Activity className="w-4 h-4" />
+                                            </span>
+                                            Análisis Nutricional (Chef Elite)
+                                        </h3>
+                                        {!nutritionData && !loadingNutrition && (
+                                            <button
+                                                onClick={handleAnalyzeNutrition}
+                                                className="px-4 py-2 bg-amber-500 text-white text-xs font-bold rounded-xl shadow-lg hover:bg-amber-600 transition-colors"
+                                            >
+                                                Analizar Receta
+                                            </button>
+                                        )}
+                                    </div>
+
+                                    {loadingNutrition && (
+                                        <div className="flex items-center gap-3 p-4 bg-amber-50 dark:bg-gray-800 rounded-2xl animate-pulse">
+                                            <Activity className="w-5 h-5 text-amber-500 animate-bounce" />
+                                            <span className="text-sm font-bold text-amber-700 dark:text-amber-500">Calculando macros por la IA...</span>
+                                        </div>
+                                    )}
+
+                                    {nutritionData && !loadingNutrition && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="grid grid-cols-2 sm:grid-cols-4 gap-3"
+                                        >
+                                            <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-700 text-center">
+                                                <div className="w-8 h-8 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center mx-auto mb-2 text-[10px] font-black uppercase">KCAL</div>
+                                                <p className="font-black text-gray-900 dark:text-white text-lg">{nutritionData.calories}</p>
+                                            </div>
+                                            <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-700 text-center">
+                                                <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center mx-auto mb-2 text-[10px] font-black uppercase">PROT</div>
+                                                <p className="font-black text-gray-900 dark:text-white text-lg">{nutritionData.protein}</p>
+                                            </div>
+                                            <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-700 text-center">
+                                                <div className="w-8 h-8 rounded-full bg-green-100 text-green-500 flex items-center justify-center mx-auto mb-2 text-[10px] font-black uppercase">CARB</div>
+                                                <p className="font-black text-gray-900 dark:text-white text-lg">{nutritionData.carbs}</p>
+                                            </div>
+                                            <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-700 text-center">
+                                                <div className="w-8 h-8 rounded-full bg-red-100 text-red-500 flex items-center justify-center mx-auto mb-2 text-[10px] font-black uppercase">GRAS</div>
+                                                <p className="font-black text-gray-900 dark:text-white text-lg">{nutritionData.fat}</p>
+                                            </div>
+                                            {nutritionData.tags && nutritionData.tags.map(tag => (
+                                                <div key={tag} className="col-span-2 sm:col-span-4 bg-amber-50 dark:bg-amber-900/10 text-amber-700 dark:text-amber-500 text-xs font-bold py-2 px-4 rounded-lg text-center border border-amber-200 dark:border-amber-800/50">
+                                                    ✨ {tag}
+                                                </div>
+                                            ))}
+                                        </motion.div>
+                                    )}
+                                </div>
+                            )}
 
                             <div className="pb-8"></div> {/* Bottom padding */}
                         </div>

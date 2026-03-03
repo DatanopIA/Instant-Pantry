@@ -10,6 +10,7 @@ import { inventoryService } from '../services/inventoryService';
 import { aiService } from '../services/aiService';
 import { supabase } from '../utils/supabase';
 import RecipeModal from '../components/RecipeModal';
+import FamilyMenuModal from '../components/FamilyMenuModal'; // Added import for FamilyMenuModal
 import { useSubscription } from '../hooks/useSubscription';
 
 const RecipesPage = () => {
@@ -29,6 +30,7 @@ const RecipesPage = () => {
 
     const { features } = useSubscription();
     const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+    const [showFamilyMenuModal, setShowFamilyMenuModal] = useState(false); // Added state for FamilyMenuModal
     const navigate = useNavigate();
 
     const handleClearChat = () => {
@@ -467,7 +469,16 @@ const RecipesPage = () => {
                                         Planificador Familiar
                                         {!features.canUseFamilyMenu && <Lock className="w-3 h-3 text-gray-400" />}
                                     </h3>
-                                    <p className="text-xs text-gray-500 dark:text-gray-400">Organiza las comidas de toda la familia para la semana.</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Organiza las comidas de toda la familia para la semana.</p>
+
+                                    {features.canUseFamilyMenu && (
+                                        <button
+                                            onClick={() => setShowFamilyMenuModal(true)} // Connected to FamilyMenuModal
+                                            className="px-4 py-2 bg-primary text-white text-xs font-bold rounded-xl shadow-lg shadow-primary/30 active:scale-95 transition-transform"
+                                        >
+                                            Generar Menú Semanal
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                             {!features.canUseFamilyMenu && (
@@ -660,6 +671,11 @@ const RecipesPage = () => {
                     </div>
                 )}
             </AnimatePresence>
+
+            <FamilyMenuModal
+                isOpen={showFamilyMenuModal}
+                onClose={() => setShowFamilyMenuModal(false)}
+            />
         </div>
     );
 };
