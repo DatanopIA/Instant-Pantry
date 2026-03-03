@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion as Motion, AnimatePresence } from 'framer-motion';
-import { Camera, ChefHat, LineChart, ListChecks, ChevronRight, ShieldCheck, Zap, Sparkles } from 'lucide-react';
+import { Camera, ChefHat, LineChart, ListChecks, ChevronRight, ShieldCheck, Zap, Sparkles, Smartphone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 import AuthModal from '../components/AuthModal';
@@ -41,6 +41,26 @@ export default function LandingPage() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAuthOpen, setIsAuthOpen] = useState(false);
     const [isLoginMode, setIsLoginMode] = useState(false);
+    const [deferredPrompt, setDeferredPrompt] = useState(null);
+
+    useEffect(() => {
+        const handleBeforeInstallPrompt = (e) => {
+            e.preventDefault();
+            setDeferredPrompt(e);
+        };
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        return () => window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    }, []);
+
+    const handleInstallClick = async () => {
+        if (!deferredPrompt) {
+            alert('Para instalar la app, abre las opciones de tu navegador y selecciona "Añadir a la pantalla de inicio" o "Instalar aplicación".');
+            return;
+        }
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice;
+        setDeferredPrompt(null);
+    };
 
     const openAuth = (loginMode) => {
         setIsLoginMode(loginMode);
@@ -145,6 +165,13 @@ export default function LandingPage() {
                             className="w-full sm:w-auto px-8 py-4 bg-white/80 hover:bg-white backdrop-blur-xl text-gray-800 font-semibold rounded-2xl border border-gray-200 shadow-sm transition-all shadow-[0_8px_30px_-10px_rgba(0,0,0,0.05)]"
                         >
                             Ver Planes
+                        </button>
+                        <button
+                            onClick={handleInstallClick}
+                            className="w-full sm:w-auto px-6 py-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2 transform hover:scale-105 border border-slate-700"
+                        >
+                            <Smartphone className="w-5 h-5 text-emerald-400" />
+                            Descargar App
                         </button>
                     </Motion.div>
                 </div>

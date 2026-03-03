@@ -6,6 +6,7 @@ import {
     ShoppingBasket, ShoppingBag, Calendar
 } from 'lucide-react';
 import { inventoryService } from '../services/inventoryService';
+import { notificationService } from '../services/notificationService';
 
 const InventoryList = () => {
     const [items, setItems] = useState([]);
@@ -34,6 +35,13 @@ const InventoryList = () => {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        if (!loading && items.length > 0) {
+            const expirySetting = localStorage.getItem('expiryDays') || '3 días antes';
+            notificationService.scheduleExpirationNotifications(items, expirySetting);
+        }
+    }, [items, loading]);
 
     // Handle search master products
     useEffect(() => {
@@ -112,9 +120,7 @@ const InventoryList = () => {
             };
             await inventoryService.updateItem(dateModal.item.id, updates);
 
-            setItems(prev => prev.map(i =>
-                i.id === dateModal.item.id ? { ...i, ...updates } : i
-            ));
+            setItems(prev => prev.map(i => i.id === dateModal.item.id ? { ...i, ...updates } : i));
             setDateModal({ isOpen: false, item: null, date: '' });
         } catch (err) {
             console.error(err);
