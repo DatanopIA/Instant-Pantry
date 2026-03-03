@@ -45,8 +45,18 @@ export default async function handler(req, res) {
             model: "gemini-2.5-flash"
         });
 
-        const processedItems = visionData.items
-            .filter(item => item.is_food === true) // Filtro de seguridad por IA
+        let visionItems = visionData.items || (Array.isArray(visionData) ? visionData : []);
+        if (!Array.isArray(visionItems) && visionData.items === undefined) {
+            // Sometimes the AI just returns the item object itself
+            if (visionData.name) {
+                visionItems = [visionData];
+            } else {
+                visionItems = [];
+            }
+        }
+
+        const processedItems = visionItems
+            .filter(item => item.is_food === true || item.is_food === 'true' || String(item.is_food).toLowerCase() === 'true') // Filtro de seguridad por IA
             .map(item => {
                 const expiryDate = new Date();
                 expiryDate.setDate(expiryDate.getDate() + (item.expires_in_days || 7));
