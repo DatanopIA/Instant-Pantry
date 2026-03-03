@@ -3,9 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Settings, Shield, Bell, CreditCard, ChevronRight, BarChart3, PieChart, Activity, LogOut, CheckCircle2, Upload, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../utils/supabase';
+import { useSubscription } from '../hooks/useSubscription';
 
 const ProfileAnalytics = () => {
     const navigate = useNavigate();
+    const { plan } = useSubscription();
+
+    const planNames = {
+        free: 'Pantry Básico',
+        plus: 'Pantry Plus',
+        chef: 'Chef Elite'
+    };
+
     const [notificationsEnabled, setNotificationsEnabled] = useState(true);
     const [showToast, setShowToast] = useState(null);
     const [profilePic, setProfilePic] = useState("");
@@ -158,7 +167,9 @@ const ProfileAnalytics = () => {
                     </div>
                 </div>
                 <h2 className="text-xl font-bold dark:text-white">{user?.user_metadata?.full_name || 'Usuario'}</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Usuario Premium desde 2024</p>
+                <p className={`text-sm font-bold mt-1 ${plan === 'chef' ? 'text-amber-500' : plan === 'plus' ? 'text-primary' : 'text-gray-500'}`}>
+                    {planNames[plan] || 'Pantry Básico'}
+                </p>
             </header>
 
             {/* Analytics Grid */}
