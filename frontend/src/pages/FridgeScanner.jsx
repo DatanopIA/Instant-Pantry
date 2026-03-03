@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, RefreshCw, Check, X, Loader2, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { inventoryService } from '../services/inventoryService';
+import { useSubscription } from '../hooks/useSubscription';
 
 const FridgeScanner = () => {
     const navigate = useNavigate();
@@ -11,6 +12,8 @@ const FridgeScanner = () => {
     const [isProcessing, setIsProcessing] = useState(false);
     const [results, setResults] = useState(null);
     const [capturedImage, setCapturedImage] = useState(null);
+
+    const { features } = useSubscription();
 
     // Define functions before useEffect to avoid declaration errors
     const stopCamera = () => {
@@ -21,6 +24,7 @@ const FridgeScanner = () => {
     };
 
     const startCamera = async () => {
+        if (!features.canUseScanner) return; // Prevent camera start if locked
         try {
             const mediaStream = await navigator.mediaDevices.getUserMedia({
                 video: { facingMode: 'environment' }
@@ -35,9 +39,11 @@ const FridgeScanner = () => {
     };
 
     useEffect(() => {
-        startCamera();
+        if (features.canUseScanner) {
+            startCamera();
+        }
         return () => stopCamera();
-    }, []);
+    }, [features.canUseScanner]);
 
     const takePhoto = async () => {
         const canvas = document.createElement('canvas');
@@ -113,7 +119,21 @@ const FridgeScanner = () => {
 
             {/* Camera Preview */}
             <div className="relative flex-1 bg-gray-900 flex items-center justify-center">
-                {!capturedImage ? (
+                {!features.canUseScanner ? (
+                    <div className="px-6 py-12 text-center bg-gray-900 flex flex-col items-center justify-center w-full h-full">
+                        <Camera size={64} className="text-gray-500 mb-6" />
+                        <h3 className="text-2xl font-bold text-white mb-4">Escáner IA Bloqueado</h3>
+                        <p className="text-gray-400 mb-8 max-w-sm">
+                            El escáner de visión IA es una función Premium. Actualiza a Pantry Plus para detectar automáticamente tus alimentos con foto.
+                        </p>
+                        <button
+                            onClick={() => navigate('/premium')}
+                            className="py-4 px-8 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl transition-all shadow-lg"
+                        >
+                            Ver Planes Premium
+                        </button>
+                    </div>
+                ) : !capturedImage ? (
                     <video
                         ref={videoRef}
                         autoPlay
@@ -125,7 +145,7 @@ const FridgeScanner = () => {
                 )}
 
                 {/* Scan Frame Overlay */}
-                {!results && !isProcessing && (
+                {features.canUseScanner && !results && !isProcessing && (
                     <div className="absolute inset-x-8 inset-y-32 border-2 border-white/30 rounded-3xl pointer-events-none flex items-center justify-center">
                         <div className="w-full h-0.5 bg-primary/50 absolute animate-[pulse_2s_infinite]"></div>
                     </div>
@@ -193,7 +213,7 @@ const FridgeScanner = () => {
             </AnimatePresence>
 
             {/* Capture Button */}
-            {!results && !isProcessing && (
+            {features.canUseScanner && !results && !isProcessing && (
                 <div className="absolute bottom-12 left-0 right-0 flex justify-center z-20">
                     <button
                         onClick={takePhoto}

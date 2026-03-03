@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Instant Pantry</string>
+    <string name="title_activity_main">Instant Pantry</string>
+    <string name="package_name">com.instantpantry.app</string>
+    <string name="custom_url_scheme">com.instantpantry.app</string>
+</resources>

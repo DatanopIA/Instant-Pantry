@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
     ChefHat, Sparkles, Clock, Users, Flame, ChevronRight,
     Search, ArrowRight, Heart, Utensils, Star, BookOpen,
-    X, Send, User, MessageCircle, RotateCcw
+    X, Send, User, MessageCircle, RotateCcw, Lock, Calendar, Activity as ActivityIcon
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { inventoryService } from '../services/inventoryService';
 import { aiService } from '../services/aiService';
 import { supabase } from '../utils/supabase';
 import RecipeModal from '../components/RecipeModal';
+import { useSubscription } from '../hooks/useSubscription';
 
 const RecipesPage = () => {
     const [pantryItems, setPantryItems] = useState([]);
@@ -24,6 +26,10 @@ const RecipesPage = () => {
     ];
     const [chatMessages, setChatMessages] = useState(initialMessages);
     const [isTyping, setIsTyping] = useState(false);
+
+    const { features } = useSubscription();
+    const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+    const navigate = useNavigate();
 
     const handleClearChat = () => {
         setChatMessages(initialMessages);
@@ -428,13 +434,75 @@ const RecipesPage = () => {
                         <h3 className="text-xl font-bold text-white mb-2">¿Buscas algo específico?</h3>
                         <p className="text-sm text-gray-400 mb-6 font-medium">Nuestro Chef Inteligente puede crear recetas únicas con lo que tengas ahora mismo.</p>
                         <button
-                            onClick={() => setIsChatOpen(true)}
+                            onClick={() => {
+                                if (savedRecipes.length >= features.maxRecipes) {
+                                    setShowUpgradeModal(true);
+                                } else {
+                                    setIsChatOpen(true);
+                                }
+                            }}
                             className="w-full bg-white text-gray-900 py-3.5 rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
                         >
                             Consultar Chef IA <ArrowRight className="w-4 h-4" />
                         </button>
                     </div>
                 </div>
+
+                {/* Chef Elite Exclusive Features */}
+                <section className="mt-12 bg-gray-50 dark:bg-gray-800/30 rounded-3xl p-6 border border-gray-100 dark:border-gray-700">
+                    <div className="flex items-center gap-2 mb-6">
+                        <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
+                        <h2 className="text-lg font-bold text-gray-900 dark:text-white">Herramientas Chef Elite</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {/* Family Menu Planning */}
+                        <div className="relative overflow-hidden bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-700">
+                            <div className="flex items-start gap-4">
+                                <div className={`p-3 rounded-xl ${features.canUseFamilyMenu ? 'bg-primary/20 text-primary' : 'bg-gray-100 dark:bg-gray-700 text-gray-400'}`}>
+                                    <Calendar className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-gray-900 dark:text-white text-sm mb-1 flex items-center gap-2">
+                                        Planificador Familiar
+                                        {!features.canUseFamilyMenu && <Lock className="w-3 h-3 text-gray-400" />}
+                                    </h3>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">Organiza las comidas de toda la familia para la semana.</p>
+                                </div>
+                            </div>
+                            {!features.canUseFamilyMenu && (
+                                <div className="absolute inset-0 bg-white/60 dark:bg-gray-900/60 backdrop-blur-[2px] flex items-center justify-center p-4">
+                                    <button onClick={() => navigate('/premium')} className="px-4 py-2 bg-amber-500 text-white text-xs font-bold rounded-xl shadow-lg">
+                                        Desbloquear Chef Elite
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Nutritional Analysis */}
+                        <div className="relative overflow-hidden bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-700">
+                            <div className="flex items-start gap-4">
+                                <div className={`p-3 rounded-xl ${features.canUseNutritionalAnalysis ? 'bg-primary/20 text-primary' : 'bg-gray-100 dark:bg-gray-700 text-gray-400'}`}>
+                                    <ActivityIcon className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-gray-900 dark:text-white text-sm mb-1 flex items-center gap-2">
+                                        Análisis Nutricional
+                                        {!features.canUseNutritionalAnalysis && <Lock className="w-3 h-3 text-gray-400" />}
+                                    </h3>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">Detalles macro y micronutricionales de cada receta.</p>
+                                </div>
+                            </div>
+                            {!features.canUseNutritionalAnalysis && (
+                                <div className="absolute inset-0 bg-white/60 dark:bg-gray-900/60 backdrop-blur-[2px] flex items-center justify-center p-4">
+                                    <button onClick={() => navigate('/premium')} className="px-4 py-2 bg-amber-500 text-white text-xs font-bold rounded-xl shadow-lg">
+                                        Desbloquear Chef Elite
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </section>
             </div>
 
             {/* AI Chef Chat Modal */}
@@ -546,6 +614,52 @@ const RecipesPage = () => {
                 isOpen={!!selectedRecipe}
                 onClose={() => setSelectedRecipe(null)}
             />
+
+            {/* Upgrade Modal para recetas limitadas */}
+            <AnimatePresence>
+                {showUpgradeModal && (
+                    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setShowUpgradeModal(false)}
+                            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                        />
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="bg-white dark:bg-gray-900 rounded-3xl p-6 relative z-10 max-w-sm w-full shadow-2xl"
+                        >
+                            <button onClick={() => setShowUpgradeModal(false)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                                <X className="w-5 h-5" />
+                            </button>
+                            <div className="text-center">
+                                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+                                    <ChefHat className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Límite Alcanzado</h3>
+                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+                                    Has alcanzado el límite de {features.maxRecipes} recetas de tu plan gratuito. Sube de plan para recetas ilimitadas.
+                                </p>
+                                <button
+                                    onClick={() => navigate('/premium')}
+                                    className="w-full py-4 bg-primary text-white rounded-xl font-bold active:scale-95 transition-all shadow-lg shadow-primary/30"
+                                >
+                                    Ver Planes Premium
+                                </button>
+                                <button
+                                    onClick={() => setShowUpgradeModal(false)}
+                                    className="w-full py-3 mt-2 text-gray-500 font-bold active:scale-95 transition-all"
+                                >
+                                    Quizás más tarde
+                                </button>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

@@ -5,13 +5,15 @@ import {
     ChevronLeft, User, Lock, Users, Home, Bell,
     Scale, Store, Trash2, ShieldCheck, Mail,
     CheckCircle2, Copy, QrCode, UserPlus,
-    X, Save, AlertTriangle
+    X, Save, AlertTriangle, HeadphonesIcon, Star
 } from 'lucide-react';
+import { useSubscription } from '../hooks/useSubscription';
 
 const AccountSettings = () => {
     const navigate = useNavigate();
     const [showToast, setShowToast] = useState(null);
     const [modal, setModal] = useState(null);
+    const { features } = useSubscription();
 
     // States for personalized data
     const [householdName, setHouseholdName] = useState('Mansión Giménez');
@@ -46,7 +48,11 @@ const AccountSettings = () => {
                 setModal({ type: 'password', title: 'Cambiar Contraseña' });
                 break;
             case 'Invitar Propietarios':
-                setModal({ type: 'invite', title: 'Invitar Propietarios' });
+                if (features.canInviteUsers) {
+                    setModal({ type: 'invite', title: 'Invitar Propietarios' });
+                } else {
+                    setModal({ type: 'upgrade', title: 'Plan Premium Requerido', content: 'Actualiza a Pantry Plus para invitar a otros miembros (hasta 1 usuario extra).' });
+                }
                 break;
             case 'Unidades de Medida':
                 setModal({ type: 'select', field: 'units', title: 'Unidades de Medida', options: ['Sistema Métrico (kg, l)', 'Sistema Imperial (lb, oz)'], value: units });
@@ -57,11 +63,17 @@ const AccountSettings = () => {
             case 'Supermercado Favorito':
                 setModal({ type: 'input', field: 'favoriteStore', title: 'Súper Favorito', value: favoriteStore });
                 break;
+            case 'Soporte Prioritario':
+                window.open('mailto:info@artbymaeki.com?subject=Soporte Prioritario - Chef Elite');
+                break;
+            case 'Soporte y Ayuda':
+                triggerToast('El equipo de soporte te responderá pronto.');
+                break;
             case 'Eliminar Cuenta':
                 setModal({ type: 'delete', title: 'Eliminar Cuenta' });
                 break;
             case 'Miembros de la Familia':
-                setModal({ type: 'info', title: 'Miembros', content: 'Actualmente hay 3 miembros con acceso: Alex (Propietario), María y Juan.' });
+                setModal({ type: 'info', title: 'Miembros', content: `Límite de miembros: ${features.maxUsers}.` });
                 break;
             default:
                 triggerToast('Función actualizada');
@@ -94,6 +106,15 @@ const AccountSettings = () => {
                 { label: 'Unidades de Medida', icon: Scale, detail: units },
                 { label: 'Alertas de Caducidad', icon: Bell, detail: expiryDays },
                 { label: 'Supermercado Favorito', icon: Store, detail: favoriteStore },
+            ]
+        },
+        {
+            id: 'support',
+            title: 'Ayuda',
+            items: [
+                features.hasPrioritySupport
+                    ? { label: 'Soporte Prioritario', icon: Star, detail: 'info@artbymaeki.com', color: 'text-amber-500' }
+                    : { label: 'Soporte y Ayuda', icon: HeadphonesIcon, detail: 'Centro de ayuda' }
             ]
         },
         {
@@ -291,6 +312,15 @@ const AccountSettings = () => {
                                     <div className="space-y-6 text-center">
                                         <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed font-medium">{modal.content}</p>
                                         <button onClick={() => setModal(null)} className="w-full py-4 bg-primary text-white font-bold rounded-2xl active:scale-95 transition-all">Cerrar</button>
+                                    </div>
+                                ) : modal.type === 'upgrade' ? (
+                                    <div className="space-y-6 text-center">
+                                        <div className="flex justify-center text-primary">
+                                            <ShieldCheck className="w-16 h-16" />
+                                        </div>
+                                        <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed font-medium">{modal.content}</p>
+                                        <button onClick={() => navigate('/premium')} className="w-full py-4 bg-primary text-white font-bold rounded-2xl active:scale-95 transition-all">Ver Planes Premium</button>
+                                        <button onClick={() => setModal(null)} className="w-full py-4 bg-gray-100 dark:bg-gray-800 dark:text-white font-bold rounded-2xl active:scale-95 transition-all">Cancelar</button>
                                     </div>
                                 ) : null}
                             </div>
