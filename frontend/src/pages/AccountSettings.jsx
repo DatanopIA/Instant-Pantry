@@ -67,7 +67,7 @@ const AccountSettings = () => {
                 window.open('mailto:info@artbymaeki.com?subject=Soporte Prioritario - Chef Elite');
                 break;
             case 'Soporte y Ayuda':
-                triggerToast('El equipo de soporte te responderá pronto.');
+                setModal({ type: 'faq', title: 'Preguntas Frecuentes (FAQ)' });
                 break;
             case 'Eliminar Cuenta':
                 setModal({ type: 'delete', title: 'Eliminar Cuenta' });
@@ -307,6 +307,22 @@ const AccountSettings = () => {
                                             <button onClick={() => { setModal(null); triggerToast('Cuenta eliminada'); }} className="w-full py-4 bg-red-500 text-white font-bold rounded-2xl shadow-lg active:scale-95 transition-all">Eliminar definitivamente</button>
                                             <button onClick={() => setModal(null)} className="w-full py-4 bg-gray-100 dark:bg-gray-800 dark:text-white font-bold rounded-2xl active:scale-95 transition-all">Cancelar</button>
                                         </div>
+                                    </div>
+                                ) : modal.type === 'faq' ? (
+                                    <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2 pb-4">
+                                        {[
+                                            { q: '¿Cómo añado productos a mi despensa?', a: 'Puedes añadir productos manualmente desde la pantalla principal usando el botón "+", o escanear tus tickets de compra para añadirlos automáticamente.' },
+                                            { q: '¿Cómo funciona el escáner de tickets?', a: 'Ve a la sección "Escanear", toma una foto de tu ticket de supermercado y la IA detectará los alimentos para añadirlos a tu inventario.' },
+                                            { q: '¿Para qué sirve Chef Elite AI?', a: 'Es nuestro asistente inteligente que analiza tu despensa para sugerir recetas, planificar el menú de tu familia y darte información nutricional.' },
+                                            { q: '¿Cómo puedo compartir mi despensa con mi familia?', a: 'Usa la opción "Invitar Propietarios" para obtener un enlace o escanear un código QR. La otra persona necesita una cuenta para unirse.' },
+                                            { q: '¿Cómo funcionan las alertas de caducidad?', a: 'La app revisará las fechas de caducidad de tus productos y te enviará un aviso según tus "Alertas de Caducidad" (p.ej. 3 días antes).' }
+                                        ].map((faq, i) => (
+                                            <div key={i} className="bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-700">
+                                                <h4 className="font-bold text-sm dark:text-white mb-2">{faq.q}</h4>
+                                                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">{faq.a}</p>
+                                            </div>
+                                        ))}
+                                        <button onClick={() => setModal(null)} className="w-full mt-4 py-4 bg-primary text-white font-bold rounded-2xl active:scale-95 transition-all sticky bottom-0 z-10">Cerrar Ayuda</button>
                                     </div>
                                 ) : modal.type === 'info' ? (
                                     <div className="space-y-6 text-center">
