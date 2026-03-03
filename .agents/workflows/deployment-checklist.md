@@ -6,6 +6,11 @@ description: Preparación de la Aplicación para Publicación (De Local a Produc
 
 *Este workflow define los pasos OBLIGATORIOS y la lista de chequeo (check-list) exhaustiva que se debe seguir CADA VEZ que se solicita "preparar una app para publicar" o "subir a producción". Su objetivo es evitar dar vueltas innecesarias, verificar la integridad del código, establecer todas las claves correctas y desplegar correctamente sin fallos.*
 
+> [!CAUTION]
+> **PASO 0 (BLOQUEANTE): AUDITORÍA GLOBAL DE QA Y CIBERSEGURIDAD**
+> Antes de marcar tareas en esta checklist técnica de despliegue, DEBERÁS haber superado obligatoriamente la auditoría exigente. Ejecuta o solicita el workflow de auditoría ubicado en:
+> `/workflows/pre-deployment-audit.md` (Comandos `npm audit`, checklist legal, arquitectura...). **No inicies el despliegue a Vercel/Android sin un "Dictamen: LISTO" de la auditoría.**
+
 ## 📋 FASE 1: Revisión y Limpieza del Código Local
 
 Antes de tocar cualquier servidor, la aplicación debe estar lista a nivel de archivos.
@@ -61,11 +66,28 @@ El último paso y revisión general final.
   2. ¿El Autenticador / Inicio Sesión funciona y redirecciona a `dashboard` o `app`?
   3. ¿Las llamadas a API externas (ej. llamadas a Gemini o Stripe) procesan el pago / devuelven resultados de Inteligencia Artificial bien o dan Fallo CORS/Error 500?
 
+## 📦 FASE 6: Preparación para Google Play (App Nativa Android)
+
+Si la aplicación va a ser distribuida como aplicación nativa en Android, es estrictamente obligatorio cumplir con todos los requisitos visuales y técnicos de Google Play.
+
+- [ ] **Sincronización de Capacitor:** Ejecutar compilación y volcar el build de Vite en la carpeta nativa:
+  `npm run build && npx cap sync android`
+- [ ] **Generación de Assets (Iconos y Splash):** Asegurar que todos los tamaños resolutivos exigidos por Google están generados utilizando la herramienta nativa, garantizando que el diseño y el icono sean premium y reconocibles:
+  `npx @capacitor/assets generate --android`
+- [ ] **Imágenes y Screnshots Promocionales (Store Listing):** Comprobar que en la carpeta de marketing/assets o en la ficha de Google Play Console disponemos de:
+  - Icono de la app en alta resolución (512x512 px).
+  - Gráfico de funciones (1024x500 px).
+  - Capturas de pantalla (Screenshots) dinámicas que muestren la interfaz (Premium) en dispositivos móviles (mínimo 4 capturas).
+- [ ] **Mini Videos Promocionales:** Grabar o generar un bloque de previsualización (teaser) en formato de vídeo corto demostrando la funcionalidad clave de la app (ej. subida de receta a despensa, escáner, scroll de UI cristal). Esto acelera la verificación y evita que marquen la app por "falta de experiencia demostrable".
+- [ ] **Firma y Bundle:** Generar el Android App Bundle (.aab) firmado en Release desde Android Studio para la carga, revisando los permisos en el `AndroidManifest.xml`.
+- [ ] **Botón / Prompt de Descarga Nativa en Web:** Actualizar el código front-end (landing page y/o dashboard) para integrar automáticamente un banner o botón "Descarga la App". Este debe detectar dispositivos móviles de forma inteligente y ofrecer descargar la versión de Google Play para fidelizar la experiencia nativa desde la plataforma online.
+
 ### 👑 RESUMEN DIRECTO 👑
 
 1. **Local Clean-up & Opt** (purgar localhost, borrar código/ficheros muertos, y maximizar la compresión y ligereza).
 2. **Entornos/Enviroments** (Mudar claves Test a Live y configurar panel de Vercel Envs).
 3. **Persistencia de IA** (Verificar modelos y configuración de la Inteligencia Artificial idénticos a local, sin bajadas de versión).
 4. **Plataformas Externas** (Configurar Redirect Urls en Supabase RLS/Auth y Webhooks en Stripe).
-5. **Git Push** (Subir estado íntegro y estable al respositorio principal).
+5. **Git Push & CI/CD** (Subir estado íntegro al repositorio. Esto es la única fuente de verdad y disparará el Auto-deploy a web).
 6. **Vercel Deploy + Testing** (Arrancar desde Vercel con todo cargado, y simular la ruta crítica completa del usuario como prueba final).
+7. **Google Play Release** (Generación de assets obligatorios de Capacitor, capturas, vídeos para validación nativa, y subida del Android App Bundle).

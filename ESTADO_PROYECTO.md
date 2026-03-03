@@ -44,5 +44,15 @@ El proyecto ha sido reestructurado en un modelo de monorepo optimizado para Verc
 - Mejorar el algoritmo de "Pantry Match" para considerar cantidades.
 - Implementar notificaciones de caducidad.
 
+### 🔄 CI/CD y Despliegue Automático
+
+- **Sincronización con GitHub**: Cualquier modificación realizada en el código, una vez publicada la web o app, deberá ser automáticamente comiteada y subida (push) al repositorio de GitHub para garantizar que el código fuente esté siempre respaldado y actúe como única fuente de verdad. Esto activará automáticamente los pipelines de despliegue en Vercel o similares.
+
+### 📱 Preparación para Google Play (Android Studio)
+
+- **Configuración Nativa**: Preparar y configurar el proyecto de Android Studio (`/android`) utilizando Capacitor con la misma consistencia y cuidado que la versión web.
+- **Minimización de Errores**: Aplicar validaciones estrictas, firmar la app correctamente (Keystore/Bundle) y asegurar permisos para evitar rechazos en el proceso de revisión de Google Play, dado que sus tiempos de verificación son lentos.
+- **Generación de Assets**: Crear todos los iconos necesarios (adaptativos), splash screens y gráficos promocionales obligatorios para garantizar una subida exitosa a la tienda a la primera.
+
 ---
 **Nota de Git**: Los cambios están seguros en el commit `042160c`.
