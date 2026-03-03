@@ -6,6 +6,9 @@ const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 // Mapeo de IDs de Precio de Stripe a niveles de Supabase
 const PRICE_TO_TIER = {
+    'price_1T6qllAj0eTKFibn3PwvicWE': 'pro', // Instant Pantry Plus (4,99 €)
+    'price_1T6qmcAj0eTKFibnTmaoXg8l': 'pro_plus', // Instant Chef Elite (9,99 €)
+    // Testing prices (optional, keeping for fallback testing if needed but maybe better to replace)
     'price_1T5T70PHmuhIo9pAd49ZsFrQ': 'pro',
     'price_1T5T7jPHmuhIo9pARIWkf2nJ': 'pro_plus'
 };

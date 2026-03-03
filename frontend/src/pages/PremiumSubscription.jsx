@@ -37,7 +37,7 @@ const PremiumSubscription = () => {
             ],
             icon: <Zap className="w-5 h-5 text-primary" />,
             tag: 'Popular',
-            checkoutUrl: 'https://buy.stripe.com/test_3cI8wR2vE3dZ3GM88S0x200'
+            checkoutUrl: `https://buy.stripe.com/00w6oG5Pg8Qm2v71hj4ko01?client_reference_id=${import.meta.env.VITE_TEST_HOUSEHOLD_ID}`
         },
         {
             id: 'chef',
@@ -52,7 +52,7 @@ const PremiumSubscription = () => {
             ],
             icon: <Star className="w-5 h-5 text-amber-500" />,
             tag: 'Mejor Valor',
-            checkoutUrl: 'https://buy.stripe.com/test_28E8wR1rAg0L2CI0Gq0x201'
+            checkoutUrl: `https://buy.stripe.com/fZueVcdhI7Mi2v79NP4ko00?client_reference_id=${import.meta.env.VITE_TEST_HOUSEHOLD_ID}`
         }
     ];
 
@@ -194,8 +194,8 @@ const PremiumSubscription = () => {
                         onClick={plan === selectedTier ? undefined : handleCheckout}
                         disabled={plan === selectedTier}
                         className={`w-full py-4 px-8 text-white text-lg font-bold rounded-2xl shadow-xl transform transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/50 ${plan === selectedTier
-                                ? 'bg-gray-400 dark:bg-gray-700 cursor-not-allowed shadow-none'
-                                : 'bg-primary hover:bg-primary-dark hover:scale-[1.01] active:scale-95 shadow-primary/20'
+                            ? 'bg-gray-400 dark:bg-gray-700 cursor-not-allowed shadow-none'
+                            : 'bg-primary hover:bg-primary-dark hover:scale-[1.01] active:scale-95 shadow-primary/20'
                             }`}
                     >
                         {plan === selectedTier ? `Actualmente eres ${tiers.find(t => t.id === selectedTier).name}` : `Comenzar con ${tiers.find(t => t.id === selectedTier).name}`}
