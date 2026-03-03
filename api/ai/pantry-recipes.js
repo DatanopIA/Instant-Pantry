@@ -27,7 +27,7 @@ Para cada receta, devuelve el siguiente formato, respondiendo SOLO con un JSON A
   {
     "id": "Un id único tipo string inventado, ej: p1",
     "title": "Nombre de la receta",
-    "image": "URL realista de Unsplash sobre el plato propuesto, usa palabras clave en inglés de los ingredientes principales para que la imagen sea fiel a la receta. Ejemplo: https://images.unsplash.com/photo-123456?auto=format&fit=crop&q=80&w=400. Intenta usar una URL que contenga términos generales de comida o del ingrediente",
+    "image": "Genera una URL directa usando este formato EXACTO: https://image.pollinations.ai/prompt/[KEYWORDS]?width=400&height=400&nologo=true reemplazando [KEYWORDS] por 3-4 palabras clave descriptivas del plato en INGLÉS unidas por el símbolo +. Ejemplo: https://image.pollinations.ai/prompt/delicious+pasta+with+tomato+basil?width=400&height=400&nologo=true",
     "time": "Tiempo en minutos, ej: 15 min",
     "difficulty": "Dificultad, ej: Fácil, Media",
     "ingredients": ["Ingrediente 1", "Ingrediente 2"],
