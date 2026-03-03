@@ -170,17 +170,27 @@ const RecipesPage = () => {
             count: 0,
             total: recipe.ingredients.length,
             missing: recipe.ingredients.length,
-            matchPercent: 0
+            matchPercent: 0,
+            matchedList: [],
+            missingList: recipe.ingredients
         };
 
-        const matches = recipe.ingredients.filter(ing =>
-            pantryNames.some(name => name.includes(ing.toLowerCase()) || ing.toLowerCase().includes(name))
-        );
+        const matchedList = [];
+        const missingList = [];
+
+        recipe.ingredients.forEach(ing => {
+            const isMatch = pantryNames.some(name => name.includes(ing.toLowerCase()) || ing.toLowerCase().includes(name));
+            if (isMatch) matchedList.push(ing);
+            else missingList.push(ing);
+        });
+
         return {
-            count: matches.length,
+            count: matchedList.length,
             total: recipe.ingredients.length,
-            missing: recipe.ingredients.length - matches.length,
-            matchPercent: Math.round((matches.length / recipe.ingredients.length) * 100)
+            missing: missingList.length,
+            matchPercent: Math.round((matchedList.length / recipe.ingredients.length) * 100),
+            matchedList,
+            missingList
         };
     };
 
@@ -385,27 +395,32 @@ const RecipesPage = () => {
                                             </div>
                                             <h3 className="text-sm font-bold text-gray-900 dark:text-white line-clamp-1">{recipe.title}</h3>
 
-                                            {/* Matches bar */}
+                                            {/* Matches bar & Ingredients */}
                                             <div className="mt-2">
                                                 <div className="flex items-center justify-between mb-1">
                                                     <p className="text-[9px] text-gray-500 font-medium">
                                                         {recipe.match.count === recipe.match.total ? (
                                                             <span className="text-green-500 font-black flex items-center gap-1 uppercase tracking-tighter">
-                                                                <Star className="w-2.5 h-2.5 fill-green-500" /> Tienes todo!
+                                                                <Star className="w-2.5 h-2.5 fill-green-500" /> ¡Tienes todo!
                                                             </span>
                                                         ) : (
-                                                            <span>Tienes <strong>{recipe.match.count}</strong> de <strong>{recipe.match.total}</strong> ingredients</span>
+                                                            <span>Tienes <strong>{recipe.match.count}</strong> de <strong>{recipe.match.total}</strong> ingredientes</span>
                                                         )}
                                                     </p>
                                                     <span className="text-[9px] font-black text-primary">{recipe.match.matchPercent}%</span>
                                                 </div>
-                                                <div className="h-1.5 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
-                                                    <motion.div
-                                                        initial={{ width: 0 }}
-                                                        animate={{ width: `${recipe.match.matchPercent}%` }}
-                                                        transition={{ duration: 0.8, ease: "easeOut" }}
-                                                        className={`h-full rounded-full ${recipe.match.matchPercent === 100 ? 'bg-green-500' : 'bg-primary'}`}
-                                                    />
+
+                                                <div className="flex flex-wrap gap-1 mt-1.5">
+                                                    {recipe.match.matchedList.map((ing, idx) => (
+                                                        <span key={`matched-${idx}`} className="px-1.5 py-0.5 rounded text-[8px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800/50">
+                                                            ✓ {ing}
+                                                        </span>
+                                                    ))}
+                                                    {recipe.match.missingList.map((ing, idx) => (
+                                                        <span key={`missing-${idx}`} className="px-1.5 py-0.5 rounded text-[8px] font-bold bg-red-50 text-red-500 dark:bg-red-900/20 dark:text-red-400 border border-red-100 dark:border-red-800/50">
+                                                            ✕ {ing}
+                                                        </span>
+                                                    ))}
                                                 </div>
                                             </div>
                                         </div>

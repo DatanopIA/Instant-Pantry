@@ -129,14 +129,21 @@ const RecipeModal = ({ recipe, isOpen, onClose }) => {
                                     Ingredientes
                                 </h3>
                                 <ul className="space-y-3">
-                                    {(recipe.ingredients || []).map((ingredient, idx) => (
-                                        <li key={idx} className="flex items-center gap-3 bg-white dark:bg-gray-800 p-3 rounded-2xl shadow-sm border border-gray-50 dark:border-gray-700">
-                                            <div className="w-2 h-2 rounded-full bg-primary/50" />
-                                            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                                {ingredient}
-                                            </span>
-                                        </li>
-                                    ))}
+                                    {(recipe.ingredients || []).map((ingredient, idx) => {
+                                        const isMatched = recipe.match?.matchedList?.includes(ingredient);
+                                        const isMissing = recipe.match?.missingList?.includes(ingredient);
+
+                                        return (
+                                            <li key={idx} className={`flex items-center gap-3 bg-white dark:bg-gray-800 p-3 rounded-2xl shadow-sm border ${isMissing ? 'border-red-100 dark:border-red-900/30' : isMatched ? 'border-green-100 dark:border-green-900/30' : 'border-gray-50 dark:border-gray-700'}`}>
+                                                <div className={`w-2 h-2 rounded-full flex-shrink-0 ${isMissing ? 'bg-red-400' : isMatched ? 'bg-green-400' : 'bg-primary/50'}`} />
+                                                <span className={`text-sm font-medium ${isMissing ? 'text-red-600 dark:text-red-400' : isMatched ? 'text-green-700 dark:text-green-400' : 'text-gray-700 dark:text-gray-300'}`}>
+                                                    {ingredient}
+                                                </span>
+                                                {isMissing && <span className="ml-auto text-[10px] font-bold text-red-500 bg-red-50 dark:bg-red-900/20 px-2 py-0.5 rounded uppercase">Falta</span>}
+                                                {isMatched && <span className="ml-auto text-[10px] font-bold text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded uppercase">Lo tienes</span>}
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
                             </div>
 
