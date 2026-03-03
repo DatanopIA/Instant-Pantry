@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Check, Star, Zap, ShieldCheck, ArrowLeft } from 'lucide-react';
+import { Check, Star, Zap, ShieldCheck, ArrowLeft, Mail } from 'lucide-react';
+import { useSubscription } from '../hooks/useSubscription';
 
 const PremiumSubscription = () => {
     const navigate = useNavigate();
     const [selectedTier, setSelectedTier] = useState('plus');
+    const { plan } = useSubscription();
 
     const tiers = [
         {
@@ -46,7 +48,7 @@ const PremiumSubscription = () => {
                 'Todo lo anterior',
                 'Análisis nutricional detallado',
                 'Planificación de menús familiar',
-                'Soporte prioritario (info@artbymaeki.com)',
+                'Soporte prioritario',
             ],
             icon: <Star className="w-5 h-5 text-amber-500" />,
             tag: 'Mejor Valor',
@@ -146,19 +148,41 @@ const PremiumSubscription = () => {
 
                             {tier.id !== 'free' && (
                                 <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700/50 flex flex-col sm:flex-row justify-end items-center gap-4">
-                                    <span className="text-sm text-gray-500 hidden sm:block">
-                                        Pago seguro mediante Stripe
-                                    </span>
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            window.open(tier.checkoutUrl, '_blank');
-                                        }}
-                                        className="w-full sm:w-auto flex items-center justify-center gap-2 py-2.5 px-6 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold transition-all duration-300 shadow-lg shadow-primary/20 transform hover:-translate-y-0.5"
-                                    >
-                                        <span>Suscribirme a {tier.name}</span>
-                                        <Zap className="w-4 h-4 fill-current" />
-                                    </button>
+                                    {plan === tier.id ? (
+                                        <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3">
+                                            {tier.id === 'chef' && (
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        window.open('mailto:info@artbymaeki.com?subject=Soporte Prioritario - Chef Elite', '_blank');
+                                                    }}
+                                                    className="w-full sm:w-auto flex items-center justify-center gap-2 py-2.5 px-6 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-bold transition-all shadow-lg"
+                                                >
+                                                    <Mail className="w-4 h-4" />
+                                                    Escribir a Soporte
+                                                </button>
+                                            )}
+                                            <button className="w-full sm:w-auto py-2.5 px-6 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-xl font-bold cursor-default">
+                                                Plan Actual
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <>
+                                            <span className="text-sm text-gray-500 hidden sm:block">
+                                                Pago seguro mediante Stripe
+                                            </span>
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    window.open(tier.checkoutUrl, '_blank');
+                                                }}
+                                                className="w-full sm:w-auto flex items-center justify-center gap-2 py-2.5 px-6 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold transition-all duration-300 shadow-lg shadow-primary/20 transform hover:-translate-y-0.5"
+                                            >
+                                                <span>Suscribirme a {tier.name}</span>
+                                                <Zap className="w-4 h-4 fill-current" />
+                                            </button>
+                                        </>
+                                    )}
                                 </div>
                             )}
                         </div>
@@ -167,14 +191,20 @@ const PremiumSubscription = () => {
 
                 <div className="pt-8">
                     <button
-                        onClick={handleCheckout}
-                        className="w-full py-4 px-8 bg-primary hover:bg-primary-dark text-white text-lg font-bold rounded-2xl shadow-xl shadow-primary/20 transform hover:scale-[1.01] transition-all duration-300 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary/50"
+                        onClick={plan === selectedTier ? undefined : handleCheckout}
+                        disabled={plan === selectedTier}
+                        className={`w-full py-4 px-8 text-white text-lg font-bold rounded-2xl shadow-xl transform transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/50 ${plan === selectedTier
+                                ? 'bg-gray-400 dark:bg-gray-700 cursor-not-allowed shadow-none'
+                                : 'bg-primary hover:bg-primary-dark hover:scale-[1.01] active:scale-95 shadow-primary/20'
+                            }`}
                     >
-                        Comenzar con {tiers.find(t => t.id === selectedTier).name}
+                        {plan === selectedTier ? `Actualmente eres ${tiers.find(t => t.id === selectedTier).name}` : `Comenzar con ${tiers.find(t => t.id === selectedTier).name}`}
                     </button>
-                    <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-500">
-                        Paga de forma segura. Cancela en cualquier momento sin compromisos.
-                    </p>
+                    {plan !== selectedTier && (
+                        <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-500">
+                            Paga de forma segura. Cancela en cualquier momento sin compromisos.
+                        </p>
+                    )}
                 </div>
             </div>
 
