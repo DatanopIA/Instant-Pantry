@@ -4,6 +4,65 @@ import { Wallet, TrendingUp, Sparkles, ChevronRight, Clock } from 'lucide-react'
 import { inventoryService } from '../services/inventoryService';
 import { supabase } from '../utils/supabase';
 
+const getDailySuggestion = (items) => {
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+
+    const newUserSuggestions = [
+        {
+            title: "Tostada de Aguacate",
+            description: "¿Te apetece empezar con esta receta rápida y deliciosa?",
+            actionText: "Empezar",
+            image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=150"
+        },
+        {
+            title: "Pancakes de Avena",
+            description: "Un desayuno perfecto para comenzar a usar tu despensa.",
+            actionText: "Descubrir",
+            image: "https://images.unsplash.com/photo-1528207776546-32248a4c050d?auto=format&fit=crop&q=80&w=150"
+        },
+        {
+            title: "Pasta al Pesto",
+            description: "Añade ingredientes a tu despensa para crear recetas como esta.",
+            actionText: "Ver receta",
+            image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=150"
+        }
+    ];
+
+    const existingUserSuggestions = [
+        {
+            title: "Recomendación Diaria",
+            description: "Basado en tu despensa: Tostada de aguacate ideal para desayunar o cenar.",
+            actionText: "Ver receta",
+            image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=150"
+        },
+        {
+            title: "Recomendación Diaria",
+            description: "Basado en tu despensa: Ensalada fresca y saludable usando tus vegetales.",
+            actionText: "Preparar",
+            image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=150"
+        },
+        {
+            title: "Recomendación Diaria",
+            description: "Basado en tu despensa: Aprovecha los huevos que tienes en un revuelto rápido.",
+            actionText: "Cocinar",
+            image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=150"
+        },
+        {
+            title: "Recomendación Diaria",
+            description: "Basado en tu despensa: Salteado de verduras para aprovechar al máximo lo guardado.",
+            actionText: "Ver pasos",
+            image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=150"
+        }
+    ];
+
+    if (!items || items.length === 0) {
+        return newUserSuggestions[dayOfYear % newUserSuggestions.length];
+    } else {
+        return existingUserSuggestions[dayOfYear % existingUserSuggestions.length];
+    }
+};
+
 const PantryDashboard = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -29,6 +88,7 @@ const PantryDashboard = () => {
     }, []);
 
     const expiringItems = items.filter(item => item.expires_at).slice(0, 3);
+    const currentSuggestion = getDailySuggestion(items);
 
     return (
         <div className="px-5 pt-8">
@@ -156,16 +216,16 @@ const PantryDashboard = () => {
                     </div>
                     <div className="flex items-center gap-4 relative z-10">
                         <div className="flex-1">
-                            <h3 className="font-bold text-lg leading-tight mb-1">Tostada de Aguacate</h3>
-                            <p className="text-xs text-emerald-100 mb-3">Usa tus aguacates y huevos que vencen pronto.</p>
+                            <h3 className="font-bold text-lg leading-tight mb-1">{currentSuggestion.title}</h3>
+                            <p className="text-xs text-emerald-100 mb-3">{currentSuggestion.description}</p>
                             <button className="bg-white text-primary text-xs font-bold py-2.5 px-5 rounded-xl shadow-sm hover:scale-105 active:scale-95 transition-all">
-                                Ver receta
+                                {currentSuggestion.actionText}
                             </button>
                         </div>
                         <img
-                            alt="Recipe"
+                            alt="Recipe Suggestion"
                             className="w-20 h-20 rounded-2xl object-cover shadow-lg border-2 border-white/30"
-                            src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=150"
+                            src={currentSuggestion.image}
                         />
                     </div>
                 </div>

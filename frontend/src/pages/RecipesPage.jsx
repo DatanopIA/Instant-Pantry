@@ -186,6 +186,7 @@ const RecipesPage = () => {
 
     const personalizedRecipes = potentialPantryRecipes
         .map(recipe => ({ ...recipe, match: getMatchScore(recipe) }))
+        .filter(recipe => recipe.match.count > 0)
         .sort((a, b) => b.match.matchPercent - a.match.matchPercent);
 
     const visibleRecommended = showAllRecommended ? globalRecommended : globalRecommended.slice(0, 3);
