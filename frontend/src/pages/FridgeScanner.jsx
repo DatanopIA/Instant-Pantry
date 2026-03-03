@@ -87,7 +87,8 @@ const FridgeScanner = () => {
                     name: item.name,
                     confidence: 0.95,
                     expires_at: item.expires_at, // guardar original para DB
-                    expiry: item.expires_at ? `${Math.ceil((new Date(item.expires_at) - new Date()) / 86400000)} días` : 'N/A'
+                    expiry: item.expires_at ? `${Math.ceil((new Date(item.expires_at) - new Date()) / 86400000)} días` : 'N/A',
+                    selected: true
                 }))
             });
         } catch (err) {
@@ -97,11 +98,26 @@ const FridgeScanner = () => {
         }
     };
 
+    const toggleSelection = (id) => {
+        setResults(prev => ({
+            ...prev,
+            items: prev.items.map(item =>
+                item.id === id ? { ...item, selected: !item.selected } : item
+            )
+        }));
+    };
+
     const handleApply = async () => {
+        const selectedItems = results.items.filter(item => item.selected);
+        if (selectedItems.length === 0) {
+            navigate('/');
+            return;
+        }
+
         setIsProcessing(true);
         try {
             // Guardado real de los artículos detectados
-            const itemsToSave = await Promise.all(results.items.map(async (item) => {
+            const itemsToSave = await Promise.all(selectedItems.map(async (item) => {
                 const product = await inventoryService.getOrCreateProduct(item.name);
                 return {
                     product_id: product.id,
@@ -198,16 +214,19 @@ const FridgeScanner = () => {
 
                                 <div className="space-y-3 max-h-60 overflow-y-auto pr-2">
                                     {results.items.map((item) => (
-                                        <div key={item.id} className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                                        <div key={item.id} className={`flex items-center justify-between p-4 rounded-2xl transition-all ${item.selected ? 'bg-gray-50 dark:bg-gray-800' : 'bg-gray-100/50 dark:bg-gray-800/50 opacity-60'}`}>
                                             <div>
-                                                <p className="font-semibold dark:text-white">{item.name}</p>
+                                                <p className={`font-semibold dark:text-white ${!item.selected && 'line-through text-gray-500 dark:text-gray-400'}`}>{item.name}</p>
                                                 <p className="text-xs text-gray-500">Vence en {item.expiry}</p>
                                             </div>
                                             <div className="flex items-center space-x-2">
                                                 <span className="text-[10px] bg-green-100 text-green-600 px-2 py-1 rounded-full">{Math.round(item.confidence * 100)}%</span>
-                                                <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white">
-                                                    <Check size={14} />
-                                                </div>
+                                                <button
+                                                    onClick={() => toggleSelection(item.id)}
+                                                    className={`w-6 h-6 rounded-full flex items-center justify-center text-white transition-colors ${item.selected ? 'bg-primary' : 'bg-gray-300 dark:bg-gray-600'}`}
+                                                >
+                                                    {item.selected ? <Check size={14} /> : <X size={14} />}
+                                                </button>
                                             </div>
                                         </div>
                                     ))}
