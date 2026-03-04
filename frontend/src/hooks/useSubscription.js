@@ -3,20 +3,17 @@ import { useState, useEffect } from 'react';
 // Plans: 'free', 'plus', 'chef'
 // Temporarily storing in localStorage for easy testing without complex backend
 export const useSubscription = () => {
-    const [plan, setPlan] = useState('free');
+    const [plan, setPlan] = useState(() => {
+        return localStorage.getItem('instant_pantry_plan') || 'free';
+    });
 
     useEffect(() => {
-        const storedPlan = localStorage.getItem('instant_pantry_plan');
-        if (storedPlan) {
-            setPlan(storedPlan);
-        } else {
-            // Check if URL has a successful payment params
-            const params = new URLSearchParams(window.location.search);
-            const successPlan = params.get('plan');
-            if (successPlan && ['plus', 'chef'].includes(successPlan)) {
-                setPlan(successPlan);
-                localStorage.setItem('instant_pantry_plan', successPlan);
-            }
+        // Check if URL has a successful payment params
+        const params = new URLSearchParams(window.location.search);
+        const successPlan = params.get('plan');
+        if (successPlan && ['plus', 'chef'].includes(successPlan)) {
+            setPlan(successPlan);
+            localStorage.setItem('instant_pantry_plan', successPlan);
         }
     }, []);
 

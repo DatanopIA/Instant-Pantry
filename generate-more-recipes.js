@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import { createClient } from '@supabase/supabase-js';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from 'dotenv';
-import { createClient as createPexelsClient } from 'pexels';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,10 +20,6 @@ if (!supabaseKey || !process.env.GEMINI_API_KEY) {
 const supabase = createClient(supabaseUrl, supabaseKey);
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-
-// Pexels client for free high quality stock photos
-// Usamos una API Key publica/gratuita, normalmente necesitariamos la nuestra pero hay placeholders publicos si falla 
-const pexels = createPexelsClient('563492ad6f9170000100000141680ebd65b24c1e8784d6333ea61483');
 
 const categorias = [
     "Desayunos saludables",

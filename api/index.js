@@ -8,6 +8,8 @@ import chatHandler from './ai/chat.js';
 import visionHandler from './process-vision.js';
 import nutritionHandler from './ai/nutrition.js';
 import familyMenuHandler from './ai/family-menu.js';
+import pantryRecipesHandler from './ai/pantry-recipes.js';
+import recommendedRecipesHandler from './recipes/recommended.js';
 
 dotenv.config();
 
@@ -42,6 +44,8 @@ app.post('/api/process-vision', visionHandler);
 
 app.post('/api/ai/nutrition', nutritionHandler);
 app.post('/api/ai/family-menu', familyMenuHandler);
+app.post('/api/ai/pantry-recipes', pantryRecipesHandler);
+app.get('/api/recipes/recommended', recommendedRecipesHandler);
 
 // Iniciar servidor solo si no estamos en Vercel (opcional, Vercel ignora el listen)
 if (process.env.NODE_ENV !== 'production') {
