@@ -17,6 +17,31 @@ const FridgeScanner = () => {
 
     const { features } = useSubscription();
 
+    const compressImage = (base64Str, maxWidth = 1200, maxHeight = 1200) => {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.src = base64Str;
+            img.onload = () => {
+                let width = img.width;
+                let height = img.height;
+
+                if (width > maxWidth || height > maxHeight) {
+                    const ratio = Math.min(maxWidth / width, maxHeight / height);
+                    width *= ratio;
+                    height *= ratio;
+                }
+
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+                resolve(canvas.toDataURL('image/jpeg', 0.7));
+            };
+            img.onerror = () => resolve(base64Str);
+        });
+    };
+
     // Define functions before useEffect to avoid declaration errors
     const stopCamera = () => {
         if (stream) {
@@ -54,10 +79,11 @@ const FridgeScanner = () => {
             canvas.height = videoRef.current.videoHeight;
             const ctx = canvas.getContext('2d');
             ctx.drawImage(videoRef.current, 0, 0);
-            const image = canvas.toDataURL('image/jpeg');
-            setCapturedImage(image);
+            const rawImage = canvas.toDataURL('image/jpeg', 0.9);
+            const compressed = await compressImage(rawImage);
+            setCapturedImage(compressed);
             stopCamera();
-            await processImage(image);
+            await processImage(compressed);
         }
     };
 
@@ -67,9 +93,17 @@ const FridgeScanner = () => {
 
         const reader = new FileReader();
         reader.onloadend = async () => {
-            const base64Data = reader.result;
+            let base64Data = reader.result;
+
+            // Show preview immediately with original
             setCapturedImage(base64Data);
             stopCamera();
+
+            // Compress if it is an image
+            if (file.type.startsWith('image/')) {
+                base64Data = await compressImage(base64Data);
+            }
+
             await processImage(base64Data);
         };
         reader.readAsDataURL(file);
