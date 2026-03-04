@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from 'dotenv';
-import { supabase } from '../../utils/supabase.js';
+import { supabase } from '../utils/supabase.js';
 dotenv.config();
 
 export default async function handler(req, res) {
