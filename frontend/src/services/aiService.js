@@ -122,10 +122,10 @@ export const aiService = {
             const fullUrl = `${API_URL}/api/ai/pantry-recipes`;
             const response = await axios.post(fullUrl, { pantry: pantryNames, count }, { timeout: 45000 });
 
-            // Reemplazamos la imagen de la IA o de origin con nuestro mapeador seguro
+            // Reemplazamos la imagen solo si no trae una configurada (ej: Pollinations URL)
             const recipesWithImages = (response.data || []).map(recipe => ({
                 ...recipe,
-                image: getRecipeImage(recipe.title)
+                image: recipe.image || getRecipeImage(recipe.title)
             }));
 
             return recipesWithImages;
@@ -145,7 +145,11 @@ export const aiService = {
     async getRecommendedRecipes() {
         try {
             const response = await axios.get(`${API_URL}/api/recipes/recommended`);
-            return response.data;
+            // Mantenemos la imagen que devuelva (pollinations) o fallback
+            return (response.data || []).map(recipe => ({
+                ...recipe,
+                image: recipe.image || getRecipeImage(recipe.title)
+            }));
         } catch (error) {
             console.error('Error fetching recommended recipes', error);
             return FALLBACK_RECIPES.slice(0, 5).map(recipe => ({

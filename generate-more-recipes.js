@@ -90,16 +90,23 @@ async function run() {
             }
 
             if (unicas.length > 0) {
-                const formattedRecipes = unicas.map(r => ({
-                    title: r.title || 'Sin Título',
-                    description: r.description || '',
-                    ingredients: r.ingredients || [],
-                    instructions: r.instructions || [],
-                    category: r.tags && r.tags.length > 0 ? r.tags[0] : null,
-                    difficulty: r.difficulty || 'Media',
-                    prep_time: r.prepTime || '30 min',
-                    tags: r.tags || []
-                }));
+                const formattedRecipes = unicas.map(r => {
+                    const title = r.title || 'Sin Título';
+                    const prompt = `Delicioso plato de ${title}, fotografia culinaria profesional de alta calidad, iluminacion de estudio, restaurante estrella michelin, apetitoso`;
+                    const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=800&height=600&nologo=true`;
+
+                    return {
+                        title: title,
+                        description: r.description || '',
+                        ingredients: r.ingredients || [],
+                        instructions: r.instructions || [],
+                        category: r.tags && r.tags.length > 0 ? r.tags[0] : null,
+                        difficulty: r.difficulty || 'Media',
+                        prep_time: r.prepTime || '30 min',
+                        image_url: imageUrl,
+                        tags: r.tags || []
+                    };
+                });
 
                 const { error } = await supabase.from('global_recipes').insert(formattedRecipes);
                 if (error) {
