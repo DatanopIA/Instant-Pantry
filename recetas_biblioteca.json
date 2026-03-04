@@ -1,0 +1,5209 @@
+[
+  {
+    "title": "Arroz salteado de aprovechamiento",
+    "description": "Perfecto para usar arroz ya cocido y verduras sueltas de la nevera.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "300g Arroz blanco cocido",
+      "1/2 Cebolla",
+      "1 Zanahoria",
+      "1/2 Pimiento rojo",
+      "1 Huevo",
+      "2 cucharadas Salsa de soja",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Pica las verduras en trozos pequeños.",
+      "Saltea la cebolla, zanahoria y pimiento 5 minutos.",
+      "Añade el arroz y mezcla bien.",
+      "Incorpora el huevo y remueve hasta que cuaje.",
+      "Agrega salsa de soja y cocina 2 minutos más."
+    ],
+    "tags": [
+      "Arroz",
+      "Aprovechamiento",
+      "Rápido"
+    ]
+  },
+  {
+    "title": "Tortilla de verduras sobrantes",
+    "description": "Ideal para usar restos de verduras cocidas o salteadas.",
+    "prepTime": "20 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "4 Huevos",
+      "1 taza Verduras cocidas variadas",
+      "1/2 Cebolla",
+      "Aceite de oliva",
+      "Sal"
+    ],
+    "instructions": [
+      "Bate los huevos con sal.",
+      "Mezcla con las verduras picadas.",
+      "Sofríe la cebolla 3 minutos.",
+      "Añade la mezcla y cuaja por ambos lados."
+    ],
+    "tags": [
+      "Huevos",
+      "Aprovechamiento",
+      "Vegetariano"
+    ]
+  },
+  {
+    "title": "Pollo al horno con patatas reutilizadas",
+    "description": "Da nueva vida a patatas cocidas del día anterior.",
+    "prepTime": "10 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "2 Muslos de pollo",
+      "400g Patatas cocidas",
+      "2 Dientes de ajo",
+      "Aceite de oliva",
+      "Pimentón",
+      "Sal"
+    ],
+    "instructions": [
+      "Precalienta el horno a 200°C.",
+      "Coloca el pollo y las patatas en una bandeja.",
+      "Añade ajo picado, aceite y pimentón.",
+      "Hornea 35-40 minutos hasta dorar."
+    ],
+    "tags": [
+      "Pollo",
+      "Horno",
+      "Batch"
+    ]
+  },
+  {
+    "title": "Crema de verduras recicladas",
+    "description": "Perfecta para aprovechar verduras maduras.",
+    "prepTime": "25 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "2 Zanahorias",
+      "1 Calabacín",
+      "1/2 Cebolla",
+      "500ml Caldo de verduras",
+      "Aceite de oliva",
+      "Sal"
+    ],
+    "instructions": [
+      "Trocea las verduras.",
+      "Sofríe la cebolla 3 minutos.",
+      "Añade el resto y cubre con caldo.",
+      "Cocina 20 minutos y tritura."
+    ],
+    "tags": [
+      "Verduras",
+      "Aprovechamiento",
+      "Saludable"
+    ]
+  },
+  {
+    "title": "Pasta con tomate y atún básico",
+    "description": "Usa media lata de atún abierta.",
+    "prepTime": "20 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "250g Pasta",
+      "1/2 Lata de atún",
+      "200g Tomate triturado",
+      "1/2 Cebolla",
+      "Aceite de oliva",
+      "Orégano"
+    ],
+    "instructions": [
+      "Cuece la pasta según instrucciones.",
+      "Sofríe la cebolla.",
+      "Añade tomate y cocina 5 minutos.",
+      "Incorpora el atún y mezcla con la pasta."
+    ],
+    "tags": [
+      "Pasta",
+      "Rápido",
+      "Económico"
+    ]
+  },
+  {
+    "title": "Ensalada templada de garbanzos",
+    "description": "Ideal para usar garbanzos cocidos sobrantes.",
+    "prepTime": "10 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "250g Garbanzos cocidos",
+      "1/2 Pimiento verde",
+      "1 Tomate",
+      "Aceite de oliva",
+      "Vinagre",
+      "Sal"
+    ],
+    "instructions": [
+      "Mezcla todos los ingredientes en un bol.",
+      "Aliña con aceite, vinagre y sal.",
+      "Sirve templado o frío."
+    ],
+    "tags": [
+      "Legumbres",
+      "Rápido",
+      "Vegetariano"
+    ]
+  },
+  {
+    "title": "Revuelto de champiñones y jamón",
+    "description": "Aprovecha champiñones abiertos.",
+    "prepTime": "12 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "3 Huevos",
+      "150g Champiñones",
+      "50g Jamón serrano",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Saltea los champiñones 5 minutos.",
+      "Añade el jamón.",
+      "Incorpora los huevos batidos y remueve hasta cuajar."
+    ],
+    "tags": [
+      "Huevos",
+      "Rápido",
+      "Proteico"
+    ]
+  },
+  {
+    "title": "Patatas salteadas con chorizo",
+    "description": "Reutiliza patatas cocidas.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "400g Patatas cocidas",
+      "80g Chorizo",
+      "1/2 Cebolla",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Saltea la cebolla.",
+      "Añade patatas en dados.",
+      "Incorpora chorizo y cocina hasta dorar."
+    ],
+    "tags": [
+      "Patatas",
+      "Aprovechamiento",
+      "Económico"
+    ]
+  },
+  {
+    "title": "Wrap de pollo reciclado",
+    "description": "Usa pollo asado sobrante.",
+    "prepTime": "10 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "1 Tortilla de trigo",
+      "100g Pollo cocido",
+      "Lechuga",
+      "Tomate",
+      "1 cucharada Yogur natural"
+    ],
+    "instructions": [
+      "Desmenuza el pollo.",
+      "Coloca todos los ingredientes en la tortilla.",
+      "Enrolla y sirve."
+    ],
+    "tags": [
+      "Wrap",
+      "Rápido",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Arroz meloso con verduras maduras",
+    "description": "Ideal para verduras a punto de estropearse.",
+    "prepTime": "30 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "250g Arroz",
+      "1 Calabacín",
+      "1 Zanahoria",
+      "1/2 Cebolla",
+      "700ml Caldo de verduras",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Sofríe las verduras picadas.",
+      "Añade el arroz y remueve.",
+      "Incorpora el caldo poco a poco hasta cocer."
+    ],
+    "tags": [
+      "Arroz",
+      "Batch",
+      "Vegetariano"
+    ]
+  },
+  {
+    "title": "Lentejas rápidas de aprovechamiento",
+    "description": "Perfectas para usar verduras que están perdiendo frescura.",
+    "prepTime": "30 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "250g Lentejas cocidas",
+      "1/2 Cebolla",
+      "1 Zanahoria",
+      "1/2 Pimiento rojo",
+      "400ml Caldo de verduras",
+      "1 cucharada Aceite de oliva"
+    ],
+    "instructions": [
+      "Sofríe la cebolla, zanahoria y pimiento picados.",
+      "Añade las lentejas y el caldo.",
+      "Cocina 15 minutos a fuego medio.",
+      "Rectifica de sal y sirve."
+    ],
+    "tags": [
+      "Legumbres",
+      "Batch",
+      "Económico"
+    ]
+  },
+  {
+    "title": "Puré rústico de patata y zanahoria",
+    "description": "Ideal para aprovechar patatas cocidas sobrantes.",
+    "prepTime": "20 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "500g Patatas cocidas",
+      "2 Zanahorias",
+      "30ml Leche",
+      "1 cucharada Mantequilla",
+      "Sal"
+    ],
+    "instructions": [
+      "Cuece las zanahorias hasta que estén tiernas.",
+      "Machaca junto con las patatas.",
+      "Añade leche y mantequilla.",
+      "Mezcla hasta obtener textura cremosa."
+    ],
+    "tags": [
+      "Acompañamiento",
+      "Vegetariano",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Salteado de arroz integral con verduras",
+    "description": "Receta rápida para usar arroz ya cocido.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "300g Arroz integral cocido",
+      "1/2 Calabacín",
+      "1/2 Pimiento verde",
+      "1 Huevo",
+      "2 cucharadas Salsa de soja",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Saltea las verduras picadas.",
+      "Añade el arroz y mezcla.",
+      "Incorpora el huevo y remueve.",
+      "Agrega soja y cocina 2 minutos más."
+    ],
+    "tags": [
+      "Arroz",
+      "Rápido",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Berenjena rellena sencilla",
+    "description": "Aprovecha restos de carne o verduras.",
+    "prepTime": "35 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 Berenjena",
+      "150g Carne picada cocida",
+      "100g Tomate triturado",
+      "30g Queso rallado",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Hornea la berenjena partida 20 minutos.",
+      "Vacía la pulpa y mézclala con la carne y tomate.",
+      "Rellena y cubre con queso.",
+      "Gratina 10 minutos."
+    ],
+    "tags": [
+      "Horno",
+      "Batch",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Ensalada fría de pasta reutilizada",
+    "description": "Perfecta para pasta sobrante del día anterior.",
+    "prepTime": "10 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "250g Pasta cocida",
+      "1/2 Lata de atún",
+      "1 Tomate",
+      "1 cucharada Maíz",
+      "Aceite de oliva",
+      "Vinagre"
+    ],
+    "instructions": [
+      "Mezcla todos los ingredientes en frío.",
+      "Aliña al gusto.",
+      "Refrigera 15 minutos antes de servir."
+    ],
+    "tags": [
+      "Pasta",
+      "Fría",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Huevos al plato con verduras",
+    "description": "Ideal para usar salsa de tomate abierta.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "2 Huevos",
+      "150ml Tomate frito",
+      "1/2 Calabacín",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Saltea el calabacín en una sartén.",
+      "Añade el tomate y calienta.",
+      "Casca los huevos encima.",
+      "Tapa y cocina hasta que cuajen."
+    ],
+    "tags": [
+      "Huevos",
+      "Rápido",
+      "Económico"
+    ]
+  },
+  {
+    "title": "Garbanzos salteados con espinacas",
+    "description": "Aprovecha espinacas frescas antes de que se estropeen.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "250g Garbanzos cocidos",
+      "1 taza Espinacas frescas",
+      "1 Diente de ajo",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Saltea el ajo picado.",
+      "Añade espinacas hasta que reduzcan.",
+      "Incorpora los garbanzos y saltea 5 minutos."
+    ],
+    "tags": [
+      "Legumbres",
+      "Saludable",
+      "Vegetariano"
+    ]
+  },
+  {
+    "title": "Pollo salteado con arroz reciclado",
+    "description": "Nueva vida para arroz y pollo cocido.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "200g Pollo cocido",
+      "250g Arroz cocido",
+      "1/2 Pimiento rojo",
+      "2 cucharadas Salsa de soja",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Saltea el pimiento.",
+      "Añade el pollo desmenuzado.",
+      "Incorpora el arroz.",
+      "Agrega soja y cocina 3 minutos."
+    ],
+    "tags": [
+      "Pollo",
+      "Arroz",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Crema rápida de calabacín",
+    "description": "Ideal para calabacines maduros.",
+    "prepTime": "25 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "2 Calabacines",
+      "1/2 Cebolla",
+      "500ml Caldo de verduras",
+      "1 cucharada Aceite de oliva"
+    ],
+    "instructions": [
+      "Sofríe la cebolla.",
+      "Añade calabacín troceado.",
+      "Cubre con caldo y cocina 20 minutos.",
+      "Tritura hasta obtener crema."
+    ],
+    "tags": [
+      "Crema",
+      "Vegetariano",
+      "Batch"
+    ]
+  },
+  {
+    "title": "Tostadas gratinadas de aprovechamiento",
+    "description": "Perfectas para pan del día anterior.",
+    "prepTime": "10 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "2 Rebanadas Pan",
+      "50g Queso rallado",
+      "100g Verduras salteadas sobrantes",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Coloca las verduras sobre el pan.",
+      "Añade queso por encima.",
+      "Gratina 5 minutos hasta dorar."
+    ],
+    "tags": [
+      "Pan",
+      "Rápido",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Arroz al horno con verduras asadas",
+    "description": "Ideal para reutilizar verduras asadas del día anterior.",
+    "prepTime": "25 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "300g Arroz cocido",
+      "1 taza Verduras asadas sobrantes",
+      "50g Queso rallado",
+      "1 cucharada Aceite de oliva"
+    ],
+    "instructions": [
+      "Precalienta el horno a 190°C.",
+      "Mezcla el arroz con las verduras.",
+      "Coloca en una fuente, añade queso por encima.",
+      "Hornea 15 minutos hasta gratinar."
+    ],
+    "tags": [
+      "Arroz",
+      "Horno",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Croquetas rápidas de pollo",
+    "description": "Perfectas para usar pollo cocido sobrante.",
+    "prepTime": "30 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200g Pollo cocido",
+      "40g Harina",
+      "250ml Leche",
+      "1 cucharada Mantequilla",
+      "Pan rallado",
+      "1 Huevo"
+    ],
+    "instructions": [
+      "Derrite la mantequilla y añade harina.",
+      "Incorpora leche poco a poco hasta espesar.",
+      "Añade el pollo desmenuzado.",
+      "Forma croquetas, pasa por huevo y pan rallado.",
+      "Fríe hasta dorar."
+    ],
+    "tags": [
+      "Pollo",
+      "Aprovechamiento",
+      "Batch"
+    ]
+  },
+  {
+    "title": "Ensalada de arroz y garbanzos",
+    "description": "Aprovecha arroz y legumbres ya cocidos.",
+    "prepTime": "10 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "200g Arroz cocido",
+      "200g Garbanzos cocidos",
+      "1 Tomate",
+      "1/2 Pepino",
+      "Aceite de oliva",
+      "Vinagre"
+    ],
+    "instructions": [
+      "Mezcla todos los ingredientes en frío.",
+      "Aliña al gusto.",
+      "Sirve fría."
+    ],
+    "tags": [
+      "Ensalada",
+      "Legumbres",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Tortilla rellena de arroz",
+    "description": "Reutiliza arroz blanco sobrante.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "3 Huevos",
+      "150g Arroz cocido",
+      "30g Queso rallado",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Bate los huevos.",
+      "Mezcla con el arroz y queso.",
+      "Cuaja en sartén por ambos lados."
+    ],
+    "tags": [
+      "Huevos",
+      "Arroz",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Salteado de patata y verduras",
+    "description": "Da salida a patatas cocidas y verduras abiertas.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "400g Patatas cocidas",
+      "1/2 Calabacín",
+      "1/2 Pimiento rojo",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Corta las patatas en dados.",
+      "Saltea junto a las verduras 8 minutos.",
+      "Sirve caliente."
+    ],
+    "tags": [
+      "Patatas",
+      "Vegetariano",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Pasta gratinada con verduras",
+    "description": "Perfecta para pasta cocida sobrante.",
+    "prepTime": "20 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "250g Pasta cocida",
+      "150g Verduras salteadas",
+      "50g Queso rallado",
+      "100ml Tomate triturado"
+    ],
+    "instructions": [
+      "Mezcla la pasta con tomate y verduras.",
+      "Coloca en fuente apta para horno.",
+      "Añade queso y gratina 10 minutos."
+    ],
+    "tags": [
+      "Pasta",
+      "Horno",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Bowl templado de lentejas y arroz",
+    "description": "Aprovecha legumbres y arroz cocidos.",
+    "prepTime": "12 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "200g Lentejas cocidas",
+      "150g Arroz cocido",
+      "1/2 Cebolla",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Saltea la cebolla.",
+      "Añade lentejas y arroz.",
+      "Cocina 5 minutos y sirve."
+    ],
+    "tags": [
+      "Legumbres",
+      "Arroz",
+      "Económico"
+    ]
+  },
+  {
+    "title": "Pan tostado con tomate y atún",
+    "description": "Ideal para pan del día anterior y media lata de atún.",
+    "prepTime": "8 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "2 Rebanadas Pan",
+      "1/2 Lata de atún",
+      "1 Tomate rallado",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Tuesta el pan.",
+      "Unta el tomate rallado.",
+      "Añade el atún y un chorrito de aceite."
+    ],
+    "tags": [
+      "Pan",
+      "Rápido",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Revuelto de espinacas y queso",
+    "description": "Para usar espinacas frescas antes de que se estropeen.",
+    "prepTime": "10 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "3 Huevos",
+      "1 taza Espinacas",
+      "30g Queso rallado",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Saltea espinacas hasta reducir.",
+      "Añade huevos batidos.",
+      "Incorpora queso y remueve."
+    ],
+    "tags": [
+      "Huevos",
+      "Vegetariano",
+      "Rápido"
+    ]
+  },
+  {
+    "title": "Guiso rápido de pollo y verduras",
+    "description": "Reutiliza pollo ya cocinado.",
+    "prepTime": "20 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "250g Pollo cocido",
+      "1 Zanahoria",
+      "1/2 Cebolla",
+      "400ml Caldo de pollo",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Sofríe cebolla y zanahoria.",
+      "Añade pollo desmenuzado.",
+      "Incorpora caldo y cocina 15 minutos."
+    ],
+    "tags": [
+      "Pollo",
+      "Guiso",
+      "Aprovechamiento"
+    ]
+  },
+  {
+    "title": "Risotto cremoso de champiñones",
+    "description": "Versión cremosa y económica usando arroz común y champiñones frescos.",
+    "prepTime": "30 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "250g Arroz blanco",
+      "200g Champiñones",
+      "1/2 Cebolla",
+      "700ml Caldo de verduras",
+      "30g Queso rallado",
+      "1 cucharada Mantequilla"
+    ],
+    "instructions": [
+      "Sofríe la cebolla picada.",
+      "Añade champiñones laminados.",
+      "Incorpora el arroz y remueve.",
+      "Añade caldo poco a poco hasta cocer.",
+      "Finaliza con mantequilla y queso."
+    ],
+    "tags": [
+      "Arroz",
+      "Premium",
+      "Cremoso"
+    ]
+  },
+  {
+    "title": "Empanada rápida de verduras sobrantes",
+    "description": "Perfecta para usar verduras salteadas del día anterior.",
+    "prepTime": "35 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "1 Masa de hojaldre",
+      "1 taza Verduras salteadas",
+      "1 Huevo",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Extiende la masa.",
+      "Rellena con las verduras.",
+      "Cierra y pinta con huevo.",
+      "Hornea 25 minutos a 190°C."
+    ],
+    "tags": [
+      "Horno",
+      "Aprovechamiento",
+      "Batch"
+    ]
+  },
+  {
+    "title": "Salmón a la plancha con salsa de yogur y limón",
+    "description": "Receta fresca y ligera con toque sofisticado.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "2 Lomos de salmón",
+      "1 Yogur natural",
+      "1/2 Limón",
+      "1 cucharada Aceite de oliva",
+      "Perejil"
+    ],
+    "instructions": [
+      "Marca el salmón 3-4 minutos por lado.",
+      "Mezcla yogur con limón y perejil.",
+      "Sirve el salmón con la salsa por encima."
+    ],
+    "tags": [
+      "Pescado",
+      "Premium",
+      "Saludable"
+    ]
+  },
+  {
+    "title": "Arroz salteado con restos de carne",
+    "description": "Aprovecha cualquier carne cocida sobrante.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "300g Arroz cocido",
+      "150g Carne cocida",
+      "1/2 Pimiento verde",
+      "2 cucharadas Salsa de soja",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Saltea el pimiento.",
+      "Añade la carne troceada.",
+      "Incorpora arroz y soja.",
+      "Cocina 5 minutos removiendo."
+    ],
+    "tags": [
+      "Arroz",
+      "Aprovechamiento",
+      "Rápido"
+    ]
+  },
+  {
+    "title": "Pollo en salsa cremosa de mostaza",
+    "description": "Plato sencillo con toque elegante.",
+    "prepTime": "25 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 Pechugas de pollo",
+      "100ml Nata",
+      "1 cucharada Mostaza",
+      "1/2 Cebolla",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Dora el pollo y retira.",
+      "Sofríe la cebolla.",
+      "Añade nata y mostaza.",
+      "Incorpora el pollo y cocina 10 minutos."
+    ],
+    "tags": [
+      "Pollo",
+      "Premium",
+      "Cremoso"
+    ]
+  },
+  {
+    "title": "Tortilla abierta de verduras asadas",
+    "description": "Reutiliza verduras del horno.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "3 Huevos",
+      "1 taza Verduras asadas",
+      "30g Queso rallado",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Bate los huevos.",
+      "Añade verduras troceadas.",
+      "Cuaja en sartén y añade queso por encima."
+    ],
+    "tags": [
+      "Huevos",
+      "Aprovechamiento",
+      "Rápido"
+    ]
+  },
+  {
+    "title": "Pasta cremosa con espinacas y queso azul",
+    "description": "Plato intenso y sofisticado con ingredientes básicos.",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "250g Pasta",
+      "1 taza Espinacas",
+      "40g Queso azul",
+      "100ml Nata",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Cuece la pasta.",
+      "Saltea espinacas.",
+      "Añade nata y queso azul hasta fundir.",
+      "Mezcla con la pasta."
+    ],
+    "tags": [
+      "Pasta",
+      "Premium",
+      "Cremoso"
+    ]
+  },
+  {
+    "title": "Crema rústica de patata y puerro",
+    "description": "Ideal para puerros abiertos.",
+    "prepTime": "30 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "2 Patatas",
+      "1 Puerro",
+      "600ml Caldo de verduras",
+      "1 cucharada Mantequilla"
+    ],
+    "instructions": [
+      "Sofríe el puerro.",
+      "Añade patatas en dados.",
+      "Cubre con caldo y cocina 20 minutos.",
+      "Tritura hasta cremoso."
+    ],
+    "tags": [
+      "Crema",
+      "Aprovechamiento",
+      "Batch"
+    ]
+  },
+  {
+    "title": "Bacalao al horno con tomate y albahaca",
+    "description": "Receta sencilla con resultado elegante.",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 Lomos de bacalao",
+      "200g Tomate triturado",
+      "Albahaca",
+      "Aceite de oliva"
+    ],
+    "instructions": [
+      "Coloca el bacalao en fuente.",
+      "Cubre con tomate y albahaca.",
+      "Hornea 15 minutos a 190°C."
+    ],
+    "tags": [
+      "Pescado",
+      "Premium",
+      "Horno"
+    ]
+  },
+  {
+    "title": "Ensalada templada de pollo y quinoa",
+    "description": "Perfecta para usar quinoa cocida sobrante.",
+    "prepTime": "15 min",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "200g Quinoa cocida",
+      "150g Pollo cocido",
+      "1/2 Pepino",
+      "Aceite de oliva",
+      "Limón"
+    ],
+    "instructions": [
+      "Mezcla quinoa y pollo.",
+      "Añade pepino troceado.",
+      "Aliña con aceite y limón."
+    ],
+    "tags": [
+      "Saludable",
+      "Aprovechamiento",
+      "Ligero"
+    ]
+  },
+  {
+    "title": "Tortilla de arroz y verduras (aprovechamiento)",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 tazas arroz cocido",
+      "3 unidades huevos",
+      "1 pequeña cebolla",
+      "1 pequeña zanahoria",
+      "1/2 unidad pimiento",
+      "al gusto sal",
+      "2 cucharadas aceite de oliva"
+    ],
+    "instructions": [
+      "Picar la cebolla, zanahoria y pimiento en cubos pequeños.",
+      "Sofreír las verduras en aceite hasta que estén tiernas.",
+      "Añadir el arroz cocido y mezclar bien.",
+      "Batir los huevos con sal e incorporarlos a la mezcla.",
+      "Cocinar a fuego medio hasta que cuaje por un lado.",
+      "Dar la vuelta y cocinar hasta que esté completamente firme."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Pollo relleno de espinaca y queso",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades pechugas de pollo",
+      "1 taza espinaca fresca",
+      "100 g queso mozzarella",
+      "1 diente ajo",
+      "al gusto sal",
+      "al gusto pimienta",
+      "2 cucharadas aceite de oliva"
+    ],
+    "instructions": [
+      "Abrir las pechugas en forma de libro.",
+      "Saltear la espinaca con ajo hasta que reduzca.",
+      "Rellenar el pollo con espinaca y mozzarella.",
+      "Cerrar con palillos y salpimentar.",
+      "Sellar en sartén con aceite hasta dorar.",
+      "Terminar de cocinar tapado a fuego medio 10 minutos."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Sopa rústica de verduras y pan duro",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 tazas en trozos pan duro",
+      "2 unidades tomate",
+      "1 unidad cebolla",
+      "1 unidad zanahoria",
+      "1 litro caldo de verduras",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Sofreír cebolla y zanahoria picadas.",
+      "Añadir tomate en cubos y cocinar 5 minutos.",
+      "Incorporar caldo y hervir 10 minutos.",
+      "Agregar pan duro y cocinar hasta que espese.",
+      "Ajustar sal y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Risotto cremoso de champiñones",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza arroz",
+      "200 g champiñones",
+      "1 pequeña cebolla",
+      "1 litro caldo de verduras",
+      "50 g queso parmesano",
+      "1 cucharada mantequilla",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Sofreír cebolla picada en aceite.",
+      "Añadir arroz y nacarar durante 2 minutos.",
+      "Incorporar champiñones laminados.",
+      "Agregar caldo caliente poco a poco removiendo.",
+      "Cuando esté cremoso, añadir mantequilla y parmesano.",
+      "Mezclar y servir inmediatamente."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Croquetas de patata y atún",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades patatas cocidas",
+      "1 lata atún en lata",
+      "1 unidad huevo",
+      "1 taza pan rallado",
+      "al gusto sal",
+      "cantidad necesaria aceite para freír"
+    ],
+    "instructions": [
+      "Machacar las patatas hasta hacer puré.",
+      "Mezclar con atún escurrido y sal.",
+      "Formar croquetas y pasarlas por huevo batido.",
+      "Rebozar en pan rallado.",
+      "Freír en aceite caliente hasta dorar.",
+      "Escurrir en papel absorbente y servir."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Salmón glaseado con miel y limón",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades lomos de salmón",
+      "2 cucharadas miel",
+      "1 unidad limón",
+      "1 diente ajo",
+      "1 cucharada aceite de oliva",
+      "al gusto sal",
+      "al gusto pimienta"
+    ],
+    "instructions": [
+      "Mezclar miel, jugo de limón y ajo picado.",
+      "Salpimentar el salmón.",
+      "Sellar en sartén con aceite 3 minutos por lado.",
+      "Añadir el glaseado y cocinar hasta caramelizar.",
+      "Servir con el jugo reducido por encima."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Arroz frito de pollo (aprovechamiento)",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 tazas arroz cocido",
+      "1 taza en cubos pollo cocido",
+      "1 unidad huevo",
+      "1 pequeña zanahoria",
+      "1/2 unidad cebolla",
+      "2 cucharadas salsa de soja",
+      "2 cucharadas aceite"
+    ],
+    "instructions": [
+      "Saltear cebolla y zanahoria picadas.",
+      "Añadir pollo y arroz, mezclar bien.",
+      "Empujar a un lado y cocinar el huevo batido.",
+      "Integrar todo y agregar salsa de soja.",
+      "Saltear 3 minutos y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Lasaña rápida de verduras",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "8 unidades láminas de pasta",
+      "1 unidad calabacín",
+      "1 unidad berenjena",
+      "2 tazas tomate triturado",
+      "200 g queso mozzarella",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cortar calabacín y berenjena en láminas y saltear.",
+      "Colocar capas de pasta, verduras, tomate y queso.",
+      "Repetir hasta terminar ingredientes.",
+      "Hornear a 180°C durante 25 minutos.",
+      "Reposar 5 minutos y servir."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Ensalada templada de patata y huevo",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades patatas cocidas",
+      "2 unidades huevos cocidos",
+      "1/4 unidad cebolla",
+      "2 cucharadas aceite de oliva",
+      "1 cucharada vinagre",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cortar patatas y huevos en rodajas.",
+      "Picar la cebolla finamente.",
+      "Mezclar aceite, vinagre y sal.",
+      "Unir todo y servir templado."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Pechuga de pollo en salsa de champiñones",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades pechugas de pollo",
+      "200 g champiñones",
+      "1 taza nata",
+      "1 diente ajo",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal",
+      "al gusto pimienta"
+    ],
+    "instructions": [
+      "Sellar las pechugas salpimentadas.",
+      "Retirar y saltear champiñones con ajo.",
+      "Agregar nata y reducir 5 minutos.",
+      "Incorporar el pollo y cocinar 8 minutos.",
+      "Servir con la salsa por encima."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Empanadillas de atún y tomate",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "10 unidades obleas para empanadillas",
+      "1 lata atún en lata",
+      "1/2 taza tomate frito",
+      "1 unidad huevo",
+      "para freír aceite"
+    ],
+    "instructions": [
+      "Mezclar atún con tomate.",
+      "Rellenar las obleas y cerrar con tenedor.",
+      "Pincelar con huevo batido.",
+      "Freír o hornear hasta dorar."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Filete de ternera con puré trufado",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades filetes de ternera",
+      "3 unidades patatas",
+      "2 cucharadas mantequilla",
+      "1/2 taza leche",
+      "1 cucharadita aceite de trufa",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cocer patatas y triturar con mantequilla y leche.",
+      "Añadir aceite de trufa y mezclar.",
+      "Sellar los filetes al punto deseado.",
+      "Servir con puré caliente."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Sopa de arroz con verduras",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1/2 taza arroz",
+      "1 unidad zanahoria",
+      "1 rama apio",
+      "1/2 unidad cebolla",
+      "1 litro caldo de verduras",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Sofreír cebolla, zanahoria y apio.",
+      "Agregar caldo y arroz.",
+      "Cocinar 15 minutos hasta que el arroz esté tierno.",
+      "Rectificar sal y servir."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Pasta cremosa con salmón y espinaca",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "250 g pasta",
+      "150 g salmón",
+      "1 taza espinaca",
+      "1 taza nata",
+      "1 diente ajo",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cocer la pasta según instrucciones.",
+      "Saltear ajo y salmón en cubos.",
+      "Agregar nata y espinaca hasta reducir.",
+      "Mezclar con la pasta y servir."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Revuelto de verduras y queso",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevos",
+      "1/2 unidad pimiento",
+      "1/2 unidad calabacín",
+      "1/2 taza queso rallado",
+      "1 cucharada aceite",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Saltear verduras picadas.",
+      "Batir huevos con sal.",
+      "Agregar a la sartén y remover.",
+      "Añadir queso y cocinar hasta cuajar."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Arroz meloso de mariscos",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza arroz",
+      "300 g mezcla de mariscos",
+      "1 litro caldo de pescado",
+      "1 diente ajo",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Sofreír ajo en aceite.",
+      "Añadir mariscos y saltear.",
+      "Incorporar arroz y mezclar.",
+      "Agregar caldo poco a poco removiendo.",
+      "Cocinar hasta textura melosa y servir."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Tortilla de patata y cebolla (aprovechamiento)",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades patatas",
+      "1 unidad cebolla",
+      "3 unidades huevos",
+      "3 cucharadas aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Pelar y cortar patatas y cebolla en rodajas finas.",
+      "Freír en aceite hasta dorar y escurrir.",
+      "Batir los huevos y mezclar con las patatas y cebolla.",
+      "Cuajar en sartén a fuego medio hasta dorar por ambos lados."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Salmón al horno con limón y hierbas",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades lomos de salmón",
+      "1 unidad limón",
+      "1 cucharada picada perejil",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal",
+      "al gusto pimienta"
+    ],
+    "instructions": [
+      "Precalentar el horno a 180°C.",
+      "Colocar el salmón en fuente, salpimentar.",
+      "Rociar con aceite y jugo de limón, espolvorear perejil.",
+      "Hornear 15-20 minutos y servir."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Sopa de verduras con fideos",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 litro caldo de verduras",
+      "1 unidad zanahoria",
+      "1/2 unidad calabacín",
+      "50 g fideos finos",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cortar verduras en cubos pequeños.",
+      "Hervir en caldo durante 10 minutos.",
+      "Añadir fideos y cocinar 5 minutos más.",
+      "Rectificar sal y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Pasta al horno con bechamel y queso",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "250 g pasta corta",
+      "100 g queso rallado",
+      "200 ml bechamel",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cocer la pasta y escurrir.",
+      "Mezclar con bechamel y colocar en fuente para horno.",
+      "Espolvorear queso rallado encima.",
+      "Hornear a 180°C durante 15 minutos hasta gratinar."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Ensalada de garbanzos y atún",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza garbanzos cocidos",
+      "1 lata atún en lata",
+      "1 unidad tomate",
+      "2 cucharadas aceite de oliva",
+      "1 cucharada vinagre",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Mezclar garbanzos con atún y tomate picado.",
+      "Aliñar con aceite, vinagre y sal.",
+      "Servir fría o a temperatura ambiente."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Pollo al curry con arroz basmati",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades pechugas de pollo",
+      "1 taza arroz basmati",
+      "1 unidad cebolla",
+      "100 ml nata",
+      "1 cucharada curry en polvo",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cocer arroz según instrucciones.",
+      "Saltear cebolla y pollo en cubos con aceite.",
+      "Agregar curry y nata, cocinar 5 minutos.",
+      "Servir el pollo sobre arroz caliente."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Revuelto de champiñones y espinacas",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevos",
+      "150 g champiñones",
+      "1 taza espinacas frescas",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Saltear champiñones y espinacas.",
+      "Batir huevos con sal y añadir a la sartén.",
+      "Remover hasta cuajar y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Filetes de merluza al horno con tomate",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades filetes de merluza",
+      "200 ml tomate triturado",
+      "1 diente ajo",
+      "1 cucharada picada perejil",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Precalentar el horno a 180°C.",
+      "Colocar filetes en fuente, cubrir con tomate, ajo y perejil.",
+      "Hornear 15 minutos y servir."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Patatas rellenas de verduras",
+    "description": "Categoría: aprovechamiento ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades patatas grandes",
+      "1/2 unidad calabacín",
+      "1/2 unidad pimiento rojo",
+      "50 g queso rallado",
+      "al gusto sal",
+      "1 cucharada aceite de oliva"
+    ],
+    "instructions": [
+      "Hornear patatas hasta que estén tiernas.",
+      "Vaciar parte del interior y mezclar con verduras salteadas.",
+      "Rellenar las patatas, espolvorear queso y gratinar 10 minutos."
+    ],
+    "tags": [
+      "aprovechamiento"
+    ]
+  },
+  {
+    "title": "Lomo de cerdo a la mostaza con manzana",
+    "description": "Categoría: premium ",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 filetes lomo de cerdo",
+      "1 unidad manzana",
+      "1 cucharada mostaza",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal",
+      "al gusto pimienta"
+    ],
+    "instructions": [
+      "Salpimentar el lomo y sellar en sartén con aceite.",
+      "Añadir manzana cortada y dorar ligeramente.",
+      "Incorporar mostaza y cocinar 5 minutos más.",
+      "Servir caliente con la salsa de manzana por encima."
+    ],
+    "tags": [
+      "premium"
+    ]
+  },
+  {
+    "title": "Tacos de pollo con verduras",
+    "description": "Categoría: aprovechamiento (Mexicana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "4 unidades tortillas de maíz",
+      "1 taza pollo cocido",
+      "1 unidad pimiento",
+      "1/2 unidad cebolla",
+      "2 cucharadas salsa de tomate",
+      "1 cucharada aceite",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Saltear pimiento y cebolla en aceite.",
+      "Agregar pollo y salsa de tomate, mezclar bien.",
+      "Calentar tortillas y rellenar con la mezcla.",
+      "Servir inmediatamente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mexicana"
+    ]
+  },
+  {
+    "title": "Curry de garbanzos y espinaca",
+    "description": "Categoría: premium (India / Vegana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza garbanzos cocidos",
+      "2 tazas espinaca fresca",
+      "1 cucharada curry en polvo",
+      "1 unidad cebolla",
+      "2 cucharadas aceite de oliva",
+      "200 ml leche de coco",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Saltear cebolla en aceite hasta dorar.",
+      "Agregar curry y mezclar 1 minuto.",
+      "Incorporar garbanzos y espinaca.",
+      "Añadir leche de coco, cocinar 10 minutos y servir."
+    ],
+    "tags": [
+      "premium",
+      "India / Vegana"
+    ]
+  },
+  {
+    "title": "Fideos salteados con verduras",
+    "description": "Categoría: aprovechamiento (Asiática)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g fideos",
+      "1 unidad zanahoria",
+      "1/2 unidad pimiento",
+      "1/2 unidad cebolla",
+      "2 cucharadas salsa de soja",
+      "1 cucharada aceite de sésamo"
+    ],
+    "instructions": [
+      "Cocer fideos según instrucciones.",
+      "Saltear verduras en aceite de sésamo.",
+      "Agregar fideos y salsa de soja.",
+      "Mezclar bien y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Asiática"
+    ]
+  },
+  {
+    "title": "Pollo teriyaki con arroz jazmín",
+    "description": "Categoría: premium (Asiática)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades pechuga de pollo",
+      "3 cucharadas salsa teriyaki",
+      "1 taza arroz jazmín",
+      "1 cucharadita aceite de sésamo",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cocer arroz jazmín según instrucciones.",
+      "Sellar pollo en sartén con aceite de sésamo.",
+      "Añadir salsa teriyaki y cocinar 5 minutos.",
+      "Servir el pollo sobre el arroz."
+    ],
+    "tags": [
+      "premium",
+      "Asiática"
+    ]
+  },
+  {
+    "title": "Pizza de aprovechamiento con restos de verduras",
+    "description": "Categoría: aprovechamiento (Italiana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 base masa de pizza",
+      "1 taza restos de verduras",
+      "100 g queso rallado",
+      "3 cucharadas salsa de tomate",
+      "1 cucharadita orégano"
+    ],
+    "instructions": [
+      "Precalentar horno a 200°C.",
+      "Untar salsa de tomate sobre la masa.",
+      "Colocar verduras y espolvorear queso y orégano.",
+      "Hornear 15-20 minutos hasta dorar."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana"
+    ]
+  },
+  {
+    "title": "Ensalada keto de aguacate y pollo",
+    "description": "Categoría: premium (Keto / Occidental)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad cocida pechuga de pollo",
+      "1 unidad aguacate",
+      "1 taza lechuga",
+      "1 cucharada aceite de oliva",
+      "1 cucharadita limón",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cortar pollo y aguacate en cubos.",
+      "Mezclar con lechuga y aderezar con aceite, limón y sal.",
+      "Servir frío."
+    ],
+    "tags": [
+      "premium",
+      "Keto / Occidental"
+    ]
+  },
+  {
+    "title": "Wrap vegano de hummus y verduras",
+    "description": "Categoría: aprovechamiento (Vegana / Occidental)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tortilla integral",
+      "3 cucharadas hummus",
+      "1 unidad zanahoria rallada",
+      "1/2 unidad pepino en tiras",
+      "1/2 unidad pimiento rojo"
+    ],
+    "instructions": [
+      "Untar hummus sobre tortilla.",
+      "Añadir verduras en tiras.",
+      "Enrollar y cortar a la mitad para servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Vegana / Occidental"
+    ]
+  },
+  {
+    "title": "Carne a la parrilla con chimichurri",
+    "description": "Categoría: premium (Argentina)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades filetes de carne vacuna",
+      "2 cucharadas picado perejil",
+      "1 diente ajo",
+      "2 cucharadas aceite de oliva",
+      "1 cucharada vinagre",
+      "al gusto sal",
+      "al gusto pimienta"
+    ],
+    "instructions": [
+      "Mezclar perejil, ajo, aceite, vinagre, sal y pimienta para chimichurri.",
+      "Sellar carne en parrilla o sartén a gusto.",
+      "Servir con chimichurri por encima."
+    ],
+    "tags": [
+      "premium",
+      "Argentina"
+    ]
+  },
+  {
+    "title": "Frittata de verduras y queso",
+    "description": "Categoría: aprovechamiento (Italiana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "4 unidades huevos",
+      "1 taza restos de verduras",
+      "50 g queso rallado",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Saltear verduras en sartén con aceite.",
+      "Batir huevos con sal y verter sobre verduras.",
+      "Añadir queso y cocinar a fuego medio hasta cuajar.",
+      "Opcional: gratinar 5 minutos en horno."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana"
+    ]
+  },
+  {
+    "title": "Sushi bowl con salmón y aguacate",
+    "description": "Categoría: premium (Asiática / Japonesa)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza arroz para sushi",
+      "100 g salmón fresco",
+      "1/2 unidad aguacate",
+      "1/2 unidad pepino",
+      "1 cucharada salsa de soja",
+      "1 cucharadita semillas de sésamo"
+    ],
+    "instructions": [
+      "Cocer arroz y enfriar ligeramente.",
+      "Cortar salmón, aguacate y pepino en cubos.",
+      "Colocar todo sobre arroz, añadir salsa de soja y semillas de sésamo.",
+      "Servir inmediatamente."
+    ],
+    "tags": [
+      "premium",
+      "Asiática / Japonesa"
+    ]
+  },
+  {
+    "title": "Burrito vegano de frijoles y arroz",
+    "description": "Categoría: aprovechamiento (Mexicana / Vegana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tortilla integral",
+      "1 taza frijoles cocidos",
+      "1/2 taza arroz cocido",
+      "1/4 taza maíz",
+      "1/2 unidad pimiento rojo",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Calentar tortilla y rellenar con frijoles, arroz, maíz y pimiento.",
+      "Enrollar bien y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mexicana / Vegana"
+    ]
+  },
+  {
+    "title": "Pollo al estilo teriyaki con brócoli",
+    "description": "Categoría: premium (Asiática)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades pechuga de pollo",
+      "1 taza brócoli",
+      "3 cucharadas salsa teriyaki",
+      "1 cucharadita aceite de sésamo",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Saltear pollo en aceite de sésamo hasta dorar.",
+      "Añadir brócoli y salsa teriyaki.",
+      "Cocinar 5-7 minutos y servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Asiática"
+    ]
+  },
+  {
+    "title": "Ensalada mediterránea de garbanzos",
+    "description": "Categoría: aprovechamiento (Mediterránea / Vegana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza garbanzos cocidos",
+      "1 unidad tomate",
+      "1/2 unidad pepino",
+      "5 unidades aceitunas negras",
+      "2 cucharadas aceite de oliva",
+      "1 cucharada vinagre",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cortar verduras en cubos y mezclar con garbanzos y aceitunas.",
+      "Aliñar con aceite, vinagre y sal.",
+      "Servir frío o a temperatura ambiente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Vegana"
+    ]
+  },
+  {
+    "title": "Salmón al horno con pesto y tomates cherry",
+    "description": "Categoría: premium (Italiana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades filetes de salmón",
+      "2 cucharadas pesto",
+      "10 unidades tomates cherry",
+      "1 cucharada aceite de oliva",
+      "al gusto sal",
+      "al gusto pimienta"
+    ],
+    "instructions": [
+      "Precalentar horno a 180°C.",
+      "Colocar salmón en fuente, untar con pesto y añadir tomates.",
+      "Hornear 12-15 minutos y servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana"
+    ]
+  },
+  {
+    "title": "Tortilla de calabacín y queso",
+    "description": "Categoría: aprovechamiento (Española)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevos",
+      "1 unidad calabacín",
+      "50 g queso rallado",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Rallar calabacín y saltear 2-3 minutos.",
+      "Batir huevos con sal y mezclar con calabacín y queso.",
+      "Cocinar a fuego medio hasta cuajar y dorar ligeramente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Española"
+    ]
+  },
+  {
+    "title": "Pasta cremosa con espinacas y champiñones",
+    "description": "Categoría: premium (Italiana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "250 g pasta corta",
+      "1 taza espinacas frescas",
+      "150 g champiñones",
+      "200 ml nata",
+      "1 diente ajo",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cocer pasta según instrucciones.",
+      "Saltear ajo y champiñones en aceite.",
+      "Agregar espinacas y nata, cocinar 5 minutos.",
+      "Mezclar con pasta y servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Italiana"
+    ]
+  },
+  {
+    "title": "Chili vegano de frijoles",
+    "description": "Categoría: aprovechamiento (Mexicana / Vegana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza frijoles negros",
+      "1 taza tomate triturado",
+      "1 unidad pimiento rojo",
+      "1/2 unidad cebolla",
+      "1 cucharadita comino",
+      "1 cucharada aceite",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Saltear cebolla y pimiento en aceite.",
+      "Agregar frijoles, tomate y comino.",
+      "Cocinar 10 minutos a fuego medio y servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mexicana / Vegana"
+    ]
+  },
+  {
+    "title": "Filete de ternera a la provenzal",
+    "description": "Categoría: premium (Francesa)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades filetes de ternera",
+      "1 diente ajo",
+      "1 cucharadita tomillo",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal",
+      "al gusto pimienta"
+    ],
+    "instructions": [
+      "Salpimentar los filetes.",
+      "Sellar en sartén con aceite, ajo y tomillo.",
+      "Cocinar al punto deseado y servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Francesa"
+    ]
+  },
+  {
+    "title": "Arroz frito con huevo y verduras",
+    "description": "Categoría: aprovechamiento (Asiática)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 tazas arroz cocido",
+      "2 unidades huevo",
+      "1 unidad zanahoria",
+      "1/2 taza guisantes",
+      "2 cucharadas salsa de soja",
+      "2 cucharadas aceite"
+    ],
+    "instructions": [
+      "Saltear zanahoria y guisantes en aceite.",
+      "Añadir arroz y mezclar bien.",
+      "Hacer huevo revuelto en sartén y añadir al arroz.",
+      "Incorporar salsa de soja, mezclar y servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Asiática"
+    ]
+  },
+  {
+    "title": "Risotto de setas y parmesano",
+    "description": "Categoría: premium (Italiana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza arroz arborio",
+      "150 g setas variadas",
+      "750 ml caldo de verduras",
+      "50 g queso parmesano",
+      "2 cucharadas mantequilla",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Saltear setas en aceite y mantequilla.",
+      "Agregar arroz y tostar 1-2 minutos.",
+      "Añadir caldo poco a poco removiendo hasta que el arroz esté cremoso.",
+      "Incorporar parmesano, mezclar y servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana"
+    ]
+  },
+  {
+    "title": "Tacos de pescado al estilo Baja",
+    "description": "Categoría: premium (Mexicana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades filetes de pescado blanco",
+      "4 unidades tortillas de maíz",
+      "1 taza repollo rallado",
+      "2 cucharadas mayonesa",
+      "1 unidad limón",
+      "2 cucharadas aceite",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Salpimentar el pescado y freír ligeramente en aceite.",
+      "Mezclar repollo con mayonesa y jugo de limón.",
+      "Calentar tortillas, colocar pescado y cubrir con repollo.",
+      "Servir inmediatamente."
+    ],
+    "tags": [
+      "premium",
+      "Mexicana"
+    ]
+  },
+  {
+    "title": "Buddha bowl de quinoa y garbanzos",
+    "description": "Categoría: aprovechamiento (Vegana / Internacional)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza quinoa cocida",
+      "1/2 taza garbanzos cocidos",
+      "1 unidad zanahoria rallada",
+      "1/2 unidad aguacate",
+      "2 cucharadas salsa de tahini",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Colocar quinoa en bol.",
+      "Añadir garbanzos, zanahoria y aguacate en secciones.",
+      "Aliñar con salsa de tahini y sal.",
+      "Servir frío o a temperatura ambiente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Vegana / Internacional"
+    ]
+  },
+  {
+    "title": "Canelones de espinaca y ricotta",
+    "description": "Categoría: premium (Italiana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "6 unidades láminas de pasta para canelones",
+      "2 tazas espinacas frescas",
+      "150 g ricotta",
+      "200 ml salsa bechamel",
+      "50 g queso rallado",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Hervir láminas de pasta hasta que estén al dente.",
+      "Saltear espinacas y mezclar con ricotta, salpimentar.",
+      "Rellenar las láminas y enrollar.",
+      "Colocar en fuente, cubrir con bechamel y queso.",
+      "Hornear 20 minutos a 180°C hasta gratinar."
+    ],
+    "tags": [
+      "premium",
+      "Italiana"
+    ]
+  },
+  {
+    "title": "Sopa miso con tofu y algas",
+    "description": "Categoría: aprovechamiento (Asiática / Vegana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 cucharadas pasta miso",
+      "500 ml caldo vegetal",
+      "100 g tofu firme",
+      "1 cucharada algas wakame",
+      "1 unidad cebolla verde",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Calentar caldo y disolver pasta miso.",
+      "Añadir tofu en cubos y algas wakame.",
+      "Cocinar 5 minutos y añadir cebolla verde picada antes de servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Asiática / Vegana"
+    ]
+  },
+  {
+    "title": "Pollo tikka masala",
+    "description": "Categoría: premium (India)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades pechugas de pollo",
+      "100 ml yogur natural",
+      "2 cucharaditas curry en polvo",
+      "200 ml tomate triturado",
+      "50 ml crema fresca",
+      "1 cucharada aceite",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Marinar pollo con yogur y curry durante 30 minutos.",
+      "Saltear pollo en sartén con aceite hasta dorar.",
+      "Agregar tomate triturado, cocinar 10 minutos.",
+      "Añadir crema fresca y mezclar antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "India"
+    ]
+  },
+  {
+    "title": "Paella de verduras",
+    "description": "Categoría: aprovechamiento (Española / Vegana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza arroz",
+      "2 tazas caldo vegetal",
+      "1 unidad pimiento rojo",
+      "1/2 taza judías verdes",
+      "1/2 taza tomate triturado",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal y azafrán"
+    ],
+    "instructions": [
+      "Saltear verduras en aceite.",
+      "Añadir arroz, tomate y caldo con azafrán.",
+      "Cocinar a fuego medio hasta absorber el líquido.",
+      "Dejar reposar 5 minutos antes de servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Española / Vegana"
+    ]
+  },
+  {
+    "title": "Ceviche de camarón",
+    "description": "Categoría: premium (Latinoamericana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 g camarones cocidos",
+      "4 cucharadas jugo de limón",
+      "1/2 unidad cebolla morada",
+      "2 cucharadas cilantro",
+      "al gusto sal y pimienta",
+      "1/2 unidad opcional ají picante"
+    ],
+    "instructions": [
+      "Picar camarones y cebolla.",
+      "Mezclar con jugo de limón, cilantro y ají.",
+      "Salpimentar y dejar reposar 10 minutos antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Latinoamericana"
+    ]
+  },
+  {
+    "title": "Ensalada templada de lentejas y calabaza",
+    "description": "Categoría: aprovechamiento (Mediterránea / Vegana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza lentejas cocidas",
+      "1 taza calabaza asada",
+      "1 taza rúcula",
+      "2 cucharadas aceite de oliva",
+      "1 cucharada vinagre balsámico",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Mezclar lentejas con calabaza y rúcula.",
+      "Aliñar con aceite, vinagre, sal y pimienta.",
+      "Servir templado o frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Vegana"
+    ]
+  },
+  {
+    "title": "Ratatouille clásico",
+    "description": "Categoría: premium (Francesa / Vegana)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad berenjena",
+      "1 unidad calabacín",
+      "1 unidad pimiento rojo",
+      "2 unidades tomate",
+      "3 cucharadas aceite de oliva",
+      "1 cucharadita hierbas provenzales",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Cortar verduras en rodajas finas.",
+      "Saltear ligeramente berenjena y calabacín en aceite.",
+      "Colocar en fuente alternando capas de verduras y tomates.",
+      "Espolvorear hierbas, salpimentar y hornear 30 minutos a 180°C."
+    ],
+    "tags": [
+      "premium",
+      "Francesa / Vegana"
+    ]
+  },
+  {
+    "title": "Sopa de marisco con arroz",
+    "description": "Categoría: premium (Mediterránea)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 g mezcla de mariscos",
+      "1/2 taza arroz",
+      "500 ml caldo de pescado",
+      "1/2 unidad cebolla",
+      "1/2 unidad pimiento rojo",
+      "1 cucharada aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Saltear cebolla y pimiento en aceite.",
+      "Añadir arroz y mezclar 2 minutos.",
+      "Incorporar caldo y mariscos, cocinar 10-12 minutos.",
+      "Rectificar sal y servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Mediterránea"
+    ]
+  },
+  {
+    "title": "Moussaka ligera",
+    "description": "Categoría: premium (Griega / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades berenjena",
+      "200 g carne picada de ternera",
+      "150 ml tomate triturado",
+      "150 ml salsa bechamel ligera",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Cortar berenjena en rodajas y asar ligeramente.",
+      "Saltear carne con tomate, sal y pimienta.",
+      "Colocar capas de berenjena, carne y bechamel en fuente.",
+      "Hornear 25 minutos a 180°C hasta dorar."
+    ],
+    "tags": [
+      "premium",
+      "Griega / Plato principal"
+    ]
+  },
+  {
+    "title": "Frittata de espinaca y queso feta",
+    "description": "Categoría: aprovechamiento (Italiana / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevos",
+      "1 taza espinaca fresca",
+      "50 g queso feta",
+      "1 cucharada aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Batir huevos y mezclar con espinaca y feta desmenuzado.",
+      "Calentar aceite en sartén, añadir mezcla y cocinar a fuego medio 5-7 minutos.",
+      "Terminar bajo el grill del horno 3 minutos hasta dorar."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Desayuno"
+    ]
+  },
+  {
+    "title": "Bruschetta de tomate y albahaca",
+    "description": "Categoría: aprovechamiento (Italiana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "4 rebanadas pan rústico",
+      "8 unidades tomates cherry",
+      "5 hojas albahaca fresca",
+      "2 cucharadas aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Tostar el pan y frotar con un diente de ajo.",
+      "Picar tomates y mezclar con albahaca, aceite, sal y pimienta.",
+      "Colocar mezcla sobre pan y servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Tzatziki con pan de pita",
+    "description": "Categoría: aprovechamiento (Griega / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g yogur griego",
+      "1/2 unidad pepino",
+      "1 diente ajo",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y eneldo",
+      "2 unidades pan de pita"
+    ],
+    "instructions": [
+      "Rallar pepino, escurrir exceso de agua y mezclar con yogur, ajo, aceite y eneldo.",
+      "Salpimentar al gusto.",
+      "Servir acompañado de pan de pita."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Griega / Cena ligera"
+    ]
+  },
+  {
+    "title": "Spaghetti aglio e olio",
+    "description": "Categoría: aprovechamiento (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g spaghetti",
+      "2 dientes ajo",
+      "2 cucharadas aceite de oliva",
+      "1 cucharada perejil fresco",
+      "al gusto sal y pimienta",
+      "1 pizca ají seco (opcional)"
+    ],
+    "instructions": [
+      "Cocer spaghetti al dente.",
+      "Saltear ajo picado en aceite, añadir ají si se desea.",
+      "Mezclar con la pasta, espolvorear perejil y servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Baklava rápido",
+    "description": "Categoría: premium (Griega / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "4 láminas masa filo",
+      "50 g nueces picadas",
+      "2 cucharadas mantequilla derretida",
+      "2 cucharadas miel",
+      "1/2 cucharadita canela"
+    ],
+    "instructions": [
+      "Precalentar horno a 180°C.",
+      "Colocar una lámina de masa, untar mantequilla y añadir nueces y canela.",
+      "Repetir capas y hornear 15 minutos.",
+      "Rociar con miel caliente antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Griega / Postre"
+    ]
+  },
+  {
+    "title": "Gnocchi de patata con salsa de tomate",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 g gnocchi de patata",
+      "200 ml tomate triturado",
+      "1 cucharada aceite de oliva",
+      "30 g queso parmesano rallado",
+      "al gusto sal y albahaca"
+    ],
+    "instructions": [
+      "Hervir gnocchi hasta que floten, escurrir.",
+      "Saltear tomate triturado con aceite, sal y albahaca.",
+      "Mezclar gnocchi con la salsa y espolvorear parmesano antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Ensalada griega clásica",
+    "description": "Categoría: aprovechamiento (Griega / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad tomate",
+      "1/2 unidad pepino",
+      "1/4 unidad cebolla morada",
+      "50 g queso feta",
+      "10 unidades aceitunas negras",
+      "1 cucharada aceite de oliva",
+      "1/2 cucharadita orégano"
+    ],
+    "instructions": [
+      "Cortar vegetales en cubos y mezclar con feta y aceitunas.",
+      "Aliñar con aceite de oliva y orégano.",
+      "Servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Griega / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Panqueques de ricotta y limón",
+    "description": "Categoría: premium (Italiana / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g ricotta",
+      "1 unidad huevo",
+      "50 g harina",
+      "1 cucharadita ralladura de limón",
+      "1 cucharadita miel"
+    ],
+    "instructions": [
+      "Mezclar ricotta, huevo, harina y ralladura de limón hasta formar masa.",
+      "Cocinar en sartén antiadherente 2-3 minutos por lado.",
+      "Servir con miel por encima."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Desayuno"
+    ]
+  },
+  {
+    "title": "Souvlaki de pollo con tzatziki",
+    "description": "Categoría: premium (Griega / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 g pechuga de pollo",
+      "4 unidades palitos de brocheta",
+      "50 g yogur griego",
+      "1/2 unidad pepino",
+      "1 diente ajo",
+      "1 cucharadita aceite de oliva",
+      "1 cucharadita limón"
+    ],
+    "instructions": [
+      "Cortar pollo en cubos, marinar con yogur, ajo y limón 30 minutos.",
+      "Insertar en brochetas y asar 10 minutos por lado.",
+      "Servir con tzatziki y pan de pita."
+    ],
+    "tags": [
+      "premium",
+      "Griega / Plato principal"
+    ]
+  },
+  {
+    "title": "Caprese con pesto",
+    "description": "Categoría: premium (Italiana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tomate",
+      "100 g mozzarella fresca",
+      "5 hojas albahaca fresca",
+      "1 cucharada pesto",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Cortar tomate y mozzarella en rodajas.",
+      "Alternar capas de tomate y mozzarella en plato.",
+      "Añadir hojas de albahaca y rociar con pesto y aceite.",
+      "Salpimentar y servir fresco."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Pan de pita casero",
+    "description": "Categoría: aprovechamiento (Griega / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 g harina de trigo",
+      "100 ml agua",
+      "1 cucharadita levadura seca",
+      "1/2 cucharadita sal",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Mezclar harina, levadura, sal, aceite y agua hasta formar masa.",
+      "Dejar reposar 30 minutos.",
+      "Dividir en porciones, estirar y hornear 5-7 minutos a 220°C.",
+      "Servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Griega / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Tarta de ricotta y espinaca",
+    "description": "Categoría: premium (Italiana / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 base masa quebrada",
+      "150 g ricotta",
+      "100 g espinaca fresca",
+      "1 unidad huevo",
+      "30 g queso parmesano",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Precalentar horno a 180°C.",
+      "Mezclar ricotta, espinaca, huevo y parmesano.",
+      "Verter sobre la base de masa, hornear 25 minutos.",
+      "Dejar enfriar 5 minutos y servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Cena ligera"
+    ]
+  },
+  {
+    "title": "Sopa fría de pepino y yogur",
+    "description": "Categoría: aprovechamiento (Griega / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad pepino",
+      "150 g yogur natural",
+      "1 diente ajo",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y menta fresca"
+    ],
+    "instructions": [
+      "Pelar y triturar pepino con yogur y ajo.",
+      "Aliñar con aceite, sal y menta.",
+      "Servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Griega / Cena ligera"
+    ]
+  },
+  {
+    "title": "Pizza margarita casera",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 g masa de pizza",
+      "100 ml salsa de tomate",
+      "100 g mozzarella",
+      "5 hojas albahaca fresca",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Precalentar horno a 220°C.",
+      "Extender masa, cubrir con salsa y mozzarella.",
+      "Hornear 10-12 minutos, añadir albahaca y aceite antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Dolmades de arroz y hierbas",
+    "description": "Categoría: premium (Griega / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "12 unidades hojas de parra en conserva",
+      "100 g arroz cocido",
+      "1/2 unidad cebolla",
+      "1 cucharada perejil y eneldo",
+      "1 cucharada aceite de oliva",
+      "1 cucharadita limón",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Mezclar arroz con cebolla picada y hierbas.",
+      "Rellenar hojas de parra, enrollar y colocar en cacerola.",
+      "Rociar con aceite y limón, cubrir con agua y cocer 20 minutos.",
+      "Servir tibio o frío."
+    ],
+    "tags": [
+      "premium",
+      "Griega / Plato principal"
+    ]
+  },
+  {
+    "title": "Tiramisu rápido en vaso",
+    "description": "Categoría: premium (Italiana / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "4 unidades bizcochos de soletilla",
+      "100 g mascarpone",
+      "50 ml café expreso",
+      "1 cucharadita cacao en polvo",
+      "2 cucharaditas azúcar"
+    ],
+    "instructions": [
+      "Remojar bizcochos en café y colocar en vaso.",
+      "Mezclar mascarpone con azúcar y cubrir bizcochos.",
+      "Repetir capas y espolvorear cacao.",
+      "Refrigerar 1 hora antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Postre"
+    ]
+  },
+  {
+    "title": "Ensalada de garbanzos mediterránea",
+    "description": "Categoría: aprovechamiento (Mediterránea / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza garbanzos cocidos",
+      "1/2 unidad pepino",
+      "6 unidades tomate cherry",
+      "10 unidades aceitunas negras",
+      "1 cucharada aceite de oliva",
+      "1/2 cucharadita orégano",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Mezclar todos los ingredientes en un bol.",
+      "Aliñar con aceite, sal, pimienta y orégano.",
+      "Servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Focaccia de romero y sal gruesa",
+    "description": "Categoría: premium (Italiana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 g harina de trigo",
+      "100 ml agua",
+      "1 cucharadita levadura seca",
+      "2 cucharadas aceite de oliva",
+      "1 cucharadita romero fresco",
+      "1 pizca sal gruesa"
+    ],
+    "instructions": [
+      "Mezclar harina, levadura, agua y aceite hasta formar masa.",
+      "Dejar reposar 30 minutos.",
+      "Extender en bandeja, espolvorear romero y sal gruesa.",
+      "Hornear 15-20 minutos a 200°C hasta dorar."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Sopa minestrone",
+    "description": "Categoría: aprovechamiento (Italiana / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad calabacín",
+      "1 unidad zanahoria",
+      "1 rama apio",
+      "150 ml tomate triturado",
+      "50 g pasta pequeña",
+      "500 ml caldo vegetal",
+      "1 cucharada aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Picar todas las verduras y sofreír en aceite 5 minutos.",
+      "Añadir caldo, tomate y pasta, cocinar 15 minutos.",
+      "Salpimentar y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Cena ligera"
+    ]
+  },
+  {
+    "title": "Crepes de ricotta y frutos rojos",
+    "description": "Categoría: premium (Italiana / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "50 g harina",
+      "1 unidad huevo",
+      "100 ml leche",
+      "50 g ricotta",
+      "50 g frutos rojos",
+      "1 cucharadita miel"
+    ],
+    "instructions": [
+      "Mezclar harina, huevo y leche hasta obtener masa líquida.",
+      "Cocinar crepes finos en sartén antiadherente.",
+      "Rellenar con ricotta y frutos rojos, enrollar.",
+      "Rociar con miel antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Desayuno"
+    ]
+  },
+  {
+    "title": "Gyros de pollo con salsa de yogur",
+    "description": "Categoría: premium (Griega / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 g pechuga de pollo",
+      "2 unidades pan de pita",
+      "50 g yogur griego",
+      "1/2 unidad pepino",
+      "1 diente ajo",
+      "1 unidad tomate",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Cortar pollo en tiras y saltear con aceite y especias.",
+      "Mezclar yogur con ajo y pepino rallado para la salsa.",
+      "Rellenar pan de pita con pollo, salsa y rodajas de tomate.",
+      "Servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Griega / Plato principal"
+    ]
+  },
+  {
+    "title": "Pasta al pesto con calabacín",
+    "description": "Categoría: aprovechamiento (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g pasta corta",
+      "1 unidad calabacín",
+      "2 cucharadas pesto",
+      "1 cucharadita aceite de oliva",
+      "20 g queso parmesano"
+    ],
+    "instructions": [
+      "Cocer la pasta al dente y escurrir.",
+      "Saltear calabacín en aceite 3-4 minutos.",
+      "Mezclar pasta con calabacín y pesto.",
+      "Espolvorear parmesano antes de servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Baklava de pistacho",
+    "description": "Categoría: premium (Griega / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "4 láminas masa filo",
+      "50 g pistachos picados",
+      "2 cucharadas mantequilla derretida",
+      "2 cucharadas miel",
+      "1/2 cucharadita canela"
+    ],
+    "instructions": [
+      "Precalentar horno a 180°C.",
+      "Colocar una lámina de masa, untar mantequilla y añadir pistachos con canela.",
+      "Repetir capas y hornear 15 minutos.",
+      "Rociar con miel antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Griega / Postre"
+    ]
+  },
+  {
+    "title": "Frittata de champiñones y espinaca",
+    "description": "Categoría: aprovechamiento (Italiana / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevos",
+      "100 g champiñones",
+      "1 taza espinaca fresca",
+      "1 cucharada aceite de oliva",
+      "20 g queso rallado",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Saltear champiñones y espinaca en aceite 3-4 minutos.",
+      "Batir huevos, mezclar con queso y añadir verduras salteadas.",
+      "Cocinar a fuego medio 5-7 minutos, terminar bajo grill 3 minutos."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Desayuno"
+    ]
+  },
+  {
+    "title": "Risotto de calabaza",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g arroz arborio",
+      "150 g calabaza",
+      "400 ml caldo vegetal",
+      "30 g queso parmesano",
+      "1 cucharada aceite de oliva",
+      "1/2 unidad cebolla",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Saltear cebolla picada en aceite, añadir arroz y calabaza en cubos.",
+      "Agregar caldo poco a poco removiendo constantemente hasta que el arroz esté cremoso.",
+      "Incorporar parmesano y ajustar sal y pimienta."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Pasta al horno con berenjena",
+    "description": "Categoría: aprovechamiento (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g pasta corta",
+      "1 unidad berenjena",
+      "150 ml tomate triturado",
+      "50 g queso mozzarella",
+      "1 cucharada aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Cocer la pasta al dente.",
+      "Saltear berenjena en cubos en aceite 5 minutos.",
+      "Mezclar con pasta y tomate, colocar en fuente para horno, cubrir con mozzarella.",
+      "Hornear 10 minutos hasta gratinar."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Panacotta de vainilla con coulis de frutos rojos",
+    "description": "Categoría: premium (Italiana / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 ml nata líquida",
+      "30 g azúcar",
+      "1/2 cucharadita vainilla",
+      "1 hoja gelatina",
+      "50 g frutos rojos"
+    ],
+    "instructions": [
+      "Hidratar gelatina en agua fría.",
+      "Calentar nata con azúcar y vainilla, añadir gelatina fuera del fuego.",
+      "Verter en moldes, refrigerar 4 horas.",
+      "Servir con coulis de frutos rojos."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Postre"
+    ]
+  },
+  {
+    "title": "Ensalada mediterránea de quinoa",
+    "description": "Categoría: aprovechamiento (Mediterránea / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g quinoa cocida",
+      "6 unidades tomate cherry",
+      "1/2 unidad pepino",
+      "10 unidades aceitunas negras",
+      "50 g queso feta",
+      "1 cucharada aceite de oliva",
+      "1/2 cucharadita orégano",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Mezclar todos los ingredientes en un bol.",
+      "Aliñar con aceite, sal, pimienta y orégano.",
+      "Servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Frittata de patata y cebolla",
+    "description": "Categoría: aprovechamiento (Italiana / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevos",
+      "1 unidad mediana patata",
+      "1/2 unidad cebolla",
+      "1 cucharada aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Pelar y cortar patata en cubos, saltear con cebolla 5 minutos.",
+      "Batir huevos, mezclar con verduras, cocinar 5-7 minutos a fuego medio.",
+      "Terminar bajo grill 2-3 minutos hasta dorar."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Desayuno"
+    ]
+  },
+  {
+    "title": "Tacos veganos de frijoles y aguacate",
+    "description": "Categoría: aprovechamiento (Mexicana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tortillas de maíz",
+      "100 g frijoles negros cocidos",
+      "1/2 unidad aguacate",
+      "1 unidad tomate",
+      "1 cucharadita cilantro fresco",
+      "1 cucharadita limón",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Calentar tortillas y colocar frijoles cocidos.",
+      "Añadir rodajas de aguacate y tomate picado.",
+      "Espolvorear cilantro, rociar con limón y servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mexicana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Pad Thai de tofu",
+    "description": "Categoría: premium (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g fideos de arroz",
+      "100 g tofu firme",
+      "50 g brotes de soja",
+      "1 unidad zanahoria rallada",
+      "2 cucharadas salsa de soja",
+      "10 g cacahuetes triturados",
+      "1 cucharadita aceite de sésamo"
+    ],
+    "instructions": [
+      "Cocer fideos según instrucciones y escurrir.",
+      "Saltear tofu en aceite hasta dorar, añadir verduras.",
+      "Mezclar con fideos y salsa de soja.",
+      "Servir con cacahuetes espolvoreados."
+    ],
+    "tags": [
+      "premium",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Smoothie bowl tropical",
+    "description": "Categoría: aprovechamiento (Internacional / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad plátano",
+      "50 g mango",
+      "100 ml yogur natural",
+      "1 cucharadita coco rallado",
+      "1 cucharadita semillas de chía"
+    ],
+    "instructions": [
+      "Batir plátano, mango y yogur hasta obtener mezcla cremosa.",
+      "Verter en bol y decorar con coco rallado y semillas de chía.",
+      "Servir inmediatamente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Internacional / Desayuno"
+    ]
+  },
+  {
+    "title": "Bowl keto de pollo y aguacate",
+    "description": "Categoría: premium (Internacional / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g pechuga de pollo",
+      "1/2 unidad aguacate",
+      "1 taza espinaca fresca",
+      "1 cucharada aceite de oliva",
+      "1 cucharadita limón",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Saltear pollo en aceite hasta dorar.",
+      "Colocar espinaca en bol, añadir pollo y rodajas de aguacate.",
+      "Aliñar con limón, sal y pimienta."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Plato principal"
+    ]
+  },
+  {
+    "title": "Churros caseros con chocolate",
+    "description": "Categoría: premium (Mexicana / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g harina",
+      "100 ml agua",
+      "20 g azúcar",
+      "50 ml aceite para freír",
+      "20 g cacao en polvo"
+    ],
+    "instructions": [
+      "Hervir agua con azúcar y añadir harina hasta formar masa.",
+      "Formar churros y freír en aceite caliente hasta dorar.",
+      "Espolvorear con cacao y servir con chocolate caliente."
+    ],
+    "tags": [
+      "premium",
+      "Mexicana / Postre"
+    ]
+  },
+  {
+    "title": "Sushi bowl vegano",
+    "description": "Categoría: aprovechamiento (Asiática / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g arroz de sushi cocido",
+      "1/2 unidad aguacate",
+      "1 unidad zanahoria rallada",
+      "1/2 unidad pepino",
+      "1 hoja algas nori en tiras",
+      "1 cucharadita salsa de soja"
+    ],
+    "instructions": [
+      "Colocar arroz en bol, añadir aguacate, zanahoria y pepino en tiras.",
+      "Espolvorear nori y rociar con salsa de soja.",
+      "Servir inmediatamente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Asiática / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Enchiladas de pollo y queso",
+    "description": "Categoría: premium (Mexicana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tortillas de maíz",
+      "100 g pollo cocido desmenuzado",
+      "50 g queso rallado",
+      "50 ml salsa de tomate",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Rellenar tortillas con pollo y un poco de queso.",
+      "Enrollar y colocar en fuente, cubrir con salsa de tomate y queso restante.",
+      "Hornear 10 minutos a 180°C hasta gratinar."
+    ],
+    "tags": [
+      "premium",
+      "Mexicana / Plato principal"
+    ]
+  },
+  {
+    "title": "Ceviche de pescado blanco",
+    "description": "Categoría: premium (Americana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g filete de pescado blanco",
+      "2 unidades limón",
+      "1/4 unidad cebolla morada",
+      "1 cucharadita cilantro fresco",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Cortar pescado en cubos pequeños y marinar en jugo de limón 15 minutos.",
+      "Añadir cebolla picada, cilantro, sal y pimienta.",
+      "Servir frío."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Plato principal"
+    ]
+  },
+  {
+    "title": "Bowl asiático de quinoa y verduras",
+    "description": "Categoría: aprovechamiento (Asiática / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g quinoa cocida",
+      "1 unidad zanahoria rallada",
+      "50 g brócoli al vapor",
+      "1 cucharadita soja y sésamo",
+      "1 cucharadita aceite de sésamo"
+    ],
+    "instructions": [
+      "Colocar quinoa en bol, añadir verduras al vapor y zanahoria rallada.",
+      "Aliñar con aceite de sésamo y soja.",
+      "Servir inmediatamente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Asiática / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Brownie vegano de chocolate",
+    "description": "Categoría: premium (Internacional / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g harina de avena",
+      "20 g cacao en polvo",
+      "50 g azúcar moreno",
+      "100 ml leche vegetal",
+      "2 cucharadas aceite de coco"
+    ],
+    "instructions": [
+      "Mezclar todos los ingredientes hasta obtener masa homogénea.",
+      "Verter en molde y hornear 20 minutos a 180°C.",
+      "Dejar enfriar antes de cortar en cuadrados."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Postre"
+    ]
+  },
+  {
+    "title": "Shakshuka ligera",
+    "description": "Categoría: aprovechamiento (Mediterránea / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades huevos",
+      "150 ml tomate triturado",
+      "1/2 unidad pimiento rojo",
+      "1 cucharadita aceite de oliva",
+      "1/2 cucharadita pimentón dulce",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Saltear pimiento en aceite 3 minutos, añadir tomate y pimentón.",
+      "Cocer 5 minutos y hacer huecos para los huevos.",
+      "Tapar y cocinar 5-7 minutos hasta que los huevos cuajen."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Desayuno"
+    ]
+  },
+  {
+    "title": "Tostadas francesas con frutos secos",
+    "description": "Categoría: premium (Internacional / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 rebanadas pan de molde",
+      "1 unidad huevo",
+      "50 ml leche",
+      "1/2 cucharadita canela",
+      "20 g frutos secos picados",
+      "1 cucharadita miel"
+    ],
+    "instructions": [
+      "Batir huevo con leche y canela.",
+      "Sumergir pan y dorar en sartén 2-3 minutos por lado.",
+      "Servir con frutos secos y miel."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Desayuno"
+    ]
+  },
+  {
+    "title": "Curry de garbanzos",
+    "description": "Categoría: aprovechamiento (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g garbanzos cocidos",
+      "100 ml tomate triturado",
+      "1/2 unidad cebolla",
+      "50 ml leche de coco",
+      "1 cucharadita curry en polvo",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Saltear cebolla en aceite 3 minutos, añadir curry y tomate.",
+      "Agregar garbanzos y leche de coco, cocer 10 minutos.",
+      "Servir caliente acompañado de arroz."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Quesadillas de espinaca y queso",
+    "description": "Categoría: aprovechamiento (Mexicana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tortillas de trigo",
+      "50 g espinaca fresca",
+      "50 g queso rallado",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Rellenar tortillas con espinaca y queso.",
+      "Doblar y dorar en sartén 2-3 minutos por lado.",
+      "Servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mexicana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Sopa miso con tofu y algas",
+    "description": "Categoría: aprovechamiento (Asiática / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 cucharadita pasta miso",
+      "50 g tofu firme",
+      "1 cucharada algas wakame hidratadas",
+      "200 ml caldo vegetal",
+      "1 cucharadita cebollino fresco"
+    ],
+    "instructions": [
+      "Calentar caldo y disolver miso fuera del fuego.",
+      "Añadir tofu en cubos y algas, calentar 3 minutos.",
+      "Servir con cebollino picado."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Asiática / Cena ligera"
+    ]
+  },
+  {
+    "title": "Brownie keto de chocolate y almendra",
+    "description": "Categoría: premium (Internacional / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "80 g harina de almendra",
+      "20 g cacao en polvo sin azúcar",
+      "2 unidades huevo",
+      "2 cucharadas aceite de coco",
+      "1 cucharadita edulcorante al gusto"
+    ],
+    "instructions": [
+      "Mezclar todos los ingredientes hasta obtener masa homogénea.",
+      "Verter en molde y hornear 15-18 minutos a 180°C.",
+      "Dejar enfriar antes de cortar."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Postre"
+    ]
+  },
+  {
+    "title": "Guacamole clásico",
+    "description": "Categoría: aprovechamiento (Mexicana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad aguacate",
+      "1/2 unidad tomate",
+      "1/4 unidad cebolla",
+      "1 cucharadita cilantro fresco",
+      "1 cucharadita limón",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Triturar aguacate y mezclar con tomate, cebolla y cilantro picados.",
+      "Aliñar con limón y sal.",
+      "Servir con totopos o tortillas."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mexicana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Canelones de ricotta y espinaca",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "4 unidades planchas de pasta para canelones",
+      "100 g ricotta",
+      "100 g espinaca cocida",
+      "100 ml salsa de tomate",
+      "30 g queso rallado"
+    ],
+    "instructions": [
+      "Mezclar ricotta con espinaca.",
+      "Rellenar las planchas de pasta y enrollar.",
+      "Colocar en fuente, cubrir con salsa y queso, hornear 15 minutos a 180°C."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Curry rojo tailandés con verduras",
+    "description": "Categoría: premium (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 cucharadita pasta de curry rojo",
+      "150 ml leche de coco",
+      "1 unidad berenjena",
+      "1 unidad pimiento rojo",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y cilantro"
+    ],
+    "instructions": [
+      "Saltear verduras en aceite 5 minutos.",
+      "Añadir pasta de curry y leche de coco, cocinar 10 minutos.",
+      "Servir con cilantro fresco."
+    ],
+    "tags": [
+      "premium",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Helado vegano de plátano y cacao",
+    "description": "Categoría: aprovechamiento (Internacional / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad plátano congelado",
+      "1 cucharadita cacao en polvo",
+      "30 ml leche vegetal"
+    ],
+    "instructions": [
+      "Batir plátano congelado con cacao y leche hasta textura cremosa.",
+      "Servir inmediatamente o congelar 30 minutos para textura más firme."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Internacional / Postre"
+    ]
+  },
+  {
+    "title": "Paella mixta rápida",
+    "description": "Categoría: premium (Española / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g arroz",
+      "50 g pollo en trozos",
+      "50 g gambas peladas",
+      "50 g calamares en rodajas",
+      "1/2 unidad pimiento rojo",
+      "50 g guisantes",
+      "1 cucharada aceite de oliva",
+      "al gusto sal y azafrán"
+    ],
+    "instructions": [
+      "Saltear pollo y calamares 3 minutos en aceite.",
+      "Añadir arroz, guisantes, pimiento y agua con azafrán.",
+      "Cocinar 12 minutos hasta que el arroz esté hecho.",
+      "Añadir gambas 3 minutos antes de terminar."
+    ],
+    "tags": [
+      "premium",
+      "Española / Plato principal"
+    ]
+  },
+  {
+    "title": "Moussaka vegetariana",
+    "description": "Categoría: aprovechamiento (Griega / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad berenjena",
+      "1 unidad patata",
+      "100 ml tomate triturado",
+      "50 g queso rallado",
+      "1 cucharada aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Cortar berenjena y patata en rodajas, saltear en aceite 5 minutos.",
+      "Colocar capas de patata, berenjena y tomate en fuente.",
+      "Cubrir con queso y hornear 15 minutos a 180°C."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Griega / Plato principal"
+    ]
+  },
+  {
+    "title": "Tortilla española clásica",
+    "description": "Categoría: aprovechamiento (Española / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevos",
+      "1 unidad mediana patata",
+      "1/2 unidad cebolla",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cortar patata en cubos finos y freír con cebolla 5-6 minutos.",
+      "Batir huevos y mezclar con patata y cebolla.",
+      "Cocinar a fuego medio 5-7 minutos por cada lado."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Española / Desayuno"
+    ]
+  },
+  {
+    "title": "Spaghetti alla carbonara",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g spaghetti",
+      "50 g panceta",
+      "1 unidad huevo",
+      "20 g queso parmesano rallado",
+      "al gusto pimienta negra"
+    ],
+    "instructions": [
+      "Cocer spaghetti al dente.",
+      "Saltear panceta hasta dorar, retirar del fuego.",
+      "Mezclar huevo con parmesano y pimienta, añadir pasta caliente y panceta.",
+      "Servir inmediatamente."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Bowl vegano mediterráneo",
+    "description": "Categoría: aprovechamiento (Mediterránea / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g quinoa cocida",
+      "50 g garbanzos cocidos",
+      "1/2 unidad pepino",
+      "6 unidades tomate cherry",
+      "6 unidades aceitunas negras",
+      "1 cucharada aceite de oliva y limón"
+    ],
+    "instructions": [
+      "Mezclar todos los ingredientes en bol.",
+      "Aliñar con aceite de oliva y limón.",
+      "Servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Hamburguesa americana con queso cheddar",
+    "description": "Categoría: premium (Americana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad pan de hamburguesa",
+      "100 g carne de res picada",
+      "20 g queso cheddar",
+      "al gusto lechuga y tomate",
+      "al gusto mostaza y ketchup"
+    ],
+    "instructions": [
+      "Formar hamburguesa y cocinar 4-5 minutos por lado.",
+      "Montar pan con lechuga, tomate, hamburguesa y queso.",
+      "Añadir salsas y servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Plato principal"
+    ]
+  },
+  {
+    "title": "Crepes de espinaca y ricotta",
+    "description": "Categoría: premium (Italiana / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "50 g harina",
+      "1 unidad huevo",
+      "100 ml leche",
+      "50 g espinaca cocida",
+      "30 g ricotta",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Mezclar harina, huevo y leche para masa de crepes.",
+      "Cocinar crepes en sartén antiadherente.",
+      "Rellenar con espinaca y ricotta, enrollar y servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Desayuno"
+    ]
+  },
+  {
+    "title": "Tacos de carne asada y guacamole",
+    "description": "Categoría: premium (Mexicana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tortillas de maíz",
+      "100 g carne de res en tiras",
+      "1/2 unidad aguacate",
+      "1 unidad tomate",
+      "1 cucharadita cilantro fresco",
+      "1 cucharadita limón"
+    ],
+    "instructions": [
+      "Saltear carne hasta dorar, añadir sal y pimienta.",
+      "Preparar guacamole triturando aguacate con tomate, cilantro y limón.",
+      "Servir en tortillas con carne y guacamole."
+    ],
+    "tags": [
+      "premium",
+      "Mexicana / Plato principal"
+    ]
+  },
+  {
+    "title": "Sopa minestrone vegetariana",
+    "description": "Categoría: aprovechamiento (Italiana / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1/2 unidad calabacín",
+      "1 unidad zanahoria",
+      "1 rama apio",
+      "100 ml tomate triturado",
+      "50 g pasta pequeña",
+      "200 ml caldo vegetal",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Saltear verduras en aceite 3 minutos.",
+      "Añadir caldo, tomate y pasta, cocinar 10 minutos.",
+      "Servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Cena ligera"
+    ]
+  },
+  {
+    "title": "Pizza vegetariana con pesto y mozzarella",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 base masa de pizza",
+      "2 cucharadas pesto",
+      "80 g mozzarella",
+      "6 unidades tomate cherry",
+      "1 taza rúcula"
+    ],
+    "instructions": [
+      "Extender pesto sobre la masa.",
+      "Colocar mozzarella y tomates cherry.",
+      "Hornear 12-15 minutos a 200°C.",
+      "Añadir rúcula antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Pancakes integrales con frutos rojos",
+    "description": "Categoría: premium (Internacional / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g harina integral",
+      "1 unidad huevo",
+      "100 ml leche",
+      "1 cucharada miel",
+      "50 g frutos rojos"
+    ],
+    "instructions": [
+      "Mezclar harina, huevo y leche hasta obtener masa homogénea.",
+      "Cocinar pancakes en sartén antiadherente 2-3 minutos por lado.",
+      "Servir con miel y frutos rojos."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Desayuno"
+    ]
+  },
+  {
+    "title": "Tarta de manzana vegana",
+    "description": "Categoría: premium (Internacional / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades manzana",
+      "150 g harina",
+      "50 g azúcar moreno",
+      "50 ml aceite de coco",
+      "1 cucharadita canela"
+    ],
+    "instructions": [
+      "Pelar y cortar manzanas, mezclar con canela y azúcar.",
+      "Preparar masa con harina y aceite de coco.",
+      "Colocar manzanas sobre la masa y hornear 25 minutos a 180°C."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Postre"
+    ]
+  },
+  {
+    "title": "Huevos benedictinos con salmón",
+    "description": "Categoría: premium (Internacional / Brunch)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades pan inglés",
+      "2 unidades huevo",
+      "50 g salmón ahumado",
+      "30 ml salsa holandesa",
+      "1 cucharadita mantequilla"
+    ],
+    "instructions": [
+      "Tostar pan inglés y colocar salmón encima.",
+      "Pochar huevos y colocar sobre el salmón.",
+      "Añadir salsa holandesa caliente y servir."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Brunch"
+    ]
+  },
+  {
+    "title": "Bowl keto de aguacate, huevo y bacon",
+    "description": "Categoría: premium (Internacional / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad aguacate",
+      "2 unidades huevo",
+      "50 g bacon en tiras",
+      "1 taza espinaca fresca",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Saltear bacon hasta dorar.",
+      "Pochar huevos y colocar sobre espinaca.",
+      "Añadir aguacate en rodajas y bacon, servir con aceite de oliva."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Plato principal"
+    ]
+  },
+  {
+    "title": "Crema catalana vegana",
+    "description": "Categoría: premium (Española / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 ml leche de almendra",
+      "50 g azúcar",
+      "1 cucharada maicena",
+      "1 unidad canela en rama",
+      "1 tira piel de limón"
+    ],
+    "instructions": [
+      "Calentar leche con canela y limón.",
+      "Mezclar maicena con un poco de leche fría y añadir a la mezcla caliente.",
+      "Cocer hasta espesar, enfriar y espolvorear azúcar para caramelizar antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Española / Postre"
+    ]
+  },
+  {
+    "title": "Ratatouille al horno",
+    "description": "Categoría: aprovechamiento (Francesa / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad berenjena",
+      "1 unidad calabacín",
+      "1 unidad pimiento rojo",
+      "2 unidades tomate",
+      "1 cucharada aceite de oliva",
+      "al gusto sal y hierbas provenzales"
+    ],
+    "instructions": [
+      "Cortar verduras en rodajas finas.",
+      "Colocarlas alternadas en fuente para horno.",
+      "Rociar con aceite, sal y hierbas, hornear 25 minutos a 180°C."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Francesa / Plato principal"
+    ]
+  },
+  {
+    "title": "Pollo al curry con leche de coco",
+    "description": "Categoría: premium (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g pechuga de pollo",
+      "100 ml leche de coco",
+      "1 cucharadita curry en polvo",
+      "1/2 unidad cebolla",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Saltear cebolla en aceite hasta dorar.",
+      "Añadir pollo y dorar 3-4 minutos.",
+      "Agregar curry y leche de coco, cocinar 10 minutos.",
+      "Servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Berenjenas rellenas de carne y verduras",
+    "description": "Categoría: premium (Mediterránea / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad berenjena",
+      "100 g carne picada de res",
+      "1/2 unidad cebolla",
+      "1/2 unidad pimiento rojo",
+      "50 ml tomate triturado",
+      "30 g queso rallado"
+    ],
+    "instructions": [
+      "Cortar berenjena por la mitad y vaciar interior.",
+      "Saltear carne con verduras picadas y tomate triturado.",
+      "Rellenar berenjena, cubrir con queso y hornear 15 minutos a 180°C."
+    ],
+    "tags": [
+      "premium",
+      "Mediterránea / Plato principal"
+    ]
+  },
+  {
+    "title": "Smoothie bowl de mango y espinaca",
+    "description": "Categoría: aprovechamiento (Internacional / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g mango",
+      "1 unidad plátano",
+      "1 taza espinaca fresca",
+      "100 ml leche vegetal",
+      "1 cucharadita semillas de chía"
+    ],
+    "instructions": [
+      "Batir mango, plátano, espinaca y leche hasta textura cremosa.",
+      "Verter en bol y espolvorear semillas de chía.",
+      "Servir inmediatamente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Internacional / Desayuno"
+    ]
+  },
+  {
+    "title": "Lasagna vegetariana con calabacín y ricotta",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "4 unidades planchas de lasaña",
+      "1 unidad calabacín",
+      "100 g ricotta",
+      "100 ml salsa de tomate",
+      "50 g queso rallado"
+    ],
+    "instructions": [
+      "Mezclar ricotta con calabacín en rodajas.",
+      "Colocar capas de pasta, ricotta y salsa de tomate.",
+      "Cubrir con queso y hornear 20 minutos a 180°C."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Brownie vegano con nueces",
+    "description": "Categoría: premium (Americana / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g harina",
+      "30 g cacao en polvo",
+      "80 g azúcar moreno",
+      "50 ml aceite de coco",
+      "30 g nueces troceadas",
+      "50 ml leche vegetal"
+    ],
+    "instructions": [
+      "Mezclar todos los ingredientes hasta obtener masa homogénea.",
+      "Verter en molde engrasado y hornear 20 minutos a 180°C.",
+      "Dejar enfriar y cortar en cuadrados."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Postre"
+    ]
+  },
+  {
+    "title": "Tacos asiático-mexicanos de pollo y salsa teriyaki",
+    "description": "Categoría: premium (Fusión Asiática-Mexicana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tortillas de maíz",
+      "100 g pechuga de pollo",
+      "2 cucharadas salsa teriyaki",
+      "1/2 unidad pepino en tiras",
+      "1 unidad zanahoria rallada",
+      "al gusto cilantro fresco"
+    ],
+    "instructions": [
+      "Cocinar pollo con salsa teriyaki 5 minutos.",
+      "Rellenar tortillas con pollo, pepino, zanahoria y cilantro.",
+      "Servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Fusión Asiática-Mexicana / Plato principal"
+    ]
+  },
+  {
+    "title": "Ensalada César con salmón a la plancha",
+    "description": "Categoría: premium (Americana / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 tazas lechuga romana",
+      "100 g salmón",
+      "20 g queso parmesano rallado",
+      "30 g croutons",
+      "2 cucharadas salsa César"
+    ],
+    "instructions": [
+      "Asar el salmón 4-5 minutos por lado.",
+      "Mezclar lechuga, croutons y salsa.",
+      "Colocar salmón sobre la ensalada y añadir parmesano."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Cena ligera"
+    ]
+  },
+  {
+    "title": "Pasta fusión italiana-asiática con pesto y tofu",
+    "description": "Categoría: premium (Fusión Italiana-Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g spaghetti",
+      "2 cucharadas pesto",
+      "50 g tofu firme",
+      "1/2 unidad pimientos en tiras",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Cocer spaghetti al dente.",
+      "Saltear tofu y pimientos 3 minutos.",
+      "Mezclar con pasta y pesto, servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Fusión Italiana-Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Bagel americano con huevo y aguacate",
+    "description": "Categoría: aprovechamiento (Americana / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad bagel integral",
+      "1 unidad huevo",
+      "1/2 unidad aguacate",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Tostar bagel.",
+      "Pochar huevo y colocar sobre bagel.",
+      "Añadir aguacate en rodajas y sazonar con sal y pimienta."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Americana / Desayuno"
+    ]
+  },
+  {
+    "title": "Cheesecake vegano de frutos rojos",
+    "description": "Categoría: premium (Internacional / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "80 g galletas veganas",
+      "30 ml aceite de coco",
+      "100 g anacardos remojados",
+      "30 ml miel o sirope de agave",
+      "50 g frutos rojos"
+    ],
+    "instructions": [
+      "Triturar galletas y mezclar con aceite de coco, colocar base en molde.",
+      "Batir anacardos con sirope hasta textura cremosa y verter sobre base.",
+      "Decorar con frutos rojos y refrigerar 2 horas antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Postre"
+    ]
+  },
+  {
+    "title": "Sándwich americano de pollo BBQ",
+    "description": "Categoría: premium (Americana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad pan de hamburguesa",
+      "100 g pollo desmenuzado",
+      "2 cucharadas salsa BBQ",
+      "al gusto lechuga y tomate"
+    ],
+    "instructions": [
+      "Mezclar pollo con salsa BBQ y calentar 2-3 minutos.",
+      "Montar sándwich con pan, pollo, lechuga y tomate.",
+      "Servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Curry vegano de garbanzos y calabaza",
+    "description": "Categoría: aprovechamiento (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g garbanzos cocidos",
+      "100 g calabaza en cubos",
+      "100 ml leche de coco",
+      "1 cucharadita curry en polvo",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Saltear calabaza en aceite 5 minutos.",
+      "Añadir garbanzos, leche de coco y curry, cocinar 10 minutos.",
+      "Servir caliente con cilantro."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Brownie americano con helado de vainilla",
+    "description": "Categoría: premium (Americana / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g chocolate negro",
+      "50 g mantequilla",
+      "80 g azúcar",
+      "2 unidades huevo",
+      "50 g harina",
+      "50 g helado de vainilla"
+    ],
+    "instructions": [
+      "Derretir chocolate con mantequilla.",
+      "Mezclar con huevos, azúcar y harina.",
+      "Hornear 20 minutos a 180°C, servir con helado."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Postre"
+    ]
+  },
+  {
+    "title": "Fajitas de ternera estilo Tex-Mex",
+    "description": "Categoría: premium (Americana-Mexicana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tortillas de trigo",
+      "150 g ternera en tiras",
+      "1/2 unidad de cada pimiento rojo y verde",
+      "1/2 unidad cebolla",
+      "1 cucharadita salsa picante"
+    ],
+    "instructions": [
+      "Saltear ternera con verduras 5 minutos.",
+      "Añadir salsa picante y mezclar.",
+      "Servir en tortillas calientes."
+    ],
+    "tags": [
+      "premium",
+      "Americana-Mexicana / Plato principal"
+    ]
+  },
+  {
+    "title": "Shakshuka con espinaca",
+    "description": "Categoría: aprovechamiento (Mediterránea / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades huevo",
+      "150 ml tomate triturado",
+      "1/2 unidad cebolla",
+      "1/2 unidad pimiento rojo",
+      "1 taza espinaca fresca",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Saltear cebolla y pimiento en aceite 3 minutos.",
+      "Añadir tomate y espinaca, cocinar 5 minutos.",
+      "Hacer huecos y añadir huevos, tapar 5 minutos hasta cuajar."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Desayuno"
+    ]
+  },
+  {
+    "title": "Sushi bowl fusión vegana",
+    "description": "Categoría: premium (Asiática / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g arroz de sushi",
+      "1/2 unidad aguacate",
+      "1 unidad zanahoria rallada",
+      "1/2 unidad pepino en tiras",
+      "50 g tofu marinado",
+      "1 cucharada salsa de soja"
+    ],
+    "instructions": [
+      "Cocer arroz de sushi y enfriar.",
+      "Colocar en bol junto con aguacate, zanahoria, pepino y tofu.",
+      "Aliñar con salsa de soja y servir."
+    ],
+    "tags": [
+      "premium",
+      "Asiática / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Pollo al limón estilo griego",
+    "description": "Categoría: premium (Griega / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g pechuga de pollo",
+      "1 unidad limón",
+      "1 cucharada aceite de oliva",
+      "1 cucharadita orégano",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Marinar pollo con limón, aceite, orégano, sal y pimienta 10 minutos.",
+      "Asar 10-12 minutos hasta dorar.",
+      "Servir con rodajas de limón."
+    ],
+    "tags": [
+      "premium",
+      "Griega / Plato principal"
+    ]
+  },
+  {
+    "title": "Smoothie bowl de mango y coco",
+    "description": "Categoría: premium (Internacional / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g mango",
+      "1 unidad plátano",
+      "100 ml leche de coco",
+      "30 g granola",
+      "1 cucharadita coco rallado"
+    ],
+    "instructions": [
+      "Batir mango, plátano y leche de coco hasta textura cremosa.",
+      "Verter en bol, decorar con granola y coco rallado."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Desayuno"
+    ]
+  },
+  {
+    "title": "Frittata de verduras y queso feta",
+    "description": "Categoría: premium (Mediterránea / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevo",
+      "1/2 unidad pimiento rojo",
+      "1/2 unidad calabacín",
+      "30 g queso feta",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Saltear verduras 5 minutos en aceite.",
+      "Batir huevos, mezclar con verduras y feta.",
+      "Cocer en sartén a fuego medio 10 minutos."
+    ],
+    "tags": [
+      "premium",
+      "Mediterránea / Desayuno"
+    ]
+  },
+  {
+    "title": "Tostadas francesas integrales con miel",
+    "description": "Categoría: aprovechamiento (Francesa / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 rebanadas pan integral",
+      "1 unidad huevo",
+      "50 ml leche",
+      "1 cucharadita miel",
+      "1 pizca canela"
+    ],
+    "instructions": [
+      "Batir huevo con leche y canela.",
+      "Sumergir pan y dorar 2 minutos por lado en sartén.",
+      "Servir con miel por encima."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Francesa / Desayuno"
+    ]
+  },
+  {
+    "title": "Bowl keto de salmón y aguacate",
+    "description": "Categoría: premium (Internacional / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g salmón ahumado",
+      "1/2 unidad aguacate",
+      "1 taza espinaca fresca",
+      "1/2 unidad pepino",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Colocar todos los ingredientes en bol.",
+      "Aliñar con aceite y servir frío."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Brownie de chocolate con nueces y sal marina",
+    "description": "Categoría: premium (Americana / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g chocolate negro",
+      "50 g mantequilla",
+      "80 g azúcar moreno",
+      "50 g harina",
+      "2 unidades huevo",
+      "30 g nueces",
+      "1 pizca sal marina"
+    ],
+    "instructions": [
+      "Derretir chocolate con mantequilla.",
+      "Mezclar con azúcar, huevo y harina.",
+      "Añadir nueces, hornear 20 minutos a 180°C, espolvorear sal antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Postre"
+    ]
+  },
+  {
+    "title": "Pasta primavera con verduras asadas",
+    "description": "Categoría: aprovechamiento (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g spaghetti",
+      "1/2 unidad calabacín",
+      "1/2 unidad pimiento rojo",
+      "6 unidades tomate cherry",
+      "1 cucharadita aceite de oliva",
+      "20 g queso parmesano rallado"
+    ],
+    "instructions": [
+      "Asar verduras 10 minutos en horno a 180°C.",
+      "Cocer spaghetti al dente, mezclar con verduras y aceite.",
+      "Añadir parmesano y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Pollo teriyaki con arroz jazmín",
+    "description": "Categoría: premium (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g pechuga de pollo",
+      "2 cucharadas salsa teriyaki",
+      "100 g arroz jazmín",
+      "1 cucharadita aceite de sésamo",
+      "50 g brotes de soja"
+    ],
+    "instructions": [
+      "Marinar pollo con salsa teriyaki 10 minutos.",
+      "Cocinar arroz jazmín 12 minutos.",
+      "Saltear pollo en aceite de sésamo 5 minutos y servir sobre arroz con brotes."
+    ],
+    "tags": [
+      "premium",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Tostadas integrales con hummus y aguacate",
+    "description": "Categoría: aprovechamiento (Mediterránea / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 rebanadas pan integral",
+      "2 cucharadas hummus",
+      "1/2 unidad aguacate",
+      "al gusto pimienta negra"
+    ],
+    "instructions": [
+      "Tostar el pan integral.",
+      "Untar hummus sobre las rebanadas.",
+      "Añadir aguacate en rodajas y pimienta por encima."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Desayuno"
+    ]
+  },
+  {
+    "title": "Ensalada griega con garbanzos",
+    "description": "Categoría: aprovechamiento (Griega / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g garbanzos cocidos",
+      "1 unidad tomate",
+      "1/2 unidad pepino",
+      "30 g queso feta",
+      "10 unidades aceitunas negras",
+      "1 cucharadita aceite de oliva",
+      "1 pizca orégano"
+    ],
+    "instructions": [
+      "Cortar verduras y mezclar con garbanzos y feta.",
+      "Añadir aceitunas, aceite y orégano.",
+      "Servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Griega / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Tortilla española con calabacín y cebolla",
+    "description": "Categoría: aprovechamiento (Española / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevo",
+      "1 unidad mediana patata",
+      "1/2 unidad cebolla",
+      "1/2 unidad calabacín",
+      "1 cucharada aceite de oliva",
+      "al gusto sal"
+    ],
+    "instructions": [
+      "Cortar patata, cebolla y calabacín en rodajas finas y freír 5-7 minutos.",
+      "Batir huevos y mezclar con verduras.",
+      "Cocer en sartén 5-6 minutos por cada lado hasta dorar."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Española / Desayuno"
+    ]
+  },
+  {
+    "title": "Smoothie de espinaca, plátano y mango",
+    "description": "Categoría: aprovechamiento (Internacional / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 taza espinaca fresca",
+      "1 unidad plátano",
+      "100 g mango",
+      "100 ml leche vegetal"
+    ],
+    "instructions": [
+      "Batir todos los ingredientes hasta obtener mezcla homogénea.",
+      "Servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Internacional / Desayuno"
+    ]
+  },
+  {
+    "title": "Bowl fusión mexicana-asiática con pollo",
+    "description": "Categoría: premium (Fusión Mexicana-Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g arroz integral",
+      "100 g pechuga de pollo",
+      "50 g maíz",
+      "1/2 unidad pimiento rojo",
+      "1 cucharada salsa teriyaki",
+      "al gusto cilantro fresco"
+    ],
+    "instructions": [
+      "Cocer arroz integral 12 minutos.",
+      "Saltear pollo con pimiento y salsa teriyaki 5 minutos.",
+      "Mezclar con arroz y maíz, decorar con cilantro."
+    ],
+    "tags": [
+      "premium",
+      "Fusión Mexicana-Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Pasta al pesto con espárragos",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g spaghetti",
+      "2 cucharadas pesto",
+      "100 g espárragos",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Cocer pasta al dente.",
+      "Saltear espárragos 3-4 minutos.",
+      "Mezclar con pasta y pesto, servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Pollo al horno con hierbas provenzales",
+    "description": "Categoría: premium (Francesa / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g muslos de pollo",
+      "1 cucharadita tomillo y romero",
+      "1 cucharada aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Precalentar horno a 180°C.",
+      "Marinar pollo con hierbas, aceite, sal y pimienta.",
+      "Hornear 25 minutos hasta dorar."
+    ],
+    "tags": [
+      "premium",
+      "Francesa / Plato principal"
+    ]
+  },
+  {
+    "title": "Brownie de chocolate y almendras",
+    "description": "Categoría: premium (Americana / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g chocolate negro",
+      "50 g mantequilla",
+      "80 g azúcar moreno",
+      "50 g harina",
+      "2 unidades huevo",
+      "30 g almendras"
+    ],
+    "instructions": [
+      "Derretir chocolate con mantequilla.",
+      "Mezclar con azúcar, huevos y harina.",
+      "Añadir almendras, hornear 20 minutos a 180°C."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Postre"
+    ]
+  },
+  {
+    "title": "Ensalada mediterránea con quinoa y garbanzos",
+    "description": "Categoría: aprovechamiento (Mediterránea / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g quinoa cocida",
+      "50 g garbanzos cocidos",
+      "1/2 unidad pepino",
+      "6 unidades tomate cherry",
+      "1 cucharadita cada uno aceite de oliva y limón"
+    ],
+    "instructions": [
+      "Mezclar todos los ingredientes en bol.",
+      "Aliñar con aceite de oliva y limón, servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Hamburguesa americana con queso cheddar y aguacate",
+    "description": "Categoría: premium (Americana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad pan de hamburguesa",
+      "100 g carne de res picada",
+      "1 loncha queso cheddar",
+      "1/2 unidad aguacate",
+      "al gusto lechuga y tomate"
+    ],
+    "instructions": [
+      "Formar hamburguesa y cocinar 5-6 minutos por lado.",
+      "Montar en pan con queso, aguacate, lechuga y tomate.",
+      "Servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Crepes integrales con frutos rojos",
+    "description": "Categoría: premium (Francesa / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "80 g harina integral",
+      "1 unidad huevo",
+      "100 ml leche",
+      "50 g frutos rojos",
+      "1 cucharadita miel"
+    ],
+    "instructions": [
+      "Batir harina, huevo y leche hasta obtener mezcla homogénea.",
+      "Cocer crepes 1-2 minutos por lado en sartén antiadherente.",
+      "Rellenar con frutos rojos y miel."
+    ],
+    "tags": [
+      "premium",
+      "Francesa / Desayuno"
+    ]
+  },
+  {
+    "title": "Tacos veganos de jackfruit y guacamole",
+    "description": "Categoría: premium (Fusión Mexicana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades tortillas de maíz",
+      "100 g jackfruit desmenuzado",
+      "1/2 unidad aguacate",
+      "1 unidad tomate",
+      "al gusto cilantro fresco"
+    ],
+    "instructions": [
+      "Cocinar jackfruit con especias 5 minutos.",
+      "Preparar guacamole con aguacate y tomate.",
+      "Servir jackfruit en tortillas con guacamole y cilantro."
+    ],
+    "tags": [
+      "premium",
+      "Fusión Mexicana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Sopa minestrone italiana",
+    "description": "Categoría: aprovechamiento (Italiana / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1/2 unidad calabacín",
+      "1 unidad zanahoria",
+      "1 unidad mediana patata",
+      "50 g judías verdes",
+      "50 g pasta pequeña",
+      "500 ml caldo de verduras",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Picar todas las verduras y saltear 5 minutos.",
+      "Añadir caldo y pasta, cocer 15 minutos.",
+      "Servir caliente con aceite de oliva."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Cena ligera"
+    ]
+  },
+  {
+    "title": "Ensalada mediterránea con quinoa y feta",
+    "description": "Categoría: aprovechamiento (Mediterránea / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g quinoa cocida",
+      "1/2 unidad pepino",
+      "6 unidades tomate cherry",
+      "10 unidades aceitunas negras",
+      "30 g queso feta",
+      "1 cucharadita aceite de oliva",
+      "1/2 unidad limón"
+    ],
+    "instructions": [
+      "Mezclar todos los ingredientes en bol.",
+      "Aliñar con aceite y limón.",
+      "Servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Bowl asiático de tofu y arroz integral",
+    "description": "Categoría: premium (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g arroz integral",
+      "100 g tofu firme",
+      "50 g brócoli",
+      "1/2 unidad zanahoria",
+      "1 cucharada salsa de soja",
+      "1 cucharadita aceite de sésamo"
+    ],
+    "instructions": [
+      "Cocer arroz integral 12 minutos.",
+      "Saltear tofu y verduras en aceite de sésamo 5 minutos.",
+      "Mezclar con arroz y salsa de soja, servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Pizza casera integral con vegetales",
+    "description": "Categoría: aprovechamiento (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 base masa integral para pizza",
+      "3 cucharadas salsa de tomate",
+      "1/2 unidad de cada pimiento rojo y verde",
+      "1/2 unidad cebolla",
+      "50 g queso mozzarella rallado"
+    ],
+    "instructions": [
+      "Precalentar horno a 200°C.",
+      "Extender salsa sobre la masa, añadir vegetales y queso.",
+      "Hornear 15-20 minutos hasta dorar."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Panqueques americanos con sirope de arce",
+    "description": "Categoría: premium (Americana / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "80 g harina",
+      "1 unidad huevo",
+      "100 ml leche",
+      "1 cucharada sirope de arce",
+      "1 cucharadita mantequilla"
+    ],
+    "instructions": [
+      "Mezclar harina, huevo y leche.",
+      "Cocer panqueques 2 minutos por lado en sartén con mantequilla.",
+      "Servir con sirope de arce."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Desayuno"
+    ]
+  },
+  {
+    "title": "Curry de garbanzos y calabaza",
+    "description": "Categoría: aprovechamiento (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g garbanzos cocidos",
+      "100 g calabaza en cubos",
+      "100 ml leche de coco",
+      "1 cucharadita curry en polvo",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Saltear calabaza en aceite 5 minutos.",
+      "Añadir garbanzos, leche de coco y curry, cocinar 10 minutos.",
+      "Servir caliente con cilantro fresco."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Sándwich americano de pavo y aguacate",
+    "description": "Categoría: aprovechamiento (Americana / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 rebanadas pan integral",
+      "100 g pavo cocido",
+      "1/2 unidad aguacate",
+      "al gusto lechuga",
+      "1 cucharadita mayonesa ligera"
+    ],
+    "instructions": [
+      "Tostar pan si se desea.",
+      "Montar sándwich con pavo, aguacate, lechuga y mayonesa.",
+      "Servir inmediatamente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Americana / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Moussaka griega con berenjena y carne",
+    "description": "Categoría: premium (Griega / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad berenjena",
+      "150 g carne picada de res",
+      "1/2 unidad cebolla",
+      "100 ml tomate triturado",
+      "30 g queso rallado",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Asar berenjena 10 minutos a 180°C.",
+      "Saltear carne con cebolla y tomate 5 minutos.",
+      "En molde, alternar capas de berenjena y carne, cubrir con queso y hornear 15 minutos."
+    ],
+    "tags": [
+      "premium",
+      "Griega / Plato principal"
+    ]
+  },
+  {
+    "title": "Pancakes veganos de avena y plátano",
+    "description": "Categoría: aprovechamiento (Internacional / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "80 g harina de avena",
+      "1 unidad plátano maduro",
+      "100 ml leche vegetal",
+      "1 pizca canela"
+    ],
+    "instructions": [
+      "Triturar plátano y mezclar con harina, leche y canela.",
+      "Cocer pancakes 2 minutos por lado en sartén antiadherente.",
+      "Servir calientes."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Internacional / Desayuno"
+    ]
+  },
+  {
+    "title": "Tacos de pescado estilo Baja",
+    "description": "Categoría: premium (Americana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g filete de pescado blanco",
+      "2 unidades tortillas de maíz",
+      "50 g col rallada",
+      "2 cucharadas salsa de yogur y lima",
+      "al gusto cilantro fresco"
+    ],
+    "instructions": [
+      "Cocinar pescado a la plancha 5 minutos.",
+      "Calentar tortillas y colocar pescado.",
+      "Añadir col, salsa y cilantro."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Plato principal"
+    ]
+  },
+  {
+    "title": "Bruschetta italiana clásica",
+    "description": "Categoría: aprovechamiento (Italiana / Aperitivo)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 rebanadas pan rústico",
+      "1 unidad tomate",
+      "1 diente ajo",
+      "1 cucharadita aceite de oliva",
+      "3 hojas albahaca fresca"
+    ],
+    "instructions": [
+      "Tostar pan y frotar con ajo.",
+      "Picar tomate y mezclar con aceite y albahaca.",
+      "Colocar mezcla sobre pan y servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Aperitivo"
+    ]
+  },
+  {
+    "title": "Gnocchi con salsa de champiñones",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g gnocchi",
+      "80 g champiñones",
+      "50 ml nata para cocinar",
+      "1 cucharadita aceite de oliva",
+      "al gusto perejil fresco"
+    ],
+    "instructions": [
+      "Cocer gnocchi hasta que floten.",
+      "Saltear champiñones en aceite, añadir nata 2 minutos.",
+      "Mezclar con gnocchi y decorar con perejil."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Wrap vegetariano con hummus y verduras",
+    "description": "Categoría: aprovechamiento (Internacional / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "1 unidad tortilla de trigo integral",
+      "2 cucharadas hummus",
+      "1 unidad zanahoria rallada",
+      "1/2 unidad pepino en tiras",
+      "1 taza espinaca fresca"
+    ],
+    "instructions": [
+      "Untar hummus sobre tortilla.",
+      "Colocar verduras y enrollar.",
+      "Cortar a la mitad y servir."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Internacional / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Sushi de salmón y aguacate",
+    "description": "Categoría: premium (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g arroz para sushi",
+      "50 g salmón fresco",
+      "1/2 unidad aguacate",
+      "1 hoja algas nori",
+      "1 cucharadita salsa de soja"
+    ],
+    "instructions": [
+      "Cocer arroz y enfriar.",
+      "Colocar arroz sobre alga nori, añadir salmón y aguacate.",
+      "Enrollar, cortar y servir con salsa de soja."
+    ],
+    "tags": [
+      "premium",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Frittata de espárragos y queso ricotta",
+    "description": "Categoría: premium (Mediterránea / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades huevo",
+      "50 g espárragos verdes",
+      "30 g queso ricotta",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Saltear espárragos 3 minutos.",
+      "Batir huevos y mezclar con espárragos y ricotta.",
+      "Cocer 10 minutos hasta cuajar."
+    ],
+    "tags": [
+      "premium",
+      "Mediterránea / Desayuno"
+    ]
+  },
+  {
+    "title": "Ceviche de camarón y mango",
+    "description": "Categoría: premium (Fusión Mexicana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g camarones cocidos",
+      "50 g mango en cubos",
+      "1/4 unidad cebolla morada",
+      "1 unidad limón",
+      "al gusto cilantro fresco"
+    ],
+    "instructions": [
+      "Mezclar camarones con mango y cebolla.",
+      "Aliñar con jugo de limón y cilantro.",
+      "Servir frío."
+    ],
+    "tags": [
+      "premium",
+      "Fusión Mexicana / Plato principal"
+    ]
+  },
+  {
+    "title": "Chili con carne estilo americano",
+    "description": "Categoría: premium (Americana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g carne picada de res",
+      "100 ml tomate triturado",
+      "50 g frijoles rojos",
+      "1/2 unidad pimiento rojo",
+      "1 cucharadita comino y paprika"
+    ],
+    "instructions": [
+      "Saltear carne con pimiento y especias 5 minutos.",
+      "Añadir tomate y frijoles, cocinar 10 minutos.",
+      "Servir caliente."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Plato principal"
+    ]
+  },
+  {
+    "title": "Parfait de yogur con granola y frutos rojos",
+    "description": "Categoría: aprovechamiento (Internacional / Postre o desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g yogur natural",
+      "30 g granola",
+      "50 g frutos rojos",
+      "1 cucharadita miel"
+    ],
+    "instructions": [
+      "En vaso, colocar capas de yogur, granola y frutos rojos.",
+      "Repetir y terminar con miel.",
+      "Servir frío."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Internacional / Postre o desayuno"
+    ]
+  },
+  {
+    "title": "Shakshuka con espinacas y pimientos",
+    "description": "Categoría: aprovechamiento (Mediterránea / Desayuno)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "2 unidades huevo",
+      "50 g espinaca fresca",
+      "1/2 unidad pimiento rojo",
+      "100 ml tomate triturado",
+      "1 cucharadita aceite de oliva",
+      "al gusto sal y pimienta"
+    ],
+    "instructions": [
+      "Saltear pimiento en aceite 3 minutos.",
+      "Añadir tomate triturado y espinaca, cocinar 5 minutos.",
+      "Hacer huecos y romper huevos, tapar y cocinar 5-6 minutos."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Mediterránea / Desayuno"
+    ]
+  },
+  {
+    "title": "Buddha bowl vegano con garbanzos y quinoa",
+    "description": "Categoría: premium (Internacional / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g quinoa cocida",
+      "80 g garbanzos cocidos",
+      "1 unidad zanahoria rallada",
+      "1/2 unidad aguacate",
+      "1 cucharada salsa tahini"
+    ],
+    "instructions": [
+      "En bol, colocar quinoa, garbanzos, zanahoria y aguacate.",
+      "Aliñar con salsa tahini y mezclar antes de servir."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Pollo al curry estilo tailandés con leche de coco",
+    "description": "Categoría: premium (Asiática / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "150 g pechuga de pollo",
+      "1/2 unidad pimiento rojo",
+      "1/2 unidad cebolla",
+      "100 ml leche de coco",
+      "1 cucharadita pasta de curry rojo",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Saltear pollo con pimiento y cebolla 5 minutos.",
+      "Añadir leche de coco y pasta de curry, cocinar 10 minutos.",
+      "Servir caliente con cilantro."
+    ],
+    "tags": [
+      "premium",
+      "Asiática / Plato principal"
+    ]
+  },
+  {
+    "title": "Tarta de manzana integral",
+    "description": "Categoría: premium (Europea / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g harina integral",
+      "50 g mantequilla",
+      "2 unidades manzana",
+      "50 g azúcar moreno",
+      "1 unidad huevo"
+    ],
+    "instructions": [
+      "Precalentar horno a 180°C.",
+      "Mezclar harina y mantequilla, formar base y colocar en molde.",
+      "Cortar manzanas en láminas, colocar sobre la base, espolvorear azúcar.",
+      "Hornear 25-30 minutos."
+    ],
+    "tags": [
+      "premium",
+      "Europea / Postre"
+    ]
+  },
+  {
+    "title": "Wrap keto de lechuga con pollo y aguacate",
+    "description": "Categoría: premium (Internacional / Almuerzo rápido)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "3 unidades hojas de lechuga",
+      "100 g pechuga de pollo",
+      "1/2 unidad aguacate",
+      "5 unidades tomate cherry",
+      "1 cucharadita mayonesa keto"
+    ],
+    "instructions": [
+      "Cocinar pollo a la plancha 5 minutos.",
+      "Colocar pollo, aguacate y tomate sobre hojas de lechuga.",
+      "Enrollar y servir."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Almuerzo rápido"
+    ]
+  },
+  {
+    "title": "Pasta primavera con verduras de temporada",
+    "description": "Categoría: aprovechamiento (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g pasta integral",
+      "1/2 unidad calabacín",
+      "1 unidad zanahoria",
+      "1/2 unidad pimiento amarillo",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Cocer pasta al dente.",
+      "Saltear verduras 5 minutos en aceite de oliva.",
+      "Mezclar con pasta y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Italiana / Plato principal"
+    ]
+  },
+  {
+    "title": "Ensalada César con pollo a la plancha",
+    "description": "Categoría: premium (Americana / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g lechuga romana",
+      "100 g pechuga de pollo",
+      "20 g queso parmesano",
+      "30 g picatostes",
+      "1 cucharada salsa césar ligera"
+    ],
+    "instructions": [
+      "Cocinar pollo a la plancha 5 minutos y cortar en tiras.",
+      "Mezclar lechuga con picatostes y pollo.",
+      "Aliñar con salsa césar y espolvorear parmesano."
+    ],
+    "tags": [
+      "premium",
+      "Americana / Cena ligera"
+    ]
+  },
+  {
+    "title": "Crema de calabaza y jengibre",
+    "description": "Categoría: aprovechamiento (Internacional / Cena ligera)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "200 g calabaza",
+      "1/2 unidad cebolla",
+      "1 unidad zanahoria",
+      "300 ml caldo de verduras",
+      "1 cm jengibre fresco",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Saltear cebolla y zanahoria 5 minutos.",
+      "Añadir calabaza, caldo y jengibre, cocinar 15 minutos.",
+      "Triturar hasta obtener crema y servir caliente."
+    ],
+    "tags": [
+      "aprovechamiento",
+      "Internacional / Cena ligera"
+    ]
+  },
+  {
+    "title": "Brownie vegano de chocolate y nueces",
+    "description": "Categoría: premium (Internacional / Postre)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "80 g harina integral",
+      "30 g cacao puro",
+      "50 g azúcar moreno",
+      "30 g aceite de coco",
+      "30 g nueces",
+      "50 ml leche vegetal"
+    ],
+    "instructions": [
+      "Mezclar todos los ingredientes hasta obtener mezcla homogénea.",
+      "Hornear 20 minutos a 180°C.",
+      "Dejar enfriar y servir."
+    ],
+    "tags": [
+      "premium",
+      "Internacional / Postre"
+    ]
+  },
+  {
+    "title": "Risotto de setas y espárragos",
+    "description": "Categoría: premium (Italiana / Plato principal)",
+    "prepTime": "20 min",
+    "difficulty": "Media",
+    "ingredients": [
+      "100 g arroz arborio",
+      "100 g setas variadas",
+      "50 g espárragos verdes",
+      "300 ml caldo de verduras",
+      "30 g queso parmesano",
+      "1 cucharadita aceite de oliva"
+    ],
+    "instructions": [
+      "Saltear setas y espárragos 5 minutos.",
+      "Añadir arroz y calentar 2 minutos.",
+      "Agregar caldo poco a poco hasta cocinar arroz al dente.",
+      "Mezclar con parmesano y servir."
+    ],
+    "tags": [
+      "premium",
+      "Italiana / Plato principal"
+    ]
+  }
+]

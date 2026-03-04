@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from 'dotenv';
+import { supabase } from '../utils/supabase.js';
 dotenv.config();
 
 export default async function handler(req, res) {
@@ -14,6 +15,51 @@ export default async function handler(req, res) {
     try {
         const { pantry, count = 5 } = req.body;
 
+        // 1. Intentar buscar en la base de datos local (global_recipes) primero
+        try {
+            const { data: globalRecipes } = await supabase.from('global_recipes').select('*');
+            if (globalRecipes && globalRecipes.length > 0) {
+                const pantryItems = (pantry || []).map(p => p.toLowerCase());
+
+                // Puntuar recetas según ingredientes coincidentes
+                const scored = globalRecipes.map(r => {
+                    let matchCount = 0;
+                    if (pantryItems.length > 0 && Array.isArray(r.ingredients)) {
+                        r.ingredients.forEach(ing => {
+                            const ingLow = ing.toLowerCase();
+                            if (pantryItems.some(p => ingLow.includes(p) || p.includes(ingLow))) {
+                                matchCount++;
+                            }
+                        });
+                    }
+                    // Dar un poco de aleatoriedad para que no salgan siempre las mismas recetas
+                    return { ...r, matchCount: matchCount + Math.random() * 0.5 };
+                });
+
+                scored.sort((a, b) => b.matchCount - a.matchCount);
+
+                const topRecipes = scored.slice(0, count).map(r => ({
+                    id: r.id,
+                    title: r.title,
+                    image: r.image_url || '',
+                    time: r.prep_time,
+                    difficulty: r.difficulty || 'Media',
+                    ingredients: r.ingredients || [],
+                    category: r.category || 'Sugerencia'
+                }));
+
+                // Si encontramos recetas con al menos 1 ingrediente en común, o la despensa está vacía, devolvemos la caché
+                // para ahorrar muchísimos tokens de IA.
+                if (topRecipes.some(r => r.matchCount >= 1) || pantryItems.length === 0) {
+                    console.log(`[Cache Hit] Sirviendo ${topRecipes.length} recetas desde base de datos local.`);
+                    return res.status(200).json(topRecipes);
+                }
+            }
+        } catch (dbErr) {
+            console.error('Error buscando recetas en cache:', dbErr);
+        }
+
+        // 2. Fallback a Gemini si no hay buenos matches
         if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY no configurada');
 
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
